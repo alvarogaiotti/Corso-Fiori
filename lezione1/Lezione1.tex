@@ -1,0 +1,341 @@
+\documentclass[../corsofiori.tex]{subfiles}
+\begin{document}
+\chapter{Vincenti e affrancabili}
+\label{chap:lezione1}
+
+\`E fondamentale, nel Bridge, mantenere il Contratto (un offerta vincente effettuata darante la Dichiarazione, ovvero
+l'asta iniziale, che sancisce un seme da usare come \emph{atout}, o la sua assenza, ed un numero minimo di prese da
+vincere), ovvero fare un numero di prese almeno pari a quelle dichiarate.
+A questo fine è fondamentale contare il numero di prese certe che si possiedono, in modo da pianificare le proprie
+successive mosse in maniera strategica e ottimale.
+
+Si dicono \textbf{vincenti o franche} o buone, quelle carte che, se giocate immediatamente, sono certe di aggiudicarsi una
+presa.
+
+Si dicono \textbf{affrancabili} quelle carte che potranno diventare vincenti dopo una opportuna manovra.
+La seguente mano:
+\medskip
+
+\hand*!{AK3}{KQJT}{QJ}{AQJ3}
+
+\medskip
+
+\noindent possiede due vincenti a Picche, zero a Cuori, zero a Quadri e una a \fio. Per quanto riguarda le \textbf{affrancabili}, ne
+possiede zero a \pic, tre a \cu (dopo aver ceduto l'Asso), zero a \qu e una a \fio (dopo aver ceduto il Re).
+
+\paragraph{Carte equivalenti} Si dicono equivalenti tutte le carte di valore contiguo. Quindi, ad esempio, se un
+Re è accompagnato da un Asso, allora abbiamo due vincenti, se abbiamo \cards{\textbf{J\Ten983}} abbiamo quattro equivalenti
+e un'affrancabile.
+
+\paragraph{Il Giocante}
+Il Giocante è colui che si è aggiudicato un Contratto. Dato questo fatto, egli ha un obiettivo da raggiungere: il
+numero di prese scommesse. Avendo un numero di prese minimo da ottenere, egli organizza ed effettua le proprie manovre
+in base alle vincenti che possiede nelle sue 26 carte (ricordatevi, c'è anche il Morto!). Il fatto di vedere 26 carte
+fornisce un grosso vantaggio rispetto ai difensori, che non vedendo la loro forza combinata, non sono in grado di fare
+un conteggio preciso come quello del Giocante.
+
+\begin{figure}[ht]
+    \onesuitNS*{AQ2}{K83}
+    \caption{Un colore di 3 vincenti, rappresentato tra Mano e Morto.}\label{fig:colore}
+\end{figure}
+
+In \autoref{fig:colore}, Sud, il Giocante, quando vede il Morto scopre che il Re è una vincente (come la Dama del Morto).
+
+\paragraph{La prima cosa da fare: contare le vincenti}
+Il Giocante, una volta che il Morto scopre le sue carte, considera i colori uno per uno, tra Mano e Morto (vedere
+l'esempio in \autoref{fig:colore}, dove le vincenti vengono contate integrando le due mani), e conta le
+vincenti all'interno di ciascun colore.
+
+Per contare le vincenti in un colore si deve tenere conto di due informazioni:
+\begin{itemize}
+    \item Il numero di vincenti
+    \item Il numero di carte nella mano in cui la lunghezza del colore è massima.
+\end{itemize}
+
+Il secondo punto è fondamentale in quanto rappresenta il numero di volte massimo che il colore potrà essere giocato.
+Di conseguenza, vige sempre la seguente regola:
+
+\medskip
+\begin{regola}{Regola sulle vincenti}
+    \textsc{Il numero di prese realizzabili in un seme è pari o inferiore al numero di carte nel lato lungo}
+
+\end{regola}
+\bigskip
+
+
+\begin{wraptable}[5]{l}[0cm]{6cm}
+    \onesuitNS{JT9}{AKQ}\hfill\onesuitNS{T9}{AKQJ2}\hfill\onesuitNS{AKJ942}{QT3}\hfill
+\end{wraptable}
+
+Nel primo caso abbiamo sei vincenti, ma solo tre carte dal lato più lungo (in questo caso Mano e Morto possiedono la
+medesima lunghezza), quindi, potendo giocare il seme solo tre volte, le
+vincenti sono limitate a tre; nel secondo caso cinque; nel terzo
+caso sei, pur con lo stesso numero di vincenti prima dell'aggiustamento dovuto alla lunghezza del seme.
+
+\paragraph{Seconda operazione: individuare il o i colori in cui vi sono prese affrancabili}
+
+L'obiettivo di entrambe le coppie è massimizzare il proprio potenziale in modo da fare il maggior numero di prese. Il
+modo migliore di ottenere il più alto ( o il necessario) numero di prese è tentare di affrancare delle prese in più.
+
+Per affrancare delle prese è necessario giocare ripetutamente nel colore delle affrancabili, partendo con le carte alte
+equivalenti possedute, spesso iniziando con quelle nella mano con meno carte nel seme selezionato\sidefootnote{Questo
+processo di dare precedenza  alle carte equivalenti della mano più corta si schiama \emph{sblocco}.}.
+
+Per ottenere il numero di prese ottenibili da un seme contenente affrancabili è necessario:
+\begin{itemize}
+    \item Contare il numero di equivalenti
+    \item Sottrarvi il numero di vincenti avversarie in quel colore
+\end{itemize}
+
+Ricordate! Vige sempre la seguente regola:
+
+\medskip
+\begin{regola}{Regola sulle affrancabili}
+    \textsc{Il numero massimo di prese affrancabili è sempre limitato dal numero di carte del lato più lungo}
+\end{regola}
+\bigskip
+
+\begin{minipage}[h][3cm][t]{.23\linewidth}
+    \onesuitNS{JT3}{KQ92}
+
+    \medskip
+
+    4-1 = 3 prese
+\end{minipage}\hfill
+\begin{minipage}[h][3cm][t]{.23\linewidth}
+    \onesuitNS{JT3}{KQ952}
+
+    \medskip
+
+    5-1 = 4 prese
+\end{minipage}\hfill
+\begin{minipage}[h][3cm][t]{.23\linewidth}
+    \onesuitNS{JT32}{Q9854}
+
+    \medskip
+
+    5-2 = 3 prese
+\end{minipage}\hfill
+\begin{minipage}[h][3cm][t]{.23\linewidth}
+    \onesuitNS{QT2}{KJ9863}
+
+    \medskip
+
+    6-1 = 5 prese
+\end{minipage}
+
+Ricordatevi, inoltre, che il primo colore da muovere (giocare) è quello che contiene più affrancabili.
+
+
+
+\paragraph{La corsa all'affrancamento} Quando si gioca a Senza Atout (\SA o \small{NT}\normalsize) l'obiettivo di
+entrambe le coppie è l'affrancamento dei propri semi. Di conseguenza è di fondamentale importanza non gettarsi a giocare
+le proprie vincenti (detto anche \emph{incassare} le vincenti), bensì immediatamente mettersi all'opera per affrancare
+il proprio colore\sidefootnote{Seme e colore sono sinonimi nel Bridge}. Questo perché, incassando le nostre vincenti,
+corriamo il rischio di affrancare il seme degli avversari, il cui obiettivo è il medesimo del giocante: rendere i propri semi \emph{franchi},
+giocando ripetutamente in quel colore.
+
+    \onesuitAll*{AK}{74}{Q52}{JT9863}
+
+
+\medskip
+
+    Se incassiamo l'Asso e il Re, rendiamo immediatamente franche le quattro affrancabili avversarie. Ora agli avversari
+    basterà vincere una sola presa per poter ottenere cinque prese: una presa in un seme esterno, grazie alla quale
+    potranno incassare le altre quattro nel seme in figura, che sarà ormai affrancato.
+   Se, invece, ci asteniamo dal giocare l'Asso e il Re, gli avversari avranno bisogno di prendere ben tre volte in altri
+   semi, al fine di affrancare e incassare questo seme: due prese per farci giocare l'Asso e il Re, e una per usufruire
+   del colore.
+
+   Vediamo, ora, una mano e la serie di passi che ci portano a decidere il modo migliore in cui giocarla.
+
+    \newpage
+
+
+\northhand{AJ9}{76}{K65}{QT932}
+\southhand{KT2}{KQJ}{AJ3}{J84}
+
+
+\begin{wraptable}[11]{l}[0cm]{6cm}
+    \vspace{-.5cm}
+    \showNS*
+\end{wraptable}
+
+\noindent L'attacco di Ovest è \Ten\Di.
+
+\noindent Sud conta le vincenti in ogni colore:
+
+\Sp: 3
+
+\He: 0
+
+\Di: 3 (il Fante ora è vincente!)
+
+\Cl: 0\\
+\noindent Affrancabili:
+
+\Sp: 0
+
+\He: 2
+
+\Di: 0
+
+\Cl: 3
+
+Le \fio sono la sorgente di prese più promettente e, quindi, il colore da giocare per primo. Dopo aver giocato
+\fio
+due volte, avversari permettendo, si giocherà \cu.
+\newgame
+
+
+\paragraph{I punteggi dei contratti}
+
+Ogni Contratto dichiarato ha, associato un punteggio, che viene assegnato quando il contratto viene almeno mantenuto. Il
+punteggio è semplicissimo da calcolare:
+
+\begin{itemize}
+    \item \SA: 40 punti la prima presa, 30 le restanti
+    \item \Sp, \He: i semi \emph{maggiori}, ogni presa vale 30 punti
+    \item \Di, \Cl: i semi \emph{minori}, ogni presa vale 20 punti
+\end{itemize}
+
+Quindi il contratto di 3\He fornisce 90 punti ($30 \times 3$), quello di 4\Cl ($20 \times 4$).
+
+Vi sono diversi tipi di contratto:
+
+\begin{itemize}
+    \item I contratti di manche, ovvero quelli che forniscono almeno 100 punti: 3\SA, 4\Sp, 4\He, 5\Di, 5\Cl
+    \item I contratti parziali, ovvero quelli sotto il contratto di manche nel seme: 1/2\SA, 1-3\Sp, 1-3\He, 1-4\Di,
+        1-4\Cl
+    \item I contratti di slam, ovvero quelli che richiedono di fare almeno 12 prese. Si dividono in grande e piccolo,
+        con il grande che richiede 13 prese, il piccolo 12. Questi contratti sono, quindi, quelli a
+        \emph{livello}\sidefootnote{Con \emph{livello} si intende il numero che trovate nel cartellino della
+        dichiarazione: il numero di prese che stiamo offrendo meno la base di prese per fare un'offerta, ovvero 6)} 6 o
+        7.
+\end{itemize}
+
+\paragraph{I bonus (e i malus) dei contratti}
+
+Ogni contratto ha dei bonus associati, che variano il base alla \emph{zona}, rappresentata dal colore riportato nel
+Board\sidefootnote{Il Board è l'astuccio che contiene le carte già distribuite, in modo che sia agevole passarlo a
+diversi tavoli mantenendo le stesse carte nelle stesse posizioni} per la vostra linea:
+
+\bigskip
+\begin{center}
+\begin{tabular}{lcc}
+    \toprule
+    Contratto & Verdi (in prima) & Rossi (in zona)\\
+    \midrule
+    Parziale & 50 & 50\\
+    Manche & 300 & 500\\
+    Piccolo Slam & 500 & 750\\
+    Grande Slam & 1000 & 1500\\
+    \bottomrule
+\end{tabular}
+\end{center}
+\bigskip
+
+Il \emph{malus} per ogni presa in meno rispetto all'offerta fatta è di 50 in prima e 100 in zona. Ricordatevi che, non
+avendo mantenuto il contratto, non vi viene assegnato nessun punteggio positivo.
+
+
+\newpage
+\section*{Esercizi}
+
+\bigskip
+\begin{tabular}{ccc}
+
+    \begin{minipage}[h][3cm][t]{.30\linewidth}
+    \onesuitNS*{AQ2}{K83}
+
+    \begin{center}
+
+        Vincenti: \rule{1cm}{.4pt}
+    \end{center}
+\end{minipage}
+&
+    \begin{minipage}[h][3cm][t]{.30\linewidth}
+    \onesuitNS*{AQ2}{KJ83}
+
+    \begin{center}
+        Vincenti: \rule{1cm}{.4pt}
+    \end{center}
+\end{minipage}
+&
+    \begin{minipage}[h][3cm][t]{.30\linewidth}
+    \onesuitNS*{832}{AKQJ}
+
+    \begin{center}
+        Vincenti: \rule{1cm}{.4pt}
+    \end{center}
+\end{minipage}
+    \\[2cm]
+
+    \begin{minipage}[h][3cm][t]{.3\linewidth}
+    \onesuitNS*{JT9}{AKQ}
+
+    \begin{center}
+        Vincenti: \rule{1cm}{.4pt}
+    \end{center}
+\end{minipage}
+    &
+    \begin{minipage}[h][3cm][t]{.3\linewidth}
+    \onesuitNS*{AKJ942}{QT3}
+
+    \begin{center}
+        Vincenti: \rule{1cm}{.4pt}
+    \end{center}
+\end{minipage}
+    &
+    \begin{minipage}[h][3cm][t]{.3\linewidth}
+    \onesuitNS*{JT3}{AQ92}
+
+    \begin{center}
+        Vincenti: \rule{1cm}{.4pt}
+
+        Affrancabili: \rule{1cm}{.4pt}
+    \end{center}
+\end{minipage}
+    \\[2cm]
+    \begin{minipage}[h][3cm][t]{.3\linewidth}
+    \onesuitNS*{JT53}{Q9874}
+
+    \begin{center}
+        Affrancabili: \rule{1cm}{.4pt}
+    \end{center}
+\end{minipage}
+&
+\begin{minipage}[h][3cm][t]{.30\linewidth}
+    \onesuitNS*{QT4}{KJ9863}
+
+    \begin{center}
+        Affrancabili: \rule{1cm}{.4pt}
+    \end{center}
+\end{minipage}
+&
+\begin{minipage}[h][3cm][t]{.3\linewidth}
+    \onesuitNS*{JT53}{A9874}
+
+    \begin{center}
+        Affrancabili: \rule{1cm}{.4pt}
+    \end{center}
+\end{minipage}
+\end{tabular}
+
+\northhand{AQ8}{76}{KT932}{K65}
+\southhand{K62}{A982}{QJ6}{A43}
+\begin{center}
+    \showNS*
+    \medskip
+        Vincenti \Sp: \rule{.3cm}{.4pt},\quad
+        \He: \rule{.3cm}{.4pt}, \quad
+        \Di: \rule{.3cm}{.4pt}, \quad
+        \Cl: \rule{.3cm}{.4pt}\\
+
+        Affrancabili \Sp: \rule{.3cm}{.4pt},\quad
+        \He: \rule{.3cm}{.4pt},\quad
+        \Di: \rule{.3cm}{.4pt},\quad
+        \Cl: \rule{.3cm}{.4pt}
+\end{center}
+
+\end{document}

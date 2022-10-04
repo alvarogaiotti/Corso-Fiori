@@ -1,0 +1,133 @@
+\documentclass[../corsofiori.tex]{subfiles}
+\externaldocument[I-]{../lezione1/Lezione1}
+\externaldocument[II-]{../lezione2/Lezione2}
+\setcounter{regolactr}{7}
+
+\begin{document}
+
+\setcounter{chapter}{2}
+\chapter{Affrancamenti di lunga e di posizione}
+
+
+Oltre a quelli studiati nella \autoref{I-chap:lezione1}, ovvero quelli \emph{di forza}, vi sono altre tipologie di
+affrancamenti: quelli \emph{di lunga} e \emph{di posizione}.
+
+\section{L'affrancamento di lunga}
+
+Quando si possiedono molte carte in un seme è possibile che, dopo aver giocato ripetutamente in quel seme, le carte
+rimaste, anche se di basso rango, siano diventate vincenti, perché gli altri giocatori le avranno esaurite.
+
+Gli affrancamenti di lunga dipendono da due fattori:
+\begin{itemize}
+\item La lunghezza massima che abbiamo in quel seme (quante carte ha la mano che ne ha di più)
+\item La \emph{divisione} delle restanti carte
+\end{itemize}
+
+\begin{wraptable}[6]{l}[0cm]{3.5cm}
+\onesuitAll{762}{AKQ43}{T85}{J9}
+\end{wraptable}
+
+Sud possiede 5 carte (+ 3 del morto) e 5 sono in mano ai difensori. Mentre incassa le 3 vincenti, Sud conta quelle che
+vengono giocate dai difensori. In questo caso, gli avversari hanno 3 e 2 carte per ciascuno\sidefootnote{Si dice che i
+\emph{resti} sono 3-2 (\texttt{tre due)}}. Ora, essendo le ultime carte rimaste, \cards{\textbf{43}} sono affrancati e, quindi,
+vincenti.
+
+\medskip
+\begin{attenzione}{Attenzione}
+Per effettuare un affrancamento di lunga è necessario che vi sia almeno una situazione favorevole!
+\end{attenzione}
+
+    \onesuit{\textbf{?}}{\textbf{62}}{\textbf{?}}{\textbf{AKQ4}}
+
+Sarà possibile affrancare il 4? No, perché noi abbiamo 6 carte e gli avversari 7: anche con la divisione più favorevole
+nelle mani avversarie (4-3), uno degli avversari supererà il 4 al quarto giro.
+
+Con la seguente figura:
+
+\onesuit{\textbf{?}}{\textbf{653}}{\textbf{?}}{\textbf{AKQ742}}
+
+Siate ottimisti e giocate \cards{\textbf{AKQ}}! La sola distribuzione che vi impedisce di affrancare tre prese è la 4-0,
+estremamente improbabile. Ricordatevi, infatti, la seguente regola:
+
+\medskip
+
+\begin{regola}{Regola della distribuzione dei resti}
+    Le distribuzioni dei resti più probabili sono quelle con disparità minima, seguite da quelle con divisioni pari (se
+    le carte rimanenti sono pari) o disparità leggermente maggiore.
+\end{regola}
+\medskip
+
+    Quindi:
+    \begin{center}
+    \begin{tabular}{lcc}
+        \toprule
+        & \multicolumn{2}{c}{Resti}\\
+        \cmidrule(l){2-3}
+        N°& 1$^a$ & 2$^a$ \\
+        \midrule
+        5 & 3-2 & 4-1\\
+        6 & 4-2 & 3-3\\
+        7 & 4-3 & 5-2\\
+        8 & 5-3 & 4-4\\
+    \end{tabular}
+
+
+    \end{center}
+
+\medskip
+
+I colori lunghi sono sempre sorgenti di prese, anche quanto molto poveri di onori:
+
+\begin{wraptable}[6]{l}[0cm]{3cm}
+
+    \onesuitAll*{T9762}{8543}{AQ}{KJ}
+
+\end{wraptable}
+
+La \emph{linea N-S}\sidefootnote{Nel bridge si indica con \emph{linea} una coppia}, giocando due volte il colore,
+affrancherà ben tre prese, nonostante non possieda nemmeno un Onore!
+
+Capite ora il perché della \autoref{II-regola:scelta dell'attacco}? L'attacco è un'occasione per tentare un affrancamento di lunga.
+Ricordatevi, però, che anche queste vincenti necessitano di \emph{rientri} o \emph{collegamenti} per essere incassate.
+
+\newpage
+
+\section{Affrancamento di posizione}
+
+L'affrancamento di posizione è un tipo di affrancamento che richiede, invece he una distribuzione dei resti favorevoli,
+una posizione di Onori favorevole.
+
+Tutte le volte che un onore al momento non è vincente, ma potrebbe fornire una presa, non giocatelo direttamente:
+posizionatevi dalla parte opposta e giocate \emph{\textbf{verso}} quell'onore, in modo da utilizzarlo in terza
+posizione; se la carta superiore è in mano all'avversario che gioca per secondo, la manovra avrà successo e il vostro
+onore vincerà la presa, se invece è in mano al quarto\ldots pazienza. L'esito è, quindi, dipendente dalla posizione
+degli onori degli avversari.
+
+Vi sono due manovre di affrancamento di posizione:
+
+\begin{itemize}
+    \item L'impasse consiste nel giocare verso un onore protetto da una carta superiore:
+\end{itemize}
+
+\begin{wraptable}[2]{l}[-.9cm]{2cm}
+    \vspace{-1.3cm}
+\onesuitNS*{AQ}{43}
+\end{wraptable}
+
+        Per fare due prese giocate il 3 verso la Dama: vincerete tutte le volte che Ovest ha il Re.
+
+\begin{itemize}
+    \item L'expasse consiste nel giocare verso un onore non protetto da una carta superiore:
+\end{itemize}
+\bigskip
+
+\begin{wraptable}[3]{l}[-3cm]{4cm}
+    \vspace{-1.3cm}
+\onesuitNS*{Q65}{A43}
+\end{wraptable}
+
+Per fare due prese, giocate il 3 verso la Dama, nuovamente, vincerete tutte le volte che Ovest ha il Re.
+
+
+cambiamento
+\end{document}

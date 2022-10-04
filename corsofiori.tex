@@ -1,0 +1,262 @@
+\PassOptionsToPackage{dvipsnames,x11names,svgnames}{xcolor}
+\PassOptionsToPackage{colors=4A}{onedown}
+\PassOptionsToPackage{usenames,dvipsnames,pdftex}{color}
+\documentclass[a4paper,italian,12pt]{memoir}
+\chapterstyle{lyhne}
+%\usepackage[margin=2cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{newcent}
+\usepackage{helvet}
+\usepackage{graphicx}
+%\usepackage{fancyhdr}
+%\pagestyle{fancy}
+\usepackage{wrapfig}
+
+%%%%%%%%%%%%%%%
+%  Pagestyle  %
+%%%%%%%%%%%%%%%
+\nouppercaseheads
+% define what goes where in the header
+% chapter into \leftmark, number shown, nothing before the
+% number and a dot and space after it
+\createmark{chapter}{left}{shownumber}{}{. }
+% section into \rightmark, number shown, nothing before the
+% number and just a space after it
+\createmark{section}{right}{shownumber}{}{ }
+% define new pagestyle
+\makepagestyle{myheadings}
+% head for even numbered pages, chapter title on the left with
+% preferred font and size, center and right side of header are empty
+\makeevenhead{myheadings}{\textit{\small\leftmark}}{}{}
+\makeevenfoot{myheadings}{}{\thepage}{}
+% head for odd numbered pages, left side and center of header
+% are empty, section title on the right with preferred font and size
+\makeoddhead{myheadings}{}{}{\textit{\small\rightmark}}
+\makeoddfoot{myheadings}{}{\thepage}{}
+% set pagestyle
+\pagestyle{myheadings}
+%\pagestyle{companion}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newtheorem{theorem}{Principio }
+\usepackage[colors=4A]{onedown}
+\usepackage[italian]{babel}
+\usepackage{enumerate}
+\usepackage{tcolorbox}
+\usepackage{multicol}
+\usepackage{xr}
+%%% Colors
+\definecolor{linkcolor}{HTML}{E23812}
+\definecolor{azzurro}{HTML}{1ECBE1}
+\definecolor{titlepagecolor}{HTML}{FF0800}
+\definecolor{MidnightBlue}{HTML}{191970}
+\definecolor{arancionediam}{HTML}{FFA500}
+\definecolor{OLIVEGREEN}{rgb}{0.33, 0.42, 0.18}
+\definecolor{MIDNIGHTBLUE}{HTML}{191970}
+\definecolor{REDORANGE}{HTML}{FF5349}
+\definecolor{RED2}{HTML}{EE0000}
+%\definecolor{titlepagecolor}{RGB}{255,40,0}
+%{cmyk}{1,.60,0,.40}
+
+\usepackage[pdftex, pdfborder={0 0 0}, colorlinks=true, linkcolor=linkcolor]{hyperref}
+\frenchspacing
+
+\usepackage{txfonts} % For \varheartsuit and \vardiamondsuit
+%\usepackage[usenames,dvipsnames,monochrome]{color} % dvipsnames necessary to made PDFLaTeX work.
+
+\usepackage{listliketab}
+\usepackage{latexsym} % \Box
+\usepackage{pbox} % \Box
+\usepackage{parskip} % line between paragraphs
+\usepackage{pgfornament}
+\usepackage{booktabs}
+\usetikzlibrary{shapes.geometric,calc}
+\usepackage{subfiles}
+% suits
+
+
+\newcommand{\BC}{\textcolor{OliveGreen}{$\clubsuit$}}
+\newcommand{\BD}{\textcolor{RedOrange}{$\vardiamondsuit$}}
+\newcommand{\BH}{\textcolor{Red2}{$\varheartsuit${}}}
+\newcommand{\BS}{\textcolor{MidnightBlue}{$\spadesuit${}}}
+
+%suits for pdf-friendly titles
+\newcommand{\pdfc}{\texorpdfstring{\BC{}}{C}}
+\newcommand{\pdfd}{\texorpdfstring{\BD{}}{D}}
+\newcommand{\pdfh}{\texorpdfstring{\BH{}}{H}}
+\newcommand{\pdfs}{\texorpdfstring{\BS{}}{S}}
+
+
+%Titlepage
+\addto\captionsitalian{
+    \renewcommand{\chaptername}{Lezione}
+      \renewcommand*{\chapterautorefname}{Lezione}%
+}
+\addto\extrasitalian{
+      \renewcommand*{\chapterautorefname}{Lezione}%
+}
+\newcommand\SA{\textsc{SA}\xspace}
+\newcommand\pic{Picche\xspace}
+\newcommand\cu{Cuori\xspace}
+\newcommand\qu{Quadri\xspace}
+\newcommand\fio{Fiori\xspace}
+
+\newenvironment{bidtable}
+{\begin{tabbing}
+
+    xxxxxx\=xxxxxx\=xxxxxx\=xxxxxx\=xxxxxx\=xxxxxx\=xxxxxx\=xxxxxx\=xxxxxx\=xxxxxx\=\kill}
+{\end{tabbing} }%
+
+\newenvironment{sviluppi}
+{\begin{tcolorbox}[colframe=azzurro,title=Sviluppi particolari]}
+    {
+\end{tcolorbox} }%
+
+\newcounter{attenzionectr}
+\newenvironment{attenzione}[1]
+{
+    \refstepcounter{attenzionectr}
+\begin{tcolorbox}[colframe=red!80!white,title=#1]}
+    {
+\end{tcolorbox} }%
+
+\newcounter{regolactr}
+\newenvironment{regola}[1]
+{
+    \refstepcounter{regolactr}
+    \begin{tcolorbox}[colframe=green!40!black,title=Regola\ \theregolactr:\ #1]}
+    {
+\end{tcolorbox} }%
+
+\newcommand{\regolactrautorefname}{Regola}
+% \newenvironment{bidding}%
+% {\begin{tabbing}
+% xxxxxx\=xxxxxx\=xxxxxx\=xxxxxx \kill
+% }{\end{tabbing} }%end bidding
+
+% writing hands
+\newcommand{\cards}[1]{\textsf{#1}}
+%\newcommand{\spades}[1]{\BS\cards{#1}}
+%\newcommand{\hearts}[1]{\BH\cards{#1}}
+%\newcommand{\diamonds}[1]{\BD\cards{#1}}
+%\newcommand{\clubs}[1]{\BC\cards{#1}}
+\newcommand{\void}{--}
+%\newcommand{\hand}[4]{\spades{#1}\ \hearts{#2}\ \diamonds{#3} \clubs{#4}}
+\newcommand{\vhand}[4]{\spades{#1}\\\hearts{#2}\\\diamonds{#3}\\\clubs{#4}}
+
+% The \Box should always appear the same distance from the left margin
+\newcommand\onesuit[4]%
+{%
+    \begin{center}%
+        \begin{tabular}{>{\hfill}p{3cm}cp{3cm}}
+            & \cards{#2} \\%
+            \cards{#1}& $\Box$    & \cards{#3} \\%
+                      & \cards{#4} %
+        \end{tabular}
+    \end{center}%
+}
+
+% A special command if the south hand is not shown to avoid whitespace
+\newcommand\onesuitenw[3]%
+{%
+    \begin{center}%
+        \begin{tabular}{>{\hfill}p{3cm}cp{3cm}}%
+                & \cards{#2} \\%
+            \cards{#1}& $\Box$    & \cards{#3}%
+        \end{tabular}%
+    \end{center}%
+}
+
+\newcommand\dealdiagram[5]%
+{%
+    \begin{center}%
+        \begin{tabular}{>{\hfill}p{3cm}cp{3cm}}
+            \pbox{20cm}{\small #5}& \pbox{20cm}{#2} \\%
+            \pbox{20cm}{#1}& $\Box$    & \pbox{20cm}{#3} \\%
+                           & \pbox{20cm}{#4} %
+        \end{tabular}
+    \end{center}%
+}
+
+\newcommand\dealdiagramenw[4]%
+{%
+    \begin{center}%
+        \begin{tabular}{>{\hfill}p{3cm}cp{3cm}}
+            \pbox{20cm}{\small #4}& \pbox{20cm}{#2} \\%
+            \pbox{20cm}{#1}& $\Box$    & \pbox{20cm}{#3} \\%
+        \end{tabular}
+    \end{center}%
+}
+
+\newcommand\dealdiagramew[2]%
+{%
+    \begin{center}%
+        \begin{tabular}{>{\hfill}p{3cm}cp{3cm}}
+            \pbox{20cm}{#1}& $\Box$    & \pbox{20cm}{#2} \\%
+        \end{tabular}
+    \end{center}%
+}
+
+\newcommand*{\plogo}{\fbox{$\mathcal{PN}$}} % Generic dummy publisher logo
+\externaldocument[I-]{lezione1/Lezione1}
+\externaldocument[II-]{lezione2/Lezione2}
+
+\begin{document} 
+
+\setdefaults{colors=4A}
+%----------------------------------------------------------------------------------------
+%   TITLE PAGE
+%----------------------------------------------------------------------------------------
+\begin{titlingpage} % Suppresses headers and footers on the title page
+    \raggedleft % Right align everything
+    
+    \vspace*{\baselineskip} % Whitespace at the top of the page
+    
+    %------------------------------------------------
+    %   Author
+    %------------------------------------------------
+    
+    {\Large Alvaro Gaiotti} % Author name
+    
+    \vspace*{0.167\textheight} % Whitespace before the title
+    
+    %------------------------------------------------
+    %   Title and subtitle
+    %------------------------------------------------
+    
+    \textbf{\LARGE Corso Fiori}\\[\baselineskip] % First title line
+    
+    {\textcolor{Red}{\Huge Dispense}}\\[\baselineskip] % Main title line which draws the focus of the reader
+    
+    {\Large \textit{Per rinfrescare la memoria}} % Subtitle
+    
+    \vfill % Whitespace between the titles and the publisher
+    
+    %------------------------------------------------
+    %   Publisher
+    %------------------------------------------------
+    
+    {\large Circolo Bridge Pordenone ~~\plogo} % Publisher and logo
+    
+    \vspace*{3\baselineskip} % Whitespace at the bottom of the page
+\end{titlingpage}
+\thispagestyle{empty}
+\newpage
+\thispagestyle{empty}
+{\hypersetup{linkcolor=black}
+\tableofcontents
+}
+\newpage
+
+%----------------------------------------------------------------------------------------
+\subfile{lezione1/Lezione1.tex}
+
+\subfile{lezione2/Lezione2.tex}
+
+\subfile{lezione3/Lezione3.tex}
+    
+\end{document}
+
+
