@@ -13,6 +13,8 @@ Letteratura/
 *.toc
 *.xmpdata
 *.xmpi
+*.key
+.vim/
 test
 *.log
 *.fdb_latexmk
