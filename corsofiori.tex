@@ -43,7 +43,7 @@
 \newtheorem{theorem}{Principio }
 \usepackage[colors=4A]{onedown}
 \usepackage[italian]{babel}
-\usepackage{enumerate}
+\usepackage{enumitem}
 \usepackage{tcolorbox}
 \usepackage{multicol}
 \usepackage{xr}
@@ -203,7 +203,7 @@
 \externaldocument[I-]{lezione1/Lezione1}
 \externaldocument[II-]{lezione2/Lezione2}
 
-\begin{document} 
+\begin{document}
 
 \setdefaults{colors=4A}
 %----------------------------------------------------------------------------------------
@@ -211,35 +211,35 @@
 %----------------------------------------------------------------------------------------
 \begin{titlingpage} % Suppresses headers and footers on the title page
     \raggedleft % Right align everything
-    
+
     \vspace*{\baselineskip} % Whitespace at the top of the page
-    
+
     %------------------------------------------------
     %   Author
     %------------------------------------------------
-    
+
     {\Large Alvaro Gaiotti} % Author name
-    
+
     \vspace*{0.167\textheight} % Whitespace before the title
-    
+
     %------------------------------------------------
     %   Title and subtitle
     %------------------------------------------------
-    
+
     \textbf{\LARGE Corso Fiori}\\[\baselineskip] % First title line
-    
+
     {\textcolor{Red}{\Huge Dispense}}\\[\baselineskip] % Main title line which draws the focus of the reader
-    
+
     {\Large \textit{Per rinfrescare la memoria}} % Subtitle
-    
+
     \vfill % Whitespace between the titles and the publisher
-    
+
     %------------------------------------------------
     %   Publisher
     %------------------------------------------------
-    
+
     {\large Circolo Bridge Pordenone ~~\plogo} % Publisher and logo
-    
+
     \vspace*{3\baselineskip} % Whitespace at the bottom of the page
 \end{titlingpage}
 \thispagestyle{empty}
@@ -256,7 +256,8 @@
 \subfile{lezione2/Lezione2.tex}
 
 \subfile{lezione3/Lezione3.tex}
-    
+
+\subfile{lezione4/Lezione4.tex}
 \end{document}
 
 
