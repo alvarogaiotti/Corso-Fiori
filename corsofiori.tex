@@ -126,10 +126,12 @@
 \newenvironment{regola}[1]
 {
     \refstepcounter{regolactr}
+    \medskip
     \begin{tcolorbox}[colframe=green!40!black,title=Regola\ \theregolactr:\ #1]}
     {
-\end{tcolorbox} }%
-
+\end{tcolorbox}
+    \medskip
+ }%
 \newcommand{\regolactrautorefname}{Regola}
 % \newenvironment{bidding}%
 % {\begin{tabbing}
@@ -258,6 +260,8 @@
 \subfile{lezione3/Lezione3.tex}
 
 \subfile{lezione4/Lezione4.tex}
+
+\subfile{lezione5/Lezione5.tex}
 \end{document}
 
 

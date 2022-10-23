@@ -1,0 +1,173 @@
+\documentclass[../corsofiori.tex]{subfiles}
+\setcounter{regolactr}{14}
+\setcounter{chapter}{5}
+\begin{document}
+\chapter{Il gioco con Atout}
+Il fatto che nel gioco ad Atout si realizzino prese non solo con le carte alte ma anche con le cartine d'Atout lo rende
+preferibile rispetto al gioco a Senza, a condizione che la coppia abbia \emph{un numero di carte pari o superiore a 8 in
+un seme}. Quando due compagni trovano l'incontro di 8 o più carte in un colore si dice che hanno trovato un
+\textsc{fit}.
+\
+Se vi è un fit conveniente (\Sp o \He\sidefootnote{Questi si dicono colori \emph{maggiori}.}: 30 punti ogni presa) si
+gioca con questa atout. Se non vi è fit in questi due semi, allora si gioca a \SA (30 punti ogni presa, 40 la prima). Se
+non è possibile giocare a \SA, si gioca a \Di o \Cl\sidefootnote{Questi colori si dicono \emph{minori}.} (20 punti ogni presa).
+
+\section{Differenze di valutazione della mano nel gioco a colore}
+
+Il fatto di essere scelto come Atout rappresenta una rivalutazione per un colore, a maggior ragione se è composto da
+carte deboli.
+
+\hand*!{543}{QJT987}{654}{2}
+
+Questa mano, nel gioco a Senza, non vale nulla. Ma se \cu fosse atout, il possessore di queste carte avrebbe la certezza
+assoluta di fare almeno 4 prese.
+\begin{regola}{Affrancabili del seme di Atout}
+    \textsc{Il fatto di elevare al ruolo di atout un colore fa sì che le sue carte affrancabili siano da considerarsi
+    come vincenti}
+\end{regola}
+Ma il potere di taglio spetta anche agli avversari, quindi:
+
+\begin{regola}
+    \textsc{Le vincenti nei colori a lato delle atout sono vincenti relative: il Giocante le potrà liberamente incassare
+    \textbf{solo quando} avrà eliminato le atout in mano agli avversari. Questa operazione è detta battere le atout.}
+\end{regola}
+
+\newgame
+\boardnr{1}
+\northhand{874}{T9}{KQJ2}{AK63}
+\southhand{3}{AKQJ75}{A54}{987}
+\westhand{AKQ92}{432}{63}{T52}
+\easthand{JT65}{86}{T987}{QJ4}
+\leftupper{\boardtext*}%
+{\dealertext\quad}{\vulnertext}
+\rightupper[2ex]{\contract:
+4\,\He}{\declarer \south}{}
+\rightlower[2ex]{}{}{\lead: A e K\Sp}
+
+\showAll*
+
+Sud taglia con una cuori la continuazione di K\Sp; ora, se provasse subito ad incassare le \qu vincenti, Ovest
+taglierebbe al terzo giro. QUindi, per prima cosa, Sud dovrà bassere le atout, ovvero incassare 3 giri di \cu (quanto
+basta per togliere le atout agli avversari), e solo dopo incassare le vincenti senza timore che vengano tagliate.
+Arriverà così a 12 prese: 6\He, 4\Di, 2\Cl. Giocando a Senza avrebbe perso le prime 5.
+
+
+\section{Il potere di Controllo}
+Quando il gioco è ad atout, non c’è più da temere per i colori corti: il taglio può interrompere le vincenti
+dell’avversario. Il taglio può essere effettuato sia dalla mano che dal morto; ovviamente la prima mano a poterlo
+esercitare sarà quella che per prima esaurisce le carte nel colore giocato. Nell’esempio sopra Sud ha esercitato il
+Potere di controllo quando ha tagliato con il 5\He il Re di picche di Ovest.
+Esercitare questo taglio non gli ha dato prese supplementari; erano in previsione 6 prese a \cu e 6 resteranno (5
+incassate + 1 taglio = 6).
+
+\section{Il potere di Allungamento}
+Nel gioco ad Atout è possibile, a volte, ottenere dal colore scelto come atout più prese di quante ne darebbe se si
+giocasse a Senza.
+
+\newgame
+\boardnr{2}
+\northhand{T95}{4}{A762}{AT842}
+\southhand{AKQJ73}{A63}{K9}{65}
+\easthand{864}{QT952}{Q83}{93}
+\westhand{2}{KJ87}{JT54}{KQJ7}
+\leftupper{\boardtext*}%
+{\dealertext\quad}{\vulnertext}
+\rightupper[2ex]{\contract:
+4\,\Sp}{\declarer \south}{}
+\rightlower[2ex]{}{}{\lead: K\Cl}
+
+\showAll*
+
+\paragraph{Piano di gioco} Vincenti: 6 a \pic, 1 a \cu, 2 a \qu e 1 a \fio.
+Ma si può arrivare a 12 se si ricavano 8 prese dalle \pic invece che 6.
+Sud vince con l'Asso, gioca subito Cuori per l'Asso e taglia una \cu. Ora gioca \pic per un onore e ancora \cu, tagliata
+da una \pic. Ora rientra in mano con il K\Di, completa la battuta delle atout e incassa l'A\Di. Ha realizzato otto prese
+a \pic: 6 in mano più due tagli fatti al Morto. Questo si dice \emph{allungare le atout}. Se Sud avesse, come prima
+cosa, eliminato le atout avversarie, non avrebbe potuto ottenere 12 prese, perché sarebbero sparite le atout dalla parte
+corta. Il potere di allungamento delle atout è dato dalla possibilità che esse offrono, tagliando, di far aumentare le prese
+nel colore di atout.
+
+Ovviamente, un giocatore realizza un allungamento delle prese in atout solo ed esclusivamente qualora il taglio aumenti
+almeno di una le prese che normalmente avrebbe fatto nel colore.
+
+\section{Potere di Affrancamento}
+
+\newgame
+\boardnr{3}
+\westhand{74}{QT53}{KQT84}{Q6}
+\northhand{KJ3}{A2}{65}{A98753}
+\southhand{AQ8652}{986}{A3}{K2}
+\easthand{T9}{KJ74}{J972}{JT4}
+\leftupper{\boardtext*}%
+{\dealertext\quad}{\vulnertext}
+\rightupper[2ex]{\contract:
+4\,\Sp}{\declarer \south}{}
+\rightlower[2ex]{}{}{\lead: K\Di}
+
+\showAll*
+
+\paragraph{Piano di gioco} Vincenti: 6\Sp, 1\He, 1\Di, 2\Cl. Affrancabili: 3 prese di lunga a \fio se i resti sono 3-2.
+
+Sud vince l'attacco, batte le atout in due giri, incasse Re e Asso di \fio e taglia in mano una \fio e cadono tutte. Ora
+le tre \fio del Morto sono franche e raggiungibili con il K\He. 13 prese fatte.
+
+Il potere di affrancamento consente, tagliando, di affrancare le cartine in un colore lungo senza cedere prese
+all'avversario.
+
+\section{Consigli per i difensori}
+
+Quando si gioca ad Atout non ha più molto senso cercare di affrancare il proprio colore lungo, perché anche vi si
+riuscisse, il giocante taglierà le nostre vincenti. A volte sarà meglio cercare di affrancare prese rapide, o sperare
+nei tagli.
+\Sp KQ7 \He62 \Di J9732 \Cl A72, il contratto è “4\He”: K\Sp è meglio del 2\Di.
+\Sp2 \He A62 \Di J982 \Cl Q8752, il contratto è “4\He”: un attacco possibile è il 2\Sp.
+
+\begin{regola}{Attacco nei contratti ad Atout}
+    Se il contratto avversario è in atout, per l'attacco da sequenza bastano due onori contigui
+\end{regola}
+
+Gli attacchi da colori molto corti hano una ragionevole motivazione di tagliare.
+
+\begin{regola}{Attacco dalla corta}
+    Quando si attacca da due carte, si sceglie sempre la più alta, che sia una cartina od un onore:
+    \begin{itemize}
+        \item Con 74: il 7
+        \item Con \Ten2: il \Ten
+        \item Con A9, l'Asso
+    \end{itemize}
+\end{regola}
+
+I difensori possono concertare ottimi controgiochi, confidando nelle deduzioni che direvano dagli accordi! Mettetevi nei
+panni di Est:
+
+\newgame
+\boardnr{3}
+\northhand{AK65}{J74}{T864}{32}
+\easthand{872}{A52}{A932}{654}
+\leftupper{\boardtext*}%
+{\dealertext\quad}{\vulnertext}
+\rightupper[2ex]{\contract:
+4\,\He}{\declarer \south}{}
+\rightlower[2ex]{}{}{\lead: J\Di}
+
+\showAll*
+
+Est sa che Ovest ha per certo J e una cartina, oppure J secco, perché? Perché vede il \Ten\Di al morto, che esclude che
+si tratti di un attacco da sequenza! Quindi prenderete con il vostro Asso e rigiocherete \qu. Se Ovest non taglia a questo
+giro, quando fermerete la battuta delle atout con l'A\He, giocherete nuvamente \qu, garantendo il taglio al compagno!
+
+Un attacco è assolutamente da evitare, quando il contratto è ad Atout.
+
+\begin{regola}{Attacco sotto asso}
+    Non si deve, MAI, attaccare \emph{sotto asso}, ovvero attaccare in un colore nel quale si possiede l'Asso.
+    Il grosso rischio è, infatti, regalare una presa che non tornerà indietro.
+
+    \onesuitAll*{9732}{K}{Q85}{AJT64}
+
+    Se Ovest attacca con il J\Cl, come farebbe a Senza Atout, permetterà a Sud di realizzare il Re secco, e non potrà
+    più fare presa con l'A\Cl, in quanto questo verrà tagliato!
+
+
+\end{regola}
+
+\end{document}
