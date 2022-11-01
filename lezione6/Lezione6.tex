@@ -4,19 +4,18 @@
 \begin{document}
 \chapter{Il piano di gioco ad atout}
 \setdefaults{colors=4A}
-Se il vostro contratto è ad atout, ricordatevi che la possibilità di tagliare è data anche all’avversario\ldots e ne farà
+Se il vostro contratto è ad atout, ricordatevi che la possibilità di tagliare è data anche all’avversario\ldots\ e ne farà
 uso, se glie lo permetterete. La prima valutazione che dovrete fare riguarda i colori che avete a lato delle atout.  Se
 avete vincenti o affrancabili “lunghe”, è inevitabile che prima o poi dobbiate “battere le atout”, ossia togliere di
 mezzo quelle che hanno gli avversari.  Diversamente, taglieranno le vostre carte buone. Se giocate ad atout\ldots
 
 \medskip
-\hfill
-\numcircledtikz{\small 1}
-\onesuitNS{K54}{A2}\hfill
-\numcircledtikz{\small 2}\onesuitNS{K732}{A4}\hfill
-\numcircledtikz{\small 3}\onesuitNS{KQJ3}{A42}\hfill
-\numcircledtikz{\small 4}\onesuitNS{732}{KQJ104}\hfill
-\medskip
+\begin{tabularx}{\textwidth}{XXXX}
+    \numcircledtikz{\small 1}\onesuitNS{K54}{A2}&
+    \numcircledtikz{\small 2}\onesuitNS{K732}{A4}&
+    \numcircledtikz{\small 3}\onesuitNS{KQJ3}{A42}&
+    \numcircledtikz{\small 4}\onesuitNS{732}{KQJT4}
+\end{tabularx}
 
 \begin{enumerate}[label=\protect\numcircledtikz{\small\arabic*}]
  \item con 5 carte in linea le probabilità che un onore vi venga tagliato sono infinitesimali.
@@ -32,8 +31,8 @@ possibile di prese facendo dei tagli. Due esempi:
 
 \newgame
 \boardnr{1}
-\northhand{AQ8}{54}{432}{AJ1082}
-\southhand{KJ1063}{A8}{85}{KQ2}
+\northhand{AQ8}{54}{432}{AJT82}
+\southhand{KJT63}{A8}{85}{KQ3}
 \leftupper{\boardtext*}%
 {\dealertext\quad}{\vulnertext}
 \rightupper[2ex]{\contract:
@@ -92,47 +91,46 @@ A volte, anche un solo giro sarà fatale.
 
 \showAll*
 
-Sulla piccola del morto Est gioca il 10 e prendete. Avete a disposizione 6 picche, 1 cuori, 1 fiori,
-1 quadri: 9 prese. Se battete le atout resteranno 9. Giocate immediatamente l’asso di cuori, e cuori! Un difensore
-  prenderà e per il suo meglio giocherà atout, per limitare i tagli del morto. Prendete e tagliate una cartina di cuori
-  con una picche di Nord: 10 prese, di cui SETTE date dal colore di atout. Ma solo se non avrete avuto fretta di
-  eliminarle come prima operazione! Notate che l’attacco in atout avrebbe battuto il contratto. E che da parte del
-  Giocante anche un solo giro di atout sarebbe stato fatale (in presa a Cuori, l’avversario gioca atout e \ldots addio
-  taglio).
+Sulla piccola del morto Est gioca il \Ten e prendete. Avete a disposizione 6\Sp, 1\He, 1\Di,
+1\Cl: 9 prese. Se battete le atout resteranno 9. Giocate immediatamente l’asso di cuori, e cuori! Un difensore prenderà
+  e per il suo meglio giocherà atout, per limitare i tagli del morto. Prendete e tagliate una cartina di cuori con una
+  picche di Nord: \Ten prese, di cui SETTE date dal colore di atout. Ma solo se non avrete avuto fretta di eliminarle
+  come prima operazione! Notate che l’attacco in atout avrebbe battuto il contratto. E che da parte del Giocante anche
+  un solo giro di atout sarebbe stato fatale (in presa a Cuori, l’avversario gioca atout e\ldots\ addio taglio).
 
 \newpage
 
   La possibilità di taglio non è sempre immediata: è il Giocante che deve adoperarsi per costruirla, cedendo le prese
-  del caso. Atout \Sp:
+  del caso.
 
+  Atout \Sp:
+
+  \medskip
+  \begin{tabularx}{\textwidth}{XXXX}
 \newgame
 \northhand{654} {32}{-}{-}
 \southhand{AKQ32} {A74}{-}{-}
-\hfill
 \numcircledtikz{\small 1}
-\showAll
-\hfill
+\showNS[c]
+&
 \newgame
 \northhand {7532} {85}{-}{-}
 \southhand{AKQ64} {932}{-}{-}
-\hfill
 \numcircledtikz{\small 2}
 \showAll
-\hfill
+&
 \newgame
 \northhand {654} {K6}{-}{-}
 \southhand{AKQ32} {Q52}{-}{-}
-\hfill
 \numcircledtikz{\small 3}
 \showAll
-\hfill
+&
 \newgame
 \northhand{65} {K7}{-}{-}
 \southhand{AKQ743} {A53}{-}{-}
-\hfill
 \numcircledtikz{\small 4}
 \showAll
-\hfill
+\end{tabularx}
 
 \begin{enumerate}[label=\protect\numcircledtikz{\small\arabic*}]
 \item Sud si "apre il taglio" giocando Asso di Cuori e Cuori .
