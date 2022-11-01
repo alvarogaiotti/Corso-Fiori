@@ -88,6 +88,8 @@
 \newcommand{\pdfh}{\texorpdfstring{\BH{}}{H}}
 \newcommand{\pdfs}{\texorpdfstring{\BS{}}{S}}
 
+\newcommand*\numcircledtikz[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=1.2pt] (char) {#1};}} 
 
 %Titlepage
 \addto\captionsitalian{

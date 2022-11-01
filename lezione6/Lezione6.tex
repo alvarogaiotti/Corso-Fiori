@@ -1,0 +1,175 @@
+\documentclass[../corsofiori.tex]{subfiles}
+\setcounter{regolactr}{19}
+\setcounter{chapter}{5}
+\begin{document}
+\chapter{Il piano di gioco ad atout}
+\setdefaults{colors=4A}
+Se il vostro contratto è ad atout, ricordatevi che la possibilità di tagliare è data anche all’avversario\ldots e ne farà
+uso, se glie lo permetterete. La prima valutazione che dovrete fare riguarda i colori che avete a lato delle atout.  Se
+avete vincenti o affrancabili “lunghe”, è inevitabile che prima o poi dobbiate “battere le atout”, ossia togliere di
+mezzo quelle che hanno gli avversari.  Diversamente, taglieranno le vostre carte buone. Se giocate ad atout\ldots
+
+\medskip
+\hfill
+\numcircledtikz{\small 1}
+\onesuitNS{K54}{A2}\hfill
+\numcircledtikz{\small 2}\onesuitNS{K732}{A4}\hfill
+\numcircledtikz{\small 3}\onesuitNS{KQJ3}{A42}\hfill
+\numcircledtikz{\small 4}\onesuitNS{732}{KQJ104}\hfill
+\medskip
+
+\begin{enumerate}[label=\protect\numcircledtikz{\small\arabic*}]
+ \item con 5 carte in linea le probabilità che un onore vi venga tagliato sono infinitesimali.
+ \item con 6 carte in linea le probabilità che un onore vi venga tagliato sono ancora basse.
+ \item con 7 carte in linea potrete forse incassare uno o due onori, ma le probabilità che possiate passare indenni al
+     terzo giro sono inferiori al 50\%.
+\item ceduto l’asso potrete forse incassare una presa, di certo non due, perché uno degli avversari ve la taglierà.
+\end{enumerate}
+
+Se avete solo vincenti o affrancabili “corte”, e nessuna possibilità di raggiungere
+il numero di prese richiesto grazie ai colori laterali, cercate di fare il maggior numero
+possibile di prese facendo dei tagli. Due esempi:
+
+\newgame
+\boardnr{1}
+\northhand{AQ8}{54}{432}{AJ1082}
+\southhand{KJ1063}{A8}{85}{KQ2}
+\leftupper{\boardtext*}%
+{\dealertext\quad}{\vulnertext}
+\rightupper[2ex]{\contract:
+4\,\Sp}{\declarer \south}{}
+\rightlower[2ex]{}{}{\lead: K\Di}
+
+\showAll*
+
+In Sud giocate 4\Sp, l’attacco è K\Di; segue la Q\Di e poi il J\Di che tagliate. E’ intuitivo che, se vorrete incassare
+le cinque prese a fiori, dovrete prima fare in modo di eliminare le picche in mano agli avversari.
+
+L’esecuzione
+è semplice: incassate le picche finché non avrete eliminato quelle di Est e Ovest, poi potrete tranquillamente dar
+piglio alle Fiori.  Realizzerete: 5 prese a \Sp, 5 a \Cl, 1 a \He = 11. 
+
+\newgame
+\boardnr{2}
+\northhand{AK8}{A743}{732}{J92}
+\southhand{6532}{8}{AK854}{853}
+\leftupper{\boardtext*}%
+{\dealertext\quad}{\vulnertext}
+\rightupper[2ex]{\contract:
+2\,\Di}{\declarer \south}{}
+\rightlower[2ex]{}{}{\lead: Q\He}
+
+\showAll*
+
+In Sud giocate 2\Di. L’attacco è Q\He.  Avete a disposizione 2\Sp e 1\He; nessuna affrancabile in vista, in nessun
+colore. Nessuna possibilità di allungamento di taglio con le atout del morto. C’è soluzione?? Visto che dovete fare
+8 prese, e i colori a lato ve ne danno solo 3, non resta che ottenerne 5 dal colore di atout. Ma attenzione, se battete
+  le atout farete solo 4 prese di quadri, mai 5 (agli avversari ne spetta una, anche se i resti sono 3-2)! C’è un solo
+  modo per mantenere il contratto: A\He e cuori tagliata col 4\Di, picche per l’Asso e cuori tagliata col 5\Di, picche
+  per il Re e cuori tagliata con l’8\Di. Se le cuori sono divise 4-4, avete fatto 8 prese.
+
+\paragraph{Decidere di battere atout non significa farlo subito!}
+Anche se avrete stabilito che la battuta delle atout è necessaria, aspettate a
+muoverle se ci sono cose più urgenti da fare.
+
+\begin{regola}{Quando ritardare la battuta delle atout}
+    \textsc{Aspettate a battere le atout se avete bisogno di fare tagli dalla parte corta}
+
+\end{regola}
+
+A volte, anche un solo giro sarà fatale.
+
+
+\newgame
+\boardnr{3}
+\northhand{82}{83}{A92}{Q97543}
+\southhand{AKQJ95}{A92}{873}{A}
+\leftupper{\boardtext*}%
+{\dealertext\quad}{\vulnertext}
+\rightupper[2ex]{\contract:
+4\,\Sp}{\declarer \south}{}
+\rightlower[2ex]{}{}{\lead: 2\Cl}
+
+\showAll*
+
+Sulla piccola del morto Est gioca il 10 e prendete. Avete a disposizione 6 picche, 1 cuori, 1 fiori,
+1 quadri: 9 prese. Se battete le atout resteranno 9. Giocate immediatamente l’asso di cuori, e cuori! Un difensore
+  prenderà e per il suo meglio giocherà atout, per limitare i tagli del morto. Prendete e tagliate una cartina di cuori
+  con una picche di Nord: 10 prese, di cui SETTE date dal colore di atout. Ma solo se non avrete avuto fretta di
+  eliminarle come prima operazione! Notate che l’attacco in atout avrebbe battuto il contratto. E che da parte del
+  Giocante anche un solo giro di atout sarebbe stato fatale (in presa a Cuori, l’avversario gioca atout e \ldots addio
+  taglio).
+
+\newpage
+
+  La possibilità di taglio non è sempre immediata: è il Giocante che deve adoperarsi per costruirla, cedendo le prese
+  del caso. Atout \Sp:
+
+\newgame
+\northhand{654} {32}{-}{-}
+\southhand{AKQ32} {A74}{-}{-}
+\hfill
+\numcircledtikz{\small 1}
+\showAll
+\hfill
+\newgame
+\northhand {7532} {85}{-}{-}
+\southhand{AKQ64} {932}{-}{-}
+\hfill
+\numcircledtikz{\small 2}
+\showAll
+\hfill
+\newgame
+\northhand {654} {K6}{-}{-}
+\southhand{AKQ32} {Q52}{-}{-}
+\hfill
+\numcircledtikz{\small 3}
+\showAll
+\hfill
+\newgame
+\northhand{65} {K7}{-}{-}
+\southhand{AKQ743} {A53}{-}{-}
+\hfill
+\numcircledtikz{\small 4}
+\showAll
+\hfill
+
+\begin{enumerate}[label=\protect\numcircledtikz{\small\arabic*}]
+\item Sud si "apre il taglio" giocando Asso di Cuori e Cuori .
+ \item  Sud gioca immediatamente Cuori a cedere, e poi ancora. Otterrà di tagliare una Cuori con le atout di Nord.
+     L'avversario avrà la presa (e l'iniziativa) per due volte.
+ \item  Sud deve giocare il Re di Cuori e cedere l’Asso, incassare la Dama e poi tagliare una Cuori con la Picche di
+     Nord.
+ \item Nell'ordine: K, A\He, e poi Cuori tagliata.
+\end{enumerate}
+
+Ci può essere qualche altra cosa urgente da fare, prima di battere:
+\newgame
+\boardnr{4}
+\northhand{K952}{853}{AQ5}{K65}
+\southhand{QJT63}{A62}{K6}{QJ3}
+\westhand{A4}{KQJ4}{J984}{984}
+\easthand{87}{T97}{T732}{AT72}
+\leftupper{\boardtext*}%
+{\dealertext\quad}{\vulnertext}
+\rightupper[2ex]{\contract:
+4\,\Sp}{\declarer \south}{}
+\rightlower[2ex]{}{}{\lead: K\He}
+
+\showAll*
+
+Teoricamente ci sono 10 prese: 4 atout, 1\He, 3\Di, e 2 affrancabili a \Cl.  Ma vediamo cosa spetta agli avversari: dopo
+l’attacco hanno affrancato 2 prese a Cuori (sia N che S sono costretti a rispondere), poi A\Cl e A\Sp. Contratto
+battuto!  Questo succederà se Sud prende con l’A\He e gioca atout: l’A\Sp è in mano ai nemici, che procederanno
+all’incasso. C’è soluzione?  Si: Sud, in presa con l’A\He, deve incassare K\Di, Q\Di e A\Di scartando una Cuori dalla
+mano. Adesso la lunghezza delle Cuori è cambiata, e si può anche procedere alla battuta delle atout: gli avversari
+potranno incassare solo più una presa a Cuori, perché al terzo giro Sud potrà tagliare.  Abituatevi a fare l’occhio
+a queste situazioni vantaggiose, perché vi consentono di disfarvi di carte che, diversamente, avreste perso.
+
+\begin{regola}{Cedere la presa}
+\textsc{Quando il vostro piano di gioco prevede di cedere la presa, chiedetevi sempre cosa farà l’avversario.}
+\end{regola}
+
+\end{document}
+
+
