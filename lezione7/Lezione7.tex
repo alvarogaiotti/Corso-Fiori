@@ -1,0 +1,265 @@
+\documentclass[../corsofiori.tex]{subfiles}
+\setcounter{regolactr}{21}
+\setcounter{chapter}{7}
+\begin{document}
+
+\chapter{I contratti e la dichiarazione di apertura}
+\setdefaults{colors=4A}
+
+\paragraph*{Dichiarare parziali, manche e slam: i requisiti di coppia}
+
+Le carte che statisticamente realizzano più frequentemente le prese sono gli assi e le tre figure di ogni colore. Un
+giocatore americano, Milton Work, ha attribuito a queste carte un valore numerico per avere un \textsc{riferimento}
+(esclusivamente statistico) circa le possibilità per ogni linea di realizzare una o più prese:
+\begin{center}
+\cards{A} = 4 punti\qquad
+\cards{K} = 3 punti\qquad
+\cards{Q} = 2 punti\qquad
+\cards{J} = 1 punto
+\end{center}
+
+Quindi in ogni seme ci sono 10 punti (A+K+Q+J) e un totale di 40 punti nel
+mazzo. Quando un giocatore afferma di avere "14 punti", di lui si saprà che può ad esempio avere tre assi + una dama,
+oppure un asso + tre re + un fante, oppure due assi + due re o altro ancora, per un totale di 14. Esempio:
+
+\hand{AQ854}{K9}{J87}{AKJ}: 18 punti
+
+\hand{7}{AKQ64}{A32}{T953}: 13 punti
+
+
+Statisticamente è verosimile che la coppia che possiede più punti sia in grado di realizzare più prese dell'altra;
+questo non sempre è vero, ma poiché si tratta di un punto di riferimento statisticamente valido, potremo ritenere
+giustificati da parte di una coppia i seguenti contratti:
+
+\begin{table}[h]
+   \centering
+   \begin{tabular}{llc}
+       \toprule
+    Giustificativo & Denominazione contratto & Contratto\\
+    \midrule
+    con 20 - 24 punti coppia&contratti parziali& tutti, tranne i seguenti\\
+con 25 - 31&contratti di Manche            &3NT, 4\Sp, 4\He, 5\Di, 5\Cl \\
+con 32 - 36&contratti di piccolo Slam      &6NT, 6\Sp, 6\He, 6\Di, 6\Cl \\
+con 37 o più&contratti di grande Slam      &7NT, 7\Sp, 7\He, 7\Di, 7\Cl\\
+\bottomrule
+
+
+\end{tabular}
+\end{table}
+
+
+
+
+
+\paragraph*{Ordine prioritario dei tipi di contratto}
+I contratti a Cuori e Picche sono la prima scelta; il vantaggio dei tagli consente di
+fare molte prese anche se la forza onori è modesta. In alternativa, qualora non ci sia
+fit di 8 carte a \He o \Sp, i contratti più convenienti sono quelli a Senza. I contratti a Fiori
+e Quadri rendono meno, quindi sono la terza scelta.
+
+\section*{L’Apertura}
+L’apertura è la prima dichiarazione diversa da Passo fatta al tavolo. Aprire è una
+libera scelta, non un obbligo: è anche possibile che nessuno apra (“tutti passano”),
+se nessuno ha i requisiti per farlo. C’è un’unica “apertura” in ogni smazzata. Il
+sistema dichiarativo che impareremo si chiama ``Quinta nobile, Quadri quarto''.
+La decisione di Aprire o Passare dipende dalla Forza della mano:
+\begin{regola}{Regola per l'apertura}
+    Si apre quando si hanno almeno 12 punti onori
+\end{regola}
+
+\begin{tabular}{cl}
+    \hand{AQJxx}{KQJx}{x}{Txx} & 13 punti: si apre\\
+    \hand{xx}{xx}{KQJxx}{KJxx} & 10 punti: si passa
+\end{tabular}
+\smallskip
+
+La forza della mano determina anche il Livello a cui aprire:
+
+\begin{table}[htpb]
+    \centering
+    \begin{tabular}{cl}
+        \toprule
+        Punteggio&Livello di apertura\\
+        \midrule
+        0--11 & \textsc{zero} (Passo)\\
+        12--20 & \textsc{uno} (1\Cl, 1\Di, 1\He, 1\Sp, 1NT)\\
+21+ & \textsc{due} (2\Cl, 2\Di, 2\He, 2\Sp, 2NT)\\
+\bottomrule
+    \end{tabular}
+\end{table}
+
+Il tipo di apertura è determinato dalla distribuzione.  La distribuzione di una mano è l’insieme delle lunghezze dei
+quattro semi Quando si dice, ad esempio, di avere “una 5-4-3-1” si intende una mano che contiene un colore quinto, uno
+quarto, uno terzo e un singolo. Ci sono due principali famiglie:
+
+Le mani bilanciate. Le distribuzioni bilanciate sono queste tre:
+\begin{enumerate}[label=-]
+\item la 4333
+    (es : \hand{xxx}  {Qxx}  {Kxx} {AKxx})\sidefootnote{Quando si scrivono delle mani è uso utilizzare le x per
+    rappresentare cartine poco rilevanti}
+\item la 4432
+    (es :\hand   {KJxx}   {AQx}   {QJxx}   {AK})
+\item la 5332
+    (es:\hand   {Axx}   {xx}   {KJxxx}   {KQx})
+\end{enumerate}
+
+Le mani sbilanciate sono tutte le altre.
+
+\subsection{Come aprire con mani bilanciate (12-20)}
+Con tutte le mani da 15 a 17 punti: 1NT
+
+
+\begin{enumerate}[label={}]
+\item \hand{KQ76}{AQ62}{KQ7}{98} $\rightarrow$ 1NT
+
+\item \hand{J6} {KQ7} {KJ2} {AJ854} $\rightarrow$ 1NT
+\end{enumerate}
+
+\begin{regola}{Deduzione sull'apertura}
+    Quando il compagno apre di 1 a colore non ha mai una mano bilanciata
+di 15-17 (avrebbe aperto con 1NT)
+\end{regola}
+
+Con le mani che hanno di meno (12-14 punti) o di più (18 -20) si apre di:
+\begin{enumerate}
+    \item 1\Sp, se ci sono 5 carte a \Sp, altrimenti\ldots
+    \item 1\He, se ci sono 5 carte a \He, altrimenti\ldots
+    \item 1\Di, se ci sono almeno 4 carte, altrimenti\ldots
+    \item 1\Cl, anche con sole 2 carte.
+\end{enumerate}
+
+\begin{enumerate}[label={}]
+\item \hand{K943}{A2}{Q97}{KJ52} $\rightarrow$ 1\Cl
+
+\item \hand{43} {AQJ82} {Q97} {A72} $\rightarrow$ 1\He
+
+\item \hand{AQJ3} {KJ62} {Q7} {853} $\rightarrow$ 1\Cl
+
+\item \hand{AKJ8} {Q982} {K8} {AQ3} $\rightarrow$ 1\Cl
+
+\item \hand{QJ7}{A954}{AQ86} {J5} $\rightarrow$ 1\Di
+\end{enumerate}
+
+
+\subsection{
+Come aprire con le mani sbilanciate (12-20)
+}
+Con le monocolori si apre di “uno” nell’unico colore lungo:
+
+\begin{enumerate}[label={}]
+\item \hand{53} {AJ4} {K9} {AJT762} $\rightarrow$ 1\Cl
+
+\item \hand{6} {AQ9853} {KQ7} {K72} $\rightarrow$ 1\He
+\end{enumerate}
+
+Con un colore quarto e uno più lungo si apre di “uno” nel lungo:
+
+\begin{enumerate}[label={}]
+\item \hand{9} {QJ54}{AQ764}{A97}$\rightarrow$ 1\Di
+
+\item \hand{J2} {A4}{KJ87} {KQ764}$\rightarrow$ 1\Cl
+\end{enumerate}
+
+
+
+
+Con due colori entrambi lunghi (quinti o più) si apre nel più alto di rango:
+
+\begin{enumerate}[label={}]
+\item \hand{K2} {4} {KJ876} {AQ873} $\rightarrow$ 1\Di
+
+
+
+\item \hand{KQ985} {-} {AJ6432} {Q3} $\rightarrow$ 1\Sp
+
+\end{enumerate}
+Con tre colori quarti si apre di 1\Di se ci sono 4 carte, altrimenti 1\Cl
+
+\begin{enumerate}[label={}]
+\item \hand{J} {AKJ5} {K986} {AQJ4} $\rightarrow$ 1\Di
+
+\item \hand{AJ85} {KQ65} {2} {KQJ4} $\rightarrow$ 1\Cl
+\end{enumerate}
+
+Quando “aprite” offrite garanzie di un certo punteggio, comunque distribuito, non promettete affatto di avere onori nel
+colore che avete annunciato. Non lasciatevi
+mai influenzare da dove siano dislocati gli onori:
+\begin{regola}{Regola sull'apertura}
+    
+La scelta del colore di apertura dipende dalle lunghezze
+\end{regola}
+
+L’apertura di 1\Cl è di lunghezza ambigua: il colore può essere presente davvero, o in caso estremo può presentare due
+sole carte (unico caso: 4\Sp4\He3\Di2\Cl) 
+\subsection{
+Le aperture a livello 2
+}
+Mostrano mani troppo forti per essere aperte a livello uno:
+punti onori 21 +, oppure una mano che suggerisce 8 ½ - 9 vincenti
+
+Se sono bilanciate, da 21 a 22 punti: 2NT
+
+Se sono sbilanciate si apre nel colore lungo, secondo gli stessi schemi visti per l’apertura a livello 1, tranne:
+    
+\begin{enumerate}[label={}]
+
+\item \hand{AQJ975} {AKJ} {5} {KQ4} $\rightarrow$ 2\Sp
+
+\item \hand{AKT986} {AKJT92} {A} {-}$\rightarrow$ 2\Sp
+
+\item \hand {5} {AK95} {AKQ98} {AQ9}$\rightarrow$ 2\Di
+
+\item \hand {KQJ4} {AK} {3} {AKQJ76}$\rightarrow$ 2\Cl
+
+\item \hand {KQ} {AKJ9} {KQ97} {AK5}$\rightarrow$ 2\Cl 
+
+\end{enumerate}
+Il colore di apertura è sempre di almeno 6 carte, può essere di 5 solo se ha un altro
+colore almeno quarto a fianco. Quindi mai una 5332; con tali distribuzioni è
+conveniente trattare la mano come una bilanciata di equivalente forza:
+\begin{enumerate}[label={}]
+\item \hand{AQ9} {AKJ} {AJ} {K9754} $\rightarrow$2NT
+
+\item \hand {AJ4} {K97} {AK962} {AQ} $\rightarrow$2NT
+
+\item \hand {KQ5} {K95} {AKQ85} {A9} $\rightarrow$2NT
+
+\end{enumerate}
+Mentre l’apertura di 2NT è
+precisamente limitata (21- 22), le
+aperture di 2\Cl, 2\Di, 2\He, 2\Sp non
+hanno un limite superiore.
+Chiedono al compagno di avere
+un’altra possibilità di dichiarare,
+quindi:
+
+\begin{regola}{Regola sulle aperture a livello 2}
+Sulle aperture di 2 a colore è vietato dire passo
+\end{regola}
+
+L'apertura di 2\Cl è ambigua fino al giro successivo: in pratica essa è un contenitore in cui alloggiano due tipi di
+mano, la bilanciata fortissima (23 e oltre) e la mano a base fiori. L'ambiguità verrà risolta al giro successivo, in
+quanto l'Apertore dirà:
+\begin{enumerate}[label={-}]
+\item i senz'atout, con il tipo di mano bilanciato
+
+\item un nuovo colore o ancora le fiori con la bicolore fiori - \Sp/\He/\Di , o la monocolore di fiori
+\end{enumerate}
+
+\begin{center}
+\begin{biddingpair}
+    2C & 2D\\
+    2S & \\
+\end{biddingpair}\qquad
+\begin{biddingpair}
+    2C & 2S\\
+    2N & \\
+\end{biddingpair}
+\end{center}
+
+Quindi il possesso reale delle fiori come palo lungo di
+base viene confermato nel momento in cui l'Apertore
+non replica a senz'atout: nella prima sequenza
+l'Apertore ha 4\Sp e 5 o più \Cl. Nella seconda sequenza
+ha la bilanciata forte.
+\end{document}
