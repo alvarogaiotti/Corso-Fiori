@@ -1,0 +1,254 @@
+\documentclass[../corsofiori.tex]{subfiles}
+\setcounter{regolactr}{25}
+\setcounter{chapter}{7}
+\begin{document}
+
+\section{Decidere cosa dichiarare}
+\setdefaults{colors=4A}
+
+Quando è il nostro turno di dichiarare, seguiamo la seguente procedura per scegliere la nostra dichiarazione.
+
+\paragraph*{Se nessuno ha aperto}
+
+\begin{enumerate}
+    \item Se abbiamo meno di 12 punti, passiamo
+    \item Se abbiamo tra i 12 e i 20 punti, apriamo a livello 1:
+        \begin{enumerate}
+            \item Se abbiamo una mano sbilanciata:
+                \begin{enumerate}
+                    \item Se abbiamo 5\Sp, apriamo 1\Sp;
+                    \item Se abbiamo 5\He, apriamo 1\He;
+                    \item Se abbiamo 4\Di, apriamo 1\Di;
+                    \item Altrimenti, apriamo 1\Cl
+                \end{enumerate}
+            \item Se abbiamo una mano bilanciata:
+                \begin{enumerate}
+                \item Se abbiamo 15--17 punti, apriamo 1\SA;
+                \item Se abbiamo 12--14 o 18--20, apriamo come se avessimo una sbilanciata, ma:
+                    \begin{enumerate}
+                   \item Al giro successivo, dichiareremo 1\SA se abbiamo 12--14;
+                \item Dichiareremo 2\SA se abbiamo 18--20
+                    \end{enumerate}
+                \end{enumerate}
+        \end{enumerate}
+        \item Se abbiamo più di 20 punti:
+            \begin{enumerate}
+                \item Se abbiamo una mano bilanciata:
+                    \begin{enumerate}
+                        \item Apriamo 2\SA se abbiamo 21--22 punti;
+                        \item Apriamo 2\Cl se abbiamo 23+ punti, per poi dichiarare 2\SA;
+                    \end{enumerate}
+                \item Se abbiamo una mano sbilanciata:
+                    \begin{enumerate}
+                        \item Apriamo nello stesso colore con cui avremmo aperto se avessimo avuto 12--20 punti.
+                    \end{enumerate}
+
+            \end{enumerate}
+\end{enumerate}
+
+\paragraph*{Se il nostro compagno ha aperto}
+\begin{enumerate}
+    \item Contiamo i punti che possediamo sulla linea, ovvero in coppia.
+        \item In base al giustificativo che siamo in grado di raggiungere, scegliamo il contratto da dichiarare secondo
+            la seguente tabella.
+
+\begin{tabular}{llc}
+       \toprule
+    Giustificativo & Denominazione contratto & Contratto\\
+    \midrule
+    con 20 - 24 punti coppia&contratti parziali& tutti, tranne i seguenti\\
+con 25 - 31&contratti di Manche            &3NT, 4\Sp, 4\He, 5\Di, 5\Cl \\
+con 32 - 36&contratti di piccolo Slam      &6NT, 6\Sp, 6\He, 6\Di, 6\Cl \\
+con 37 o più&contratti di grande Slam      &7NT, 7\Sp, 7\He, 7\Di, 7\Cl\\
+\bottomrule
+
+
+\end{tabular}
+
+\item Se possediamo un fit in un colore maggiore (\Sp o \He), dichiariamo il contratto nel maggiore.
+    \item Se non lo possediamo, dichiariamo il contratto a \SA (per il momento).
+\end{enumerate}
+
+\paragraph*{Se l'avversario ha aperto}
+
+\begin{enumerate}
+    \item Se possediamo meno di 7--8 punti, passiamo;
+    \item Se possediamo più di 8--9 punti:
+        \begin{enumerate}
+            \item Se possediamo un bel colore almeno quinto, lo dichiariamo;
+            \item Altrimenti, passiamo
+        \end{enumerate}
+\end{enumerate}
+
+\chapter{Le aperture di 1\SA e 2\SA}
+Le aperture di 1\SA (15--17) e 2\SA (21--22) sono aperture speciali riservate alle mani bilanciate (\textbf{4333},
+\textbf{4432}, \textbf{5332}). Di conseguenza, promettono almeno due carte in ogni colore.
+
+\section{L'apertura di 1\SA}
+
+Si apre di 1\SA con 15,16 e 17 punti. Se una mano è bilanciata in questa fascia di punteggio, allora non va aperta di
+1 a colore.
+
+Essendo una apertura molto descrittiva (si sanno molte cose della mano dell'Apertore), di conseguenza, è il
+Rispondente\sidefootnote{Si definisce Rispondente il compagno dell'Apertore}
+a decidere il contratto. Egli conterà i propri punti e, sommandoli ai 15--17 dell'Apertore, avrà un'idea precisa del
+livello del contratto. Se ritiene che la manche sia irraggiungibile, può dichiarare Passo per giocare 1\SA.
+
+Vediamo alcune situazioni, partendo dal presupposto che l'Apertore abbia aperto di 1\SA e noi siamo il Rispondente.
+
+\begin{wraptable}[5]{l}[-1cm]{3cm}
+\hand!{AQ8743} {K5} {J42} {76}
+\end{wraptable}
+
+L'Apertore ha almeno 15 punti e al massimo 17, inoltre, ha almeno 2\Sp. Sulla linea abbiamo, quindi,
+25--27 punti e almeno 8\Sp, quindi il \textsc{fit}. I contratti in atout sono la nostra prima scelta, quindi
+dichiareremo 4\Sp.
+
+\begin{wraptable}[4]{l}[-1cm]{3cm}
+\hand!{J3} {K52} {AQJ52} {J76}
+\end{wraptable}
+
+Dichiariamo 3\SA: i punti bastano
+(27-29) ed un fit maggiore è
+improbabile. Le Quadri daranno molte
+prese, ma il contratto deve essere a
+\SA, non a Quadri (economicamente non conviene).
+
+\begin{regola}{Dichiarazioni di manche su 1\SA}
+    Sull'apertura di 1\SA, le dichiarazioni di contratti di manche da parte del Rispondente sono conclusive.
+\end{regola}
+
+\begin{wraptable}[5]{l}[-1cm]{3cm}
+\hand!{876} {JT9652} {42} {76}
+\end{wraptable}
+
+La mano del Rispondente non vale nulla giocando a \SA! Le \cu sono, infatti, irraggiungibili anche se affrancate. Di
+conseguenza, cercheremo di sfruttare le \cu come atout: dichiareremo, quindi 2\He. La scelta di giocare a colore
+a livello 2 si può fare anche quando si hanno sole 5 carte in quel seme, ma mai con solo 4 carte. Il punteggio richiesto
+parte da zero:
+
+\hand*{x}{xxxxx}{xxxx}{xxx}
+
+Su 1\SA, il contratto di 2\He probabilmente non verrà mantenuto, ma 1\SA sarebbe peggio.
+
+
+\begin{regola}{Dichiarazioni che corrispondono a parziale minimo}
+    Sull'apertura di 1\SA, le dichiarazioni di contratti parziali minimi, quindi a livello 2 (2\Di, 2\He, 2\Sp), da parte del Rispondente sono conclusive.
+\end{regola}
+
+\begin{wraptable}[2]{l}[-1cm]{3cm}
+\hand!{876} {AJ8652} {Q2} {76}
+\end{wraptable}
+
+Il Rispondente dichiarerà 3\BH: si gioca a \cu, ma vuole che l'Apertore rialzi solo con 17 punti.
+
+
+\vspace{1cm}
+
+\begin{wraptable}[3]{l}[-1cm]{3cm}
+\hand!{Q76} {K2} {QJ72} {762}
+\end{wraptable}
+
+
+Dichiarate 2\SA: significa che si possiede più del Passo, ma meno del 3\SA. Chiede al compagno di rialzare con il
+massimo o passare con il minimo.
+
+\vspace{1cm}
+
+\begin{regola}{Dichiarazioni di parziali non minimi su 1\SA}
+    Sull'apertura di 1\SA, le dichiarazioni di parziali non minime (2\SA, 3\Cl,3\Di,3\He,3\Sp), quindi inutilmente alte,
+    mostrano certezza di fit (quindi almeno 6 carte nel colore dichiarato) e incertezza
+    sul livello a cui giocare, e chiedono all'Apertore di dichiarare 4 con il massimo del punteggio.
+\end{regola}
+
+Se il Rispondente non è in grado di decidere il contratto perché non ha informazioni a sufficienza, può usare una
+dichiarazione speciale per chiedere quali colori nobili quarti possieda: la dichiarazione di 2\Cl \emph{Stayman} (dal
+nome dell'inventore).
+
+Questa dichiarazione interrogativa convenzionale chiede al Rispondente la distribuzione. Si può usare quando si
+possiedono almeno 8 punti e 4/5 carte in un colore nobile. Con 6 carte non è necessaria, dato che abbiamo sicuramente il
+fit, e neanche con meno di 4, in quanto è improbabile trovare un fit in un maggiore.
+
+L'Apertore risponde nel seguente modo:
+\begin{itemize}
+    \item 2\Di se non possiede 4/5 carte né a \cu né a \pic.
+    \item 2\He se possiede 4/5\He e non 4\He.
+    \item 2\Sp se possiede 4/5\Sp e non 4\Sp.
+    \item 2\SA se possiede 4\Sp4\He e il minimo.
+    \item 3\Cl se possiede 4\Sp4\He e il massimo.
+\end{itemize}
+
+A questo punto ci sono 3 alternative:
+\begin{enumerate}
+    \item \`E stato individuato un fit, e allora il Rispondente dichiara 3 nel maggiore per chiedere all'Apertore di
+        dichiarare 4 con il massimo, o dichiara direttamente manche.
+    \item Sicuramente non c'è il fit, allora il Rispondente dichiara i \SA proporzionalmente alla sua forza.
+    \item Fit 4/4 non trovato, ma possibile fit 5/3 perché il Rispondente ha 5 carte: in questo caso il Rispondente
+        dichiara la sua quinta. Se l'Apertore ha 3 carte, rialza il colore, altrimenti ripiega a \SA.
+\end{enumerate}
+
+Esempi:
+
+\newgame
+\boardnr{1}
+\westhand{J7} {KQ96} {AQ2} {AJ72}
+\easthand{Q942} {JT42} {K5} {KQ3}
+\showEW\qquad
+\begin{biddingpair}(\explainit{Che quarte maggiori hai?\\}%
+    \explainit{Ho 4\He\\} \explainit{Anche io. Siamo arrivati})
+    1N & 2C\markit\\
+    2H\markit & 4H\markit\\
+\end{biddingpair}
+\bigskip
+
+\newgame
+\boardnr{2}
+\westhand{AQ75} {76} {KQ4} {AJ52}
+\easthand{64} {KQ42} {J965} {KQ3}
+\showEW\qquad
+\begin{biddingpair}(\explainit{Che quarte maggiori hai?\\}%
+    \explainit{Ho 4\Sp\\} \explainit{Io 4\He. Giochiamo 3\SA})
+    1N & 2C\markit\\
+    2S\markit & 3N\markit\\
+\end{biddingpair}
+
+\bigskip
+
+\newgame
+\boardnr{3}
+\westhand{K5} {KQ76} {AJ4} {A852}
+\easthand{QJ976} {A2} {Q965} {K3}
+\showEW\qquad
+\begin{biddingpair}(\explainit{Che quarte maggiori hai?\\}%
+    \explainit{Ho 4\He\\} \explainit{Io 5\Sp\\}
+    \explainit{Non ho 3\Sp\\})
+    1N & 2C\markit\\
+    2H\markit & 2S\markit\\
+    2N\markit & 3N\\
+\end{biddingpair}
+
+\section{L'apertura di 2\SA}
+Si apre di 2\SA con 21--22 punti e le medesime distribuzioni con cui apriamo 1\SA. Se una mano ha i requisiti per aprire
+di 2\SA, questa apertura prevale sulle aperture di 2 a colore.
+
+\paragraph*{Risposte}
+
+L'unico modo per fermarsi prima di manche è Passo. In alternativa:
+
+\begin{itemize}
+    \item Tutte le dichiarazioni di manche o slam sono conclusive;
+    \item Le risposte di 3 a colore (3\Di, 3\He, 3\Sp) mostrano 5+ carte in quel colore e forza almeno di manche.
+        L'Apertore non dovrà mai passare. Se ha fit rialza a manche, altrimenti riporta a 3\SA.
+    \item Se il Rispondente cerca un fit 4/4, usa l'interrogativa 3\Cl. Le risposte, scalate di un livello, sono le
+        stesse dell'apertura 1\SA (più o meno):
+        \begin{itemize}
+            \item 3\Di: né 4\He, né 4\Sp.
+            \item 3\He: 4\He.
+            \item 3\Sp: 4\Sp.
+            \item 3\SA: sia 4\Sp che 4\He.
+        \end{itemize}
+\end{itemize}
+
+
+
+\end{document}
