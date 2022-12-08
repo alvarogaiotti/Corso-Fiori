@@ -1,0 +1,642 @@
+\documentclass[../corsofiori.tex]{subfiles}
+\setcounter{regolactr}{39}
+\setcounter{chapter}{10}
+%\externaldocument[VIII-]{../lezione8/Lezione8}
+\setdefaults{colors=4A}
+
+\begin{document}
+\chapter{L’intervento}
+Si definisce intervento la prima dichiarazione diversa da Passo effettuata da un
+Giocatore appartenente alla linea opposta all’Apertore. Un intervento è una libera
+iniziativa, sta al giocatore decidere se gli convenga o meno entrare in dichiarazione.
+
+\section{L’ intervento di Contro}
+
+Il Contro esprime il desiderio di aggiudicarsi un contratto sulla propria linea,
+giocando in un colore diverso da quello dell’Apertore. La mano perfetta per il Contro
+presenta tutti e tre i colori giocabili e la corta in corrispondenza del seme avversario;
+ad esempio, su apertura di 1\Di, si dice Contro con:
+
+\smallskip
+\hand{KJ98} {AQ74} {5} {K983}
+\smallskip
+
+\begin{regola}{L'intervento di Contro}
+L’intervento di Contro, in seconda come in quarta posizione,
+chiede al compagno di scegliere un colore
+e dichiararlo al livello cui pensa di poter giocare.
+\end{regola}
+
+Il Contro garantisce o una mano di 12 -16 punti con “la giocabilità” dei Nobili non
+dichiarati, o una mano di 17+; in questo caso non ci sono vincoli distribuzionali.
+
+\begin{regola}{Le mani con cui contrare}
+Quando si è nella fascia 12-16:
+\begin{itemize}
+\item Il Contro su 1\Cl o 1\Di garantisce 4 cuori e 4 picche (o 4+3, mai 4+2).
+\item Il Contro su 1\He garantisce 4 picche.
+\item Il Contro su 1\Sp garantisce 4 cuori.
+\end{itemize}
+\end{regola}
+
+Il compagno sarà portato a scegliere il maggiore implicitamente promesso, se vi
+possiede 4 carte. Ma se non le ha, sceglierà un colore minore: pertanto quando si
+interviene con il Contro si deve poter tollerare anche la scelta di un colore minore
+(almeno 3 carte, eccezionalmente due, mai una o zero!).
+
+\subsubsection{Esempi}
+
+\newgame\setdefaults{bidfirst=N}
+\dealer[\east]\vulner[\eastwest]
+%\hand!-{Q952}{K32}{765}{AQ7}
+\hand!-{KJ98} {AQ74} {K87} {82}
+\begin{bidding}-
+& & 1C & ? \\
+\end{bidding}
+\expertquiz[Sud ha aperto 1\Cl, tocca a Ovest\\]{%
+Contro}
+
+Contro; i requisiti sono perfetti: entrambe le quarte maggiori, eventuale tolleranza
+delle Quadri, e punteggio sufficiente.
+
+\newgame\setdefaults{bidfirst=N}
+\dealer[\east]\vulner[\eastwest]
+%\hand!-{Q952}{K32}{765}{AQ7}
+\hand!- {9854} {K4} {A765} {AJ3}
+\begin{bidding}-
+& & 1C & ? \\
+\end{bidding}
+\expertquiz[]{%
+Passo}
+
+Passo; i punti basterebbero sì per intervenire, ma mancano le Cuori. Il compagno, a
+cui si sta chiedendo di scegliere un colore (con l’implicita promessa di portargli fit) si
+sentirebbe tradito.
+
+Quando il Contro viene dato dal quarto di mano, dopo che gli avversari hanno detto
+due colori, la forza onori promessa è sempre 12+, e devono esserci 4 carte in
+entrambi i colori che rimangono (quelli su cui si orienterà il compagno):
+Sud ha aperto 1\Di, passo di Ovest, Nord ha detto 1\Sp e Est ha:
+
+\newgame\setdefaults{bidfirst=N}
+\dealer[\east]\vulner[\eastwest]
+%\hand!-{Q952}{K32}{765}{AQ7}
+\hand!- {54} {KQ86} {A95} {KQ54}
+\begin{bidding}-
+& & 1D & p \\
+1S & ?\\
+\end{bidding}
+\expertquiz[]{%
+Contro}
+
+Contro: sta chiedendo a Ovest di scegliere tra Fiori e Cuori, e garantisce fit in
+entrambi i colori.
+
+
+\subsection{Come deve comportarsi il compagno}
+Il compagno del contrante sceglie un colore perché è obbligato a farlo;
+il punteggio minimo con cui fa una dichiarazione al minimo livello è zero.
+
+\paragraph{Esempi:}
+
+\newgame\setdefaults{bidfirst=N}
+\dealer[\east]\vulner[\eastwest]
+%\hand!-{Q952}{K32}{765}{AQ7}
+\hand!-{54}  {J986}  {952}  {Q532}
+\begin{bidding}-
+& & 1D & X \\
+p & ?\\
+\end{bidding}
+\expertquiz[]{%
+1\He}
+
+1\He; anche con una mano quasi nulla è opportuno fare una scelta, la più bassa
+possibile, ma non passare: il Passo farebbe diventare definitivo (a discrezione
+dell’Apertore, cui spetta l’ultima dichiarazione) il contratto di “ 1\Di contrato”, che si
+risolverebbe in un disastro ben peggiore: con molta probabilità verrebbe mantenuto,
+e ogni presa fatta in più costerebbe una cifra (100 l’una in Prima, 200 in Seconda!)
+
+\newgame\setdefaults{bidfirst=N}
+\dealer[\east]\vulner[\eastwest]
+%\hand!-{Q952}{K32}{765}{AQ7}
+\hand!-{KJ954}  {A76}  {95}  {K64}
+\begin{bidding}-
+& & 1D & X \\
+p & ?\\
+\end{bidding}
+\expertquiz[]{%
+4\Sp}
+
+4\Sp; fate la dichiarazione che fareste se poteste vedere le carte del compagno: una
+mano di almeno 12 punti, con “almeno la 4-3” nei colori nobili.
+Ricordate che avete una pallottola sola, quello che dichiarate sul contro non è
+l’inizio di un dialogo (come quando il compagno apre e voi rispondete con un colore
+nuovo) ma la fine: chi ha contrato non parlerà più. Ed è quello che vi augurate,
+quando avete carte come nell’esempio precedente. Morale: se pensate di poter fare
+una manche, dichiaratela o resterete al palo.
+
+\newgame\setdefaults{bidfirst=N}
+\dealer[\east]\vulner[\eastwest]
+%\hand!-{Q952}{K32}{765}{AQ7}
+\hand!-{K4}  {Q86}  {AJT}  {K954}
+\begin{bidding}-
+& & 1D & X \\
+p & ?\\
+\end{bidding}
+\expertquiz[]{%
+3\SA}
+
+3\SA: il punteggio è sufficiente, il fit a Cuori o Picche è escluso, il fermo a Quadri c’è:
+decisione facile.
+
+
+\newgame\setdefaults{bidfirst=N}
+\dealer[\east]\vulner[\eastwest]
+%\hand!-{Q952}{K32}{765}{AQ7}
+\hand!-{KQ984}  {Q86}  {62}  {Q54}
+\begin{bidding}-
+& & 1D & X \\
+p & ?\\
+\end{bidding}
+\expertquiz[]{%
+2\Sp}
+
+
+2\Sp; una scelta fatta con un salto rappresenta mani che stanno nella terra di mezzo:
+senza la certezza di avere manche, ma “contente” del contratto che stanno
+dichiarando. E’ un piccolo … segno di vita; mediamente con una dichiarazione a
+salto promettete 8-10 punti e un colore di 5+ carte.
+
+\section{L’intervento di 1\SA}
+Promette forza e distribuzione equivalente all’Apertura di 1\SA. Visto che gli
+avversari hanno già un’indicazione per l’attacco (c’è stata l’apertura in un colore)
+l’intervento di 1\SA garantisce il fermo nel colore dell’Apertore. Si prosegue
+esattamente come se avesse aperto di 1\SA (2\Cl Stayman, ecc ecc.).
+
+
+\subsubsection{Esempi}
+
+
+\newgame\setdefaults{bidfirst=N}
+\dealer[\east]\vulner[\eastwest]
+%\hand!-{Q952}{K32}{765}{AQ7}
+\hand!-{AJ5} {KJ7} {AJT53} {K8}
+\begin{bidding}-
+& & 1H & ? \\
+\end{bidding}
+\expertquiz[]{%
+1\SA}
+
+\newgame\setdefaults{bidfirst=N}
+\dealer[\east]\vulner[\eastwest]
+%\hand!-{Q952}{K32}{765}{AQ7}
+\hand!-{AK5} {98} {AK73} {QJ97}
+\begin{bidding}-
+& & 1H & X \\
+\end{bidding}
+\expertquiz[]{%
+\double}
+
+\section{L’intervento a colore}
+L’intervento a colore ha lo scopo di mettere in luce il tratto più significativo della
+mano. Ha precisi limiti superiori: promette al massimo 16/17. La forza minima
+promessa è 8 punti se a livello uno, e un po’ di più se a livello due.
+
+Si interviene dichiarando un colore solo possedendo uno dei seguenti requisiti:
+\begin{itemize}
+\item Si possiede un ottimo colore, lungo e solido. Anche con soli 7/8 punti.
+\item Si possiede un punteggio elevato, inadatto al Contro e a 1\SA. In tal caso è
+possibile che il colore sia scarsamente onorato.
+\end{itemize}
+
+\begin{regola}{Massima per l'intervento}
+Un intervento a colore è giustificato o da un ottimo colore o da tanti punti:
+evitatelo se non possedete né un requisito né l’altro.
+\end{regola}
+
+\subsection{Un colore uno su uno}
+
+\begin{center}
+
+\begin{bidding}
+    1D & 1S & \ldots & \ldots\\
+\end{bidding}\qquad
+\begin{bidding}
+    1C & p & 1D & 1H\\
+\end{bidding}
+
+\end{center}
+    \begin{tabular}{ll}
+        Punti: & 8-16\\
+        Carte:&
+5 con almeno 1 Onore\\
+              &
+6 qualsiasi
+    \end{tabular}
+
+Se il punteggio è al minimo (7/8) è tutto concentrato nel colore.
+Per Onore si intendono gli Onori Maggiori: Asso/Re/Dama.
+Stessi requisiti in 2\textsuperscript{a} e in 4\textsuperscript{a} posizione.
+\subsubsection{Esempi}
+
+\begin{bidding}*
+    1D & ?\\
+\end{bidding}
+
+\begin{tabularx}{\textwidth}{XXXX}
+    \hand!{82} {AKJT42} {86} {983}&
+    \hand!{K3} {Q7542} {985} {QJ6}&
+    \hand!{K74} {AQJ63} {9} {KQ72}&
+\hand!{AKQT3}{74}{K3}{QJ54}\\
+    \centering1\He & \centering Passo & \centering1\He & \centering1\Sp
+\end{tabularx}
+
+\subsection{Un colore due su uno}
+
+\begin{center}
+\begin{bidding}
+    1D & 2C & \ldots & \ldots\\
+\end{bidding}\qquad
+\begin{bidding}
+    1C & p & 1S & 2H\\
+\end{bidding}
+\end{center}
+
+    \begin{tabular}{ll}
+        Punti: & 10-16\\
+        Carte:&
+6 con almeno 1 Onore\\
+              &
+5 (solo se \He con almeno 1 Onore e 13+ punti)\
+    \end{tabular}
+
+L’intervento a colore 2 su 1 normalmente è almeno sesto, si fa eccezione per le
+Cuori (nel caso di apertura 1 Picche e intervento di 2 Cuori) data la loro nobiltà.
+I requisiti sono uguali sia in seconda che in quarta posizione.
+\subsubsection{Esempi}
+
+\begin{bidding}*
+    1S & ? \\
+\end{bidding}
+
+\begin{tabularx}{\textwidth}{XXXX}
+    \hand!{54} {98} {KQJ862} {A76}&
+        \hand!{6} {J6} {AJ9853} {KQJ7}&
+        \hand!{K8} {AJT63} {AQ76} {94}&
+        \hand!{K98} {87} {KQ4} {AJ543}\\
+       \centering 2\Di & \centering2\Di & \centering2\He & \centering Passo
+    \end{tabularx}
+
+    \subsection{Come deve comportarsi il compagno}
+Il compagno di chi ha fatto un intervento si baserà sul minimo garantito. Con 9+
+punti non dovrà mai dire passo, perché la manche è possibile (16+9).
+Gli appoggi possono essere dati anche con tre sole carte.
+
+\subsubsection{Consigli}
+
+Quando c’è competizione, nel 70\% dei casi il contratto finisce alla linea
+dell’Apertore, per cui possiamo dire che ogni intervento risulterà avere influenza nel
+controgioco. Se fate un intervento, e poi tocca a voi attaccare, potete anche
+scegliere di attaccare in un altro colore, ma sappiate che il vostro compagno si farà
+invece guidare dalla vostra informazione.
+
+\begin{regola}{Intervento e attacco del compagno}
+Quando state per dire un colore ricordatevi che il compagno
+ci attaccherà. Se questo vi fa rizzare i capelli vuol dire
+che l’intervento è sbagliato.
+\end{regola}
+
+\chapter{Dopo l'intervento avversario}
+
+\section{Dichiarazioni obbligate, dichiarazioni libere}
+
+Nel dialogo “a due” ogni dichiarazione fornita è la condizione indispensabile per
+dare al compagno l’opportunità di dichiarare ancora: è un rimbalzo simile a un
+palleggio su un campo da tennis, in cui due si tirano la palla e non c’è niente che
+faccia “sponda”. Ma quando nella dichiarazione si intromette un avversario, crea
+automaticamente una situazione in cui “l’ultima parola” spetta a chi è seduto alla
+sua destra:
+
+\begin{bidding}*
+    1D & 1S & ?\\
+\end{bidding}
+
+
+Nord potrebbe avere 20 punti, ed è questo il motivo per cui Sud,
+anche con 5, ha il compito di “tenere aperto”. Ma ora non serve
+che lo faccia, l’intervento di Est darà modo comunque a Nord,
+se ha davvero tanto, di rientrare in dichiarazione. Se Sud
+fornisce una qualsiasi dichiarazione lo fa quindi \emph{liberamente}.
+
+\begin{regola}{Dichiarazioni libere}
+Una dichiarazione fornita liberamente,
+in assenza di obblighi, mostra sempre una mano
+che è contenta di dichiarare (una mano non minima, comprese anche mani particolarmente sbilanciate).
+\end{regola}
+
+\section{L’ intervento modifica le risposte}
+Quando l’avversario secondo di mano interviene, le dichiarazioni del compagno
+dell’Apertore subiscono delle modifiche.
+\begin{enumerate}
+\item non è più “necessario” parlare con 4-5 punti, quindi con mani nulle si passa.
+\item i “senza” non sono più una risposta d’obbligo, ma proposta di contratto. E promettono il fermo nel colore avversario.
+\item qualunque colore nuovo è almeno quinto.
+\item si “aggiungono” Contro” (su un colore) e “Surcontro” (sul Contro).
+\end{enumerate}
+
+Gli appoggi rimangono uguali, come se l’intervento non ci fosse stato. Vediamo in
+dettaglio.
+
+\subsection{Su intervento avversario di Contro}
+Con il Contro l’avversario propone di aggiudicarsi un contratto sulla sua linea; se
+avete almeno 11, siete certi che il diritto a giocare sia vostro, e altrettanto certi che
+la vostra linea è in grado di contrare (punitivamente) qualunque contratto alternativo
+gli altri propongano. La dichiarazione che racconta tutto questo al compagno è una
+sola: Surcontro.
+
+\begin{regola}{Dichiarazione dopo intervento di Contro}
+Dopo intervento avversario di contro vale che:
+\begin{itemize}
+\item Un colore nuovo è non forzante, e almeno quinto
+\item Surcontro mostra 11+ e qualunque tipo di mano
+\end{itemize}
+\end{regola}
+
+Il Surcontro è l’unica dichiarazione forte; la descrizione si rimanda al giro dopo.
+Non esclude né promette fit. Le dichiarazioni alternative sono:
+\begin{itemize}
+\item Un colore nuovo: non è forzante (proposta di contratto finale), richiede un buon colore di almeno 5-6 buone carte.
+    Perché 4 carte non bastano più? Perché si sta proponendo un colore in cui teoricamente l’avversario ha detto di
+    voler giocare, quindi 5 carte sono una minima garanzia. I punti sono meno di 11.
+\item Tutti gli appoggi: hanno lo
+    stesso valore “come senza intervento”, ma in ogni caso meno di 11 punti.
+\item 1\SA: 7--10 punti, contenti di giocarlo (fermi nei colori impliciti del contrante).
+    \item Passo: tutte le mani non adatte a nessuna delle dichiarazioni scelte sopra.
+\end{itemize}
+
+\newpage
+\subsubsection{Esempi}
+
+\begin{bidding}*
+    1H & X & ? \\
+\end{bidding}
+
+\hand*{AJxx} {Kx} {Qxx} {Qxxx}
+
+Surcontro
+\smallskip
+
+\hand*{Kx}  {Jx}  {AQx}  {KQJtxx}
+
+Surcontro (e non 2\Cl: essendoci il contro di mezzo, mostrereste una mano inferiore agli 11 e chiedereste al compagno di passare)
+\smallskip
+
+\hand*{xx}  {Jx}  {xxx}  {KQTxxx}
+
+2\Cl: che significa “sarei contento di giocare 2\Cl!”
+\smallskip
+
+\hand*{AJx}  {xx}  {QTxx}  {JTxx}
+
+1\SA: “non ho fit, e penso di mantenere il contratto di 1{\smaller SA}”
+
+
+\subsection{Su intervento a Colore}
+
+Un intervento a colore dell’avversario crea per il compagno dell’Apertore un vincolo
+sulla lunghezza dei colori che vorrebbe descrivere: un colore nuovo infatti implica il
+possesso di almeno 5 carte.
+
+E per trovare i fit 4-4? L’uso del Contro con il significato di “vorrei giocare nei colori
+rimanenti” appartiene a chi interviene sull’apertura ma anche, con identico
+significato, a chi è seduto davanti all’Apertore:
+
+\begin{regola}{Dopo intervento a colore}
+Dopo intervento avversario a colore vale che:
+\begin{itemize}
+\item Un colore nuovo è forzante, almeno quinto
+\item Contro cerca i fit 4-4 e chiede all’Apertore di dichiarare
+\end{itemize}
+\end{regola}
+
+\begin{center}
+\begin{bidding}
+    1D & 1S & X \\
+\end{bidding}\qquad
+\begin{bidding}
+    1H & 1C & X \\
+\end{bidding}
+\end{center}
+
+In entrambi i casi Nord sta dicendo: “cerco fit nei colori che rimangono”.
+Cuori e Fiori nel primo esempio, e Picche e Quadri nel secondo. I requisiti in forza
+onori, visto che esiste già la garanzia dell’apertura del compagno, sono molto
+inferiori a quelli dell’intervento (12+).
+
+\begin{regola}{Il Contro del rispondente}
+Il Contro promette 8+ punti (illimitato!)
+e mostra “ licita impedita ”: chiede all’Apertore
+di dichiarare altri colori, o i senza, se può.
+\end{regola}
+
+In sostanza dice “gioco nei pali rimasti. Tu riparla, e poi vediamo”. Non ha limiti
+superiori: da 8 in su. Più la mano è forte, meno è vincolata al possesso di reale
+lunghezza nei colori in cui si sta implicitamente cercando fit.
+
+\subsubsection{Esempi}
+\begin{bidding}*
+    1D & 1S & ?\\
+\end{bidding}
+
+\hand{xx} {AQxxx}  {Qx}  {KJxx}
+
+2\He: tutto in regola, il colore è quinto e i punti consentono di andare a livello due.
+\smallskip
+
+\hand{xx}  {AQxx}  {Qxx}  {KJxx}
+
+Contro: i punti per dire un colore a livello 2 ci sono, ma è la lunghezza che manca.  Invece di dire un colore chiediamo
+all’Apertore di mostrare altre quarte, se ne ha.
+\smallskip
+
+\hand{xx}  {AQxx}  {QTxx}  {Qxx}
+
+Contro: il fit nel minore lo abbiamo, ma prima di appoggiarlo proviamo a cercare contratti migliori. Se l’Apertore non
+mostrerà le Cuori e se non potrà dire 1\SA, ci
+rassegneremo a giocare a Quadri.
+
+\hand{xxx}  {Kxx}  {AQxx}  {KJx}
+
+Contro: la mano non è perfetta dal punto di vista distribuzionale (le Fiori ci sono, le
+Cuori sono soltanto tre) ma i punti abbondanti compensano questa carenza.
+
+Le alternative al Contro sono:
+\begin{itemize}
+\item Un colore nuovo. \`E forzante, almeno quinto; promette almeno 7/8 punti se a livello
+1, almeno 11 se a livello 2.
+\end{itemize}
+
+\newpage
+
+\subsubsection{Esempi}
+\begin{bidding}*
+    1D & 1H & ?\\
+\end{bidding}
+
+\begin{tabularx}{\textwidth}{XXXX}
+    \hand!{AQ73} {87} {Q4} {AQ764}&
+\hand!{KQ763} {87} {Q43} {J76}&
+\hand!{AKJ63} {87} {A43} {Q76}&
+\hand!{K763} {87} {43} {AQ764}\\
+    \centering2\Sp & \centering 1\Sp & \centering1\Sp & \centering Dbl
+\end{tabularx}
+
+\begin{itemize}
+\item Gli appoggi, che restano invariati.
+\item I Senza, che promettono il fermo nel seme avversario (1\SA: 7-10, 2\SA: 11-12, 3\SA: 13-14).
+\end{itemize}
+
+Ricapitolando, il Contro supplisce a tutte le situazioni in cui non si può fare una
+dichiarazione “naturale”, o perché pur essendoci una lunga mancano i punti per dirla
+al livello necessario, o perché pur essendoci i punti manca lunghezza nel colore.
+
+Sul Contro l’Apertore dichiara altri colori, se ne ha, o si arrangia dicendo
+comunque qualcosa. Poiché obbedisce a un ordine, eventuali dichiarazioni a colore
+nuovo che superino “2 nel primo palo” NON mostrano mano di rovescio:
+
+\begin{bidding}*
+    1D & 1S & X & p\\
+    2H & \ldots & \ldots & \ldots\\
+\end{bidding}
+
+Nord, che ha dichiarato per obbligo, può avere:
+
+\hand*{xx} {AJxx} {KQxx} {Kxx}
+
+\section{L’ intervento del quarto: cosa fa l’Apertore}
+
+Anche l’Apertore, dopo intervento alla sua destra, si può trovare in una situazione di
+“parlata libera”:
+
+\begin{bidding}*
+    1D & p & 1H & 1S\\
+    ? \\
+\end{bidding}
+
+Sud (1\He forzante) ha chiesto di poter
+ridichiarare ma l’intervento di Est gli
+consente di farlo anche se Sud scegliesse
+di dire Passo. Quindi, se Sud dichiara, lo fa
+“liberamente”.
+
+\begin{regola}{Dichiarazioni dell'Apertore su intervento del quarto di mano}
+
+Le regole sono molto semplici:
+\begin{itemize}
+\item con tutte le mani “normali”, bilanciate o sbilanciate, l’Apertore Passa. A meno che abbia fit quarto: in tal caso appoggia il compagno, proporzionalmente alla propria forza.
+\item con tutte le sbilanciate di Diritto che presentano o un’ottima monocolore o una bicolore di almeno 10 carte, ridichiara. A condizione, ovviamente, di restare entro il livello di guardia.
+\item con le sbilanciate di Rovescio dichiara normalmente, ignorando l’intervento.
+\item con la bilanciata 18-20, se ha il fermo, dichiara i Senza al minimo livello.
+\end{itemize}
+\end{regola}
+
+\subsubsection{Esempi}
+
+\begin{bidding}*
+    1D & p & 1H & 1S\\
+    ?\\
+\end{bidding}
+
+\hand*{Jx} {Kx} {AQxxx} {Qxxx}
+
+Passo; una bicolore al minimo dei requisiti (di punti e di distribuzione) è una mano
+“normale”!
+\smallskip
+
+\hand*{x} {xx} {AKJxx} {KQJxx}
+
+2\Cl: il punteggio è di Diritto, ma ci sono ottimi colori da dire velocemente, prima che
+le Picche vengano rialzate da Ovest.
+\smallskip
+
+\hand*{Kx} {xx} {Kxxxxx} {AQx}
+
+Passo; non è così pressante la voglia di informare il compagno che le Quadri sono
+tante, vista la loro povertà. Ben diverso con:
+\smallskip
+
+\hand*{xx} {xx} {AKJTxx} {KQx}
+
+
+2\Di: un colore ridichiarato spontaneamente è sempre un “signor colore”.
+\smallskip
+
+\hand*{xx} {KJxx} {KQxx} {Kxx}
+
+2\He: il fit è sacro, e consente di sopravvivere in un contratto di 8 prese anche se la
+coppia avesse solo 18 in linea.
+\smallskip
+
+\hand*{AQx} {Jxx} {Kxxx} {Kxx}
+
+Passo: senza intervento avremmo dichiarato 1\SA, ma questa è una mano normale,
+anche se ha il fermo a Picche.
+\smallskip
+
+\hand*{AQx} {Kxx} {AKxx} {Kxx}
+
+1\SA: non c’è bisogno del salto a 2\SA per chiarire la bilanciata 18-20, perché non
+possono esserci equivoci: con 15-17 avremmo aperto 1\SA, e poiché con 12-14
+adesso diremmo Passo, questa replica non può mostrare altro che questa mano.
+
+Anche se l’annuncio di un nuovo colore può restare a livello uno, rimane il fatto che
+l’Apertore dichiara libero solo con mani che abbiano quanto meno una buona
+distribuzione. Quindi:
+
+\begin{bidding}*
+    1C & p & 1D & 1H \\
+    1S\\
+\end{bidding}
+
+Che carte dobbiamo aspettarci da Sud?
+Qualcosa tipo questo:
+
+\hand*{AQxx} {x} {Qxx} {KQxxx}
+
+\noindent
+la dichiarazione “libera” di 1\Sp rende reali e lunghe le Fiori, visto che la mano deve
+essere sbilanciata (e Fiori è l’unica lunga possibile!) . Non certo queste:
+\smallskip
+
+\hand*{AQxx} {Kxx} {Qxx} {Qxx}
+
+\noindent
+con cui si dice Passo.
+
+\chapter*{Etica e Regole}
+\addcontentsline{toc}{chapter}{Etica e Regole}
+\markboth{Etica e Regole}{Etica e Regole}
+
+\begin{enumerate}
+\item Una carta giocata non si cambia più, né ci si prova.
+\item Non si può chiedere di rivedere le carte giocate, a meno che non si abbia la propria carta ancora scoperta sul tavolo. Nessuno può giocare su una presa successiva finché uno dei giocatori tiene ancora la sua carta scoperta; se l’avversario gioca troppo veloce, questo è il modo con cui potete imporre il ritmo che vi consente di non andare in confusione: aspettate qualche secondo prima di girare la vostra.
+\item Il board deve restare in centro tavolo per tutta la smazzata; questo evita imbussolamenti errati.
+\item Quando scende il Morto è buona norma dire “grazie” al compagno. Siate costanti in questa pratica, anche perché il
+    non farlo può suggerire all'avversario che siete in difficoltà.
+\item I difensori non devono mai preparare la carta prima che sia il loro turno di gioco.
+\item Il silenzio, assoluto, durante tutta la smazzata, è la più ferrea regola del bridge.  Anche se vi accorgete di avere sbagliato, non ditelo: vi scuserete dopo. Non avete il diritto di mettere in guardia il vostro compagno perché possa parare il colpo. Nessun tipo di commento deve essere fatto, né dovete lasciar trapelare emozioni.
+\item Nessuno può toccare le carte di un altro giocatore (tranne che quelle del Morto, con l’intento di sistemarle meglio). Non è vietato che il Giocante muova personalmente le carte del Morto, ma non è conveniente; facendolo è facile sporgersi sul tavolo, e dare agli avversari una bella panoramica delle proprie carte.
+\item I messaggi che due compagni si scambiano sono dati dalle dichiarazioni e dalle carte giocate. Tutto il resto: commenti, sbuffi, smorfie, sorrisi sono informazioni illecite, e nel Bridge sono sanzionati.
+\item Non è corretto giocherellare con i cartellini del bidding box. Che la vostra mano parta quando il cervello ha già deciso cosa dichiarare.
+\item Il Codice è stato inventato per porre rimedio a situazioni che hanno involontariamente alterato il normale svolgimento del gioco, e il Direttore ne è l'esperto e l'unico autorizzato ad applicare le eventuali sanzioni. Chiamatelo senza timore, è lì apposta per rimediare. E non è il caso di offendersi se qualcuno lo chiama per una vostra vera o presunta irregolarità.
+\item Il Morto \`E MORTO, non si muove dal suo posto, non suggerisce e non tocca le sue carte (neanche se si tratta di
+    un singolo) fintantoché il Giocante non le chiama. Tiene il conto delle prese vinte o perse e fa il possibile perché
+    il vivo possa restare concentrato su quello che fa.
+\item Il tempo è di tutti: non sprecatelo tergiversando in situazioni in cui pensare non serve, o non serve più. Più in
+    fretta giocate, più mani giocate e più vi divertite. Se potete fare claim da Giocante, ovvero affermare con sicurezza il numero
+    di prese che fate e cedete agli avversari, fatelo: mostrate le carte e illustrate la vostra linea di gioco. Se gli
+    avversari sono d'accordo risparmierete tempo e fatica. Ma attenzione, dovete essere sicuri del numero di prese che
+    farete, altrimenti l'avversario potrà controgiocare avendo visto le vostre carte. Se da difensori non siete sicuri
+    di un claim avversario, chiedete gentilmente di continuare a giocare la mano.
+\end{enumerate}
+\end{document}
