@@ -1,0 +1,371 @@
+\PassOptionsToPackage{dvipsnames,x11names,svgnames}{xcolor}
+\PassOptionsToPackage{colors=4A}{onedown}
+\PassOptionsToPackage{usenames,dvipsnames,pdftex}{color}
+\documentclass[a4paper,italian,12pt]{article}
+\usepackage[margin=2cm]{geometry}
+\usepackage{lscape}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{newcent}
+\usepackage{helvet}
+\usepackage{graphicx}
+%\usepackage{fancyhdr}
+%\pagestyle{fancy}
+\usepackage{wrapfig}
+\usepackage[printonlyused]{acronym}
+\newacro{ldg}[LDG] {Livello di guardia}
+%%%%%%%%%%%%%%%
+%  Pagestyle  %
+%%%%%%%%%%%%%%%
+\usepackage[colors=4A]{onedown}
+\usepackage[italian]{babel}
+\usepackage{enumitem}
+\usepackage[most]{tcolorbox}
+\usepackage{multicol}
+\usepackage{xr}
+%%% Colors
+\definecolor{linkcolor}{HTML}{E23812}
+\definecolor{azzurro}{HTML}{1ECBE1}
+\definecolor{titlepagecolor}{HTML}{FF0800}
+\definecolor{MidnightBlue}{HTML}{191970}
+\definecolor{arancionediam}{HTML}{FFA500}
+\definecolor{OLIVEGREEN}{rgb}{0.33, 0.42, 0.18}
+\definecolor{MIDNIGHTBLUE}{HTML}{191970}
+\definecolor{REDORANGE}{HTML}{FF5349}
+\definecolor{RED2}{HTML}{EE0000}
+%\definecolor{titlepagecolor}{RGB}{255,40,0}
+%{cmyk}{1,.60,0,.40}
+
+\usepackage[pdftex, pdfborder={0 0 0}, colorlinks=true, linkcolor=linkcolor]{hyperref}
+\frenchspacing
+
+\usepackage{txfonts} % For \varheartsuit and \vardiamondsuit
+%\usepackage[usenames,dvipsnames,monochrome]{color} % dvipsnames necessary to made PDFLaTeX work.
+
+\usepackage{listliketab}
+\usepackage{latexsym} % \Box
+\usepackage{pbox} % \Box
+\usepackage{parskip} % line between paragraphs
+\usepackage{pgfornament}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric,calc,arrows.meta}
+% suits
+
+
+\newcommand{\BC}{\textcolor{OliveGreen}{$\clubsuit$}}
+\newcommand{\BD}{\textcolor{RedOrange}{$\vardiamondsuit$}}
+\newcommand{\BH}{\textcolor{Red2}{$\varheartsuit${}}}
+\newcommand{\BS}{\textcolor{MidnightBlue}{$\spadesuit${}}}
+
+%suits for pdf-friendly titles
+\newcommand{\pdfc}{\texorpdfstring{\BC{}}{C}}
+\newcommand{\pdfd}{\texorpdfstring{\BD{}}{D}}
+\newcommand{\pdfh}{\texorpdfstring{\BH{}}{H}}
+\newcommand{\pdfs}{\texorpdfstring{\BS{}}{S}}
+
+\newcommand*\numcircledtikz[1]{\tikz[baseline=(char.base)]{
+\node[shape=circle,draw,inner sep=1.2pt] (char) {#1};}} 
+
+%Titlepage
+\addto\captionsitalian{
+    \renewcommand{\chaptername}{Lezione}
+    \renewcommand*{\chapterautorefname}{Lezione}%
+}
+\addto\extrasitalian{
+    \renewcommand*{\chapterautorefname}{Lezione}%
+}
+\newcommand\SA{{\smaller{SA}}\xspace}
+\newcommand\pic{Picche\xspace}
+\newcommand\cu{Cuori\xspace}
+\newcommand\qu{Quadri\xspace}
+\newcommand\fio{Fiori\xspace}
+
+\newenvironment{bidtable}
+{\begin{tabbing}
+
+    xxxxxx\=xxxxxx\=xxxxxx\=xxxxxx\=xxxxxx\=xxxxxx\=xxxxxx\=xxxxxx\=xxxxxx\=xxxxxx\=\kill}
+{\end{tabbing} }%
+
+\newenvironment{sviluppi}
+{\begin{tcolorbox}[colframe=azzurro,title=Sviluppi particolari]}
+    {
+\end{tcolorbox} }%
+
+\newcounter{attenzionectr}
+\newcounter{regolactr}
+\newenvironment{attenzione}[1]
+{
+    \refstepcounter{attenzionectr}
+\begin{tcolorbox}[colframe=red!80!white,title=#1]}
+    {
+\end{tcolorbox} }%
+\newtcolorbox[auto counter, list inside=regole]{regola}[2][]{%
+    colframe=green!40!black,
+    title={Regola \thetcbcounter: #2}
+}
+\AtBeginEnvironment{regola}{\medskip}
+\AtEndEnvironment{regola}{\medskip}
+%\newenvironment{regola}[1]
+%{
+%    \refstepcounter{regolactr}
+%    \medskip
+%    \begin{tcolorbox}}
+%    {
+%\end{tcolorbox}
+%    \medskip
+% }%
+\newcommand{\regolactrautorefname}{Regola}
+% \newenvironment{bidding}%
+% {\begin{tabbing}
+% xxxxxx\=xxxxxx\=xxxxxx\=xxxxxx \kill
+% }{\end{tabbing} }%end bidding
+
+% writing hands
+\newcommand{\cards}[1]{\textsf{#1}}
+%\newcommand{\spades}[1]{\BS\cards{#1}}
+%\newcommand{\hearts}[1]{\BH\cards{#1}}
+%\newcommand{\diamonds}[1]{\BD\cards{#1}}
+%\newcommand{\clubs}[1]{\BC\cards{#1}}
+\newcommand{\void}{--}
+\newcommand{\vhand}[4]{\spades{#1}\\\hearts{#2}\\\diamonds{#3}\\\clubs{#4}}
+
+% The \Box should always appear the same distance from the left margin
+\newcommand\onesuit[4]%
+{%
+    \begin{center}%
+        \begin{tabular}{>{\hfill}p{3cm}cp{3cm}}
+            & \cards{#2} \\%
+            \cards{#1}& $\Box$    & \cards{#3} \\%
+                      & \cards{#4} %
+        \end{tabular}
+    \end{center}%
+}
+
+% A special command if the south hand is not shown to avoid whitespace
+\newcommand\onesuitenw[3]%
+{%
+    \begin{center}%
+        \begin{tabular}{>{\hfill}p{3cm}cp{3cm}}%
+                & \cards{#2} \\%
+            \cards{#1}& $\Box$    & \cards{#3}%
+        \end{tabular}%
+    \end{center}%
+}
+
+\newcommand\dealdiagram[5]%
+{%
+    \begin{center}%
+        \begin{tabular}{>{\hfill}p{3cm}cp{3cm}}
+            \pbox{20cm}{\small #5}& \pbox{20cm}{#2} \\%
+            \pbox{20cm}{#1}& $\Box$    & \pbox{20cm}{#3} \\%
+                           & \pbox{20cm}{#4} %
+        \end{tabular}
+    \end{center}%
+}
+
+\newcommand\dealdiagramenw[4]%
+{%
+    \begin{center}%
+        \begin{tabular}{>{\hfill}p{3cm}cp{3cm}}
+            \pbox{20cm}{\small #4}& \pbox{20cm}{#2} \\%
+            \pbox{20cm}{#1}& $\Box$    & \pbox{20cm}{#3} \\%
+        \end{tabular}
+    \end{center}%
+}
+
+\newcommand\dealdiagramew[2]%
+{%
+    \begin{center}%
+        \begin{tabular}{>{\hfill}p{3cm}cp{3cm}}
+            \pbox{20cm}{#1}& $\Box$    & \pbox{20cm}{#2} \\%
+        \end{tabular}
+    \end{center}%
+}
+
+%\newcommand*{\plogo}{\includegraphics[scale=.5, trim={1cm 1cm 1cm 1cm}, clip]{quote associative 2022.jpg}} % Generic dummy publisher logo
+
+\title{Sistema Allievi}
+\author{Circolo Bridge Pordenone \fbox{$\textcolor{red}{\mathcal{PN}}$}}
+
+\begin{document}
+
+\setdefaults{colors=4A}
+\maketitle
+\thispagestyle{empty}
+\pagestyle{empty}
+%----------------------------------------------------------------------------------------
+%   TITLE PAGE
+%----------------------------------------------------------------------------------------
+%----------------------------------------------------------------------------------------
+
+\begin{large}
+    Quinta nobile, quadri quarte. 1\SA 15--17. 2\SA\ 22--23. No transfer.
+\end{large}
+
+\section*{Aperture}
+\begin{large}
+    \begin{bidtable}
+        1\Cl\>\> 2+\Cl, 12--20 punti, può contenere bilanciata 18--20\\
+        1\Di\>\> 4+\Di, 12--20 punti, può contenere bilanciata 18--20\\
+        1\He\>\> 5+\He, 12--20 punti, può contenere bilanciata 18--20\\
+        1\Sp\>\> 2+\Sp, 12--20 punti, può contenere bilanciata 18--20\\
+        1\SA\>\> Bilanciata 15--17 punti, anche con 5\He/\Sp\\
+        2\Cl\>\> 2+\Cl, 20+ punti, naturale sbilanciata o bilanciata 23+, forzante\\
+        2\Di/\He/\Sp \> \> Naturali sbilanciati, 21+ punti, forzanti\\
+        2\SA\>\> 21--22 bilanciati
+    \end{bidtable}
+\end{large}
+
+\section*{Sviluppi}
+
+\begin{bidtable}
+    1\Cl/\Di--\+\\
+    1\Di,\He,\Sp,\SA \> \> Naturali, 5+ punti\\
+    2\Cl \>\> Naturale forzante manche, 4+\Cl\\
+    2\Di \>\> Su 1\Cl non previsto, 4+\Di 5--10 su 1\Di\\
+    2\SA \>\> Invitante\\
+    3\Cl \>\> Invitante, 6+\Cl\\
+    3\Di \>\> Su 1\Di: invitante, 4+\Di\\
+    3\SA \>\> 12--16 punti, bilanciato
+\end{bidtable}
+
+\paragraph{Legge di Rivalutazione}
+Quando il Rispondente ha una mano sbilanciata e fit di almeno 4 carte, aggiunge ai suoi punti un valore dato dalla
+differenza tra il numero di carte di atout e il numero di carte nel colore più corto.
+
+\begin{bidtable}
+    1\He/\Sp--\+\\
+    1\Sp,\SA \> \> Naturali, 5+ punti\\
+    2\Cl \>\> Naturale forzante manche, 2+\Cl\\
+    2\Di \>\> 4+\Di, forzante manche\\
+    2\He \>\> Appoggio 5--10 su 1\He, naturale forzante manche su 1\Sp\\
+    2\Sp\>\> Non previsto su 1\He, appoggio 5--10 su 1\Sp\\
+    2\SA \>\> Invitante\\
+    3\Cl,\Di \>\> Invitante, 6+\Cl/\Di\\
+    3\He \>\> Appoggio di 11 punti, anche rivalutati su 1\He; 6+\He invitanti su 1\Sp\\
+    3\Sp \>\> Non previsto su 1\He; appoggio di 11 punti, anche rivalutati su 1\Sp\\
+    3\SA \>\> 12--16 punti, bilanciato\\
+    4\He/\Sp \>\> ``Giochiamo manche'', meno di 12 punti ma più di 12 punti rivalutati
+\end{bidtable}
+
+\begin{bidtable}
+    1\SA--\+\\
+    2\Cl\>\> Stayman\+\+\\
+    2\Di\> No 4e maggiori\\
+    2\He/\Sp \> 4\He/\Sp, non 4\Sp/\He\\
+    2\SA \> 4\He e 4\Sp, minimo\\
+    3\Cl \> 4\He e 4\Sp, massimo\-\-\\
+    2\Di,\He,\Sp \>\> 5+\Di/\He/\Sp, a passare\\
+    2\SA \>\> Invitante, 8--9 punti\\
+    3X \>\> Invitante naturale, 6+ carte\\
+    3\SA \>\> A giocare\\
+    4\He/\Sp \>\> A giocare
+\end{bidtable}
+Per mostrare 5+ carte in un maggiore in mano forzante manche, passare per 2\Cl e poi dichiarare il proprio maggiore.
+
+\begin{bidtable}
+    2\SA--\+\\
+    3\Cl\>\> Stayman\+\+\\
+    3\Di\> No 4e maggiori\\
+    3\He/\Sp \> 4\He/\Sp, non 4\Sp/\He\\
+    3\SA \> 4\He e 4\Sp\-\-\\
+    3\Di,\He,\Sp \>\> 5+\Di/\He/\Sp, forzante\\
+    3\SA \>\> A giocare\\
+    4\He/\Sp \>\> A giocare
+\end{bidtable}
+L'unico parziale giocabile è 2\SA.
+
+\section*{Quando interviene l'avversario}
+Intervento di contro: colori 5\textsuperscript{i} meno di 11 punti, altrimenti Surcontro. Appoggi da sistema.
+
+Intervento a colore: nuovi colori 5\textsuperscript{i} forzanti, Contro 8+ punti, possibilità di giocare negli altri
+colori, meno accentuata mano a mano che il punteggio aumenta.
+
+\section*{Iterventi}
+Interventi solidi. No salti. A livello 1: almeno un onore maggiore nel colore di intervento e 7+ punti (se pochi, concentrati nel
+colore). Fino a 16 punti, altrimenti: Contro.
+
+A livello 2: 10--16 punti, bel colore, 6 carte tassative. Unica eccezione: su 1\Sp, la dichiarazione di 2\He può venire
+da 5\He belle (almeno tre dei cinque onori) e 13+ punti.
+
+Contro: 12+ punti, giocabilità nei tre (due se dichiarato dopo due dichiarazioni avversarie) colori rimanenti. Su
+1\Cl/\Di garantisce la 4--3 nobile. Inoltre, può contenere qualsiasi mano
+di 17+ punti. In risposta, niente surlicita, dichiarare quello che si pensa di fare. Salti invitanti.
+
+\paragraph{Un consiglio} Se non volete giocare contratti ridicoli, non surlicitate: questa è una nozione che non è stata
+introdotta a lezione.
+
+\begin{landscape}
+
+    % Drawing part, node distance is 1.5 cm and every node
+    % is prefilled with white background
+    \begin{tikzpicture}[node distance=2cm,
+        every node/.style={font=\sffamily}, align=center]
+        \tikzset{%
+            >={Latex[width=2mm,length=2mm]},
+            % Specifications for style of nodes:
+            base/.style = {rectangle, rounded corners, draw=black,
+                minimum width=4cm, minimum height=1cm,
+            text centered, font=\sffamily},
+            activityStarts/.style = {base, fill=blue!30},
+            startstop/.style = {base, fill=red!30},
+            activityRuns/.style = {base, fill=green!30},
+            process/.style = {base, minimum width=2.5cm, fill=orange!15,
+            font=\ttfamily},
+        }
+        % Specification of nodes (position, etc.)
+        \node   (Aprire)    [activityStarts]    {12+ punti?};
+        \node   (Passo)     [startstop, right of=Aprire, xshift=4cm]         {Passo};
+        \node   (Bil)       [process, below of=Aprire]           {Bilanciato?};
+        \node   (1sa?)       [process, below of=Bil]           {15--17 punti?};
+        \node   (1sa)       [activityRuns, left of=1sa?, xshift=-4cm]      {1\SA};
+        \node   (2sa?)       [process, below of=1sa?]           {21-22 punti?};
+        \node   (2sa)       [activityRuns, below of=1sa]      {2\SA};
+        \node   (23+?)       [process, below of=2sa?]           {23+ punti?};
+        \node   (5p1)       [process, below of=23+?]           {5+\Sp?};
+        \node   (1p)       [activityRuns, left of=5p1, xshift=-4cm]      {1\Sp};
+        \node   (5h1)       [process, below of=5p1]           {5+\He?};
+        \node   (1h)       [activityRuns, below of=1p]      {1\He};
+        \node   (4d)       [process, below of=5h1]           {4+\Di?};
+        \node   (1d)       [activityRuns, below of=1h]      {1\Di};
+        \node   (1c)       [activityRuns, below of=4d]      {1\Cl};
+        \node   (apri2)     [process, right of=Bil, xshift=4cm]           {21+ punti?};
+        \node   (5p2)       [process, right of=5p1, xshift=4cm]           {5+\Sp?};
+        \node   (2p)       [activityRuns, right of=5p2, xshift = 4cm]      {2\Sp};
+        \node   (5h2)       [process, below of=5p2]           {5+\He?};
+        \node   (2h)       [activityRuns, below of=2p]      {2\He};
+        \node   (5d)       [process,below of=5h2]           {4+\Di?};
+        \node   (2d)       [activityRuns, below of=2h]      {2\Di};
+        \node   (2c)       [activityRuns, below of=5d]      {2\Cl};
+        % Specification of lines between nodes specified above
+        % with aditional nodes for description 
+        \draw[-{>[color=green!80]}, color=green!80]             (Aprire) -- (Bil);
+        \draw[-{>[color=green!80]}, color=green!80]     (Bil) -- (1sa?);
+        \draw[-{>[color=green!80]}, color=green!80]      (1sa?) -- (1sa);
+        \draw[-{>[color=green!80]}, color=green!80]      (apri2) -- (5p2);
+        \draw[-{>[color=green!80]}, color=green!80]     (2sa?) -- (2sa);
+        \draw[-{>[color=green!80]}, color=green!80]     (5p1) -- (1p);
+        \draw[-{>[color=green!80]}, color=green!80]     (5h1) -- (1h);
+        \draw[-{>[color=green!80]}, color=green!80]     (4d) -- (1d);
+        \draw[-{>[color=green!80]}, color=green!80]     (5p2) -- (2p);
+        \draw[-{>[color=green!80]}, color=green!80]     (5h2) -- (2h);
+        \draw[-{>[color=green!80]}, color=green!80]     (5d) -- (2d);
+        \draw[-{>[color=green!80]}, color=green!80]     (23+?.east) -- ++(1.6,0) -- ++(0,-8) --
+            node[xshift=1.2cm,yshift=-1.5cm, text width=2.5cm]
+            {} (2c.west);
+        \draw[-{Circle[fill=red!80]}, color=red!80]             (Aprire) -- (Passo);
+        \draw[-{Circle[fill=red!80]}, color=red!80]     (Bil) -- (apri2);
+        \draw[-{Circle[fill=red!80]}, color=red!80]      (1sa?) -- (2sa?);
+        \draw[-{Circle[fill=red!80]}, color=red!80]      (2sa?) -- (23+?);
+        \draw[-{Circle[fill=red!80]}, color=red!80]      (23+?) -- (5p1);
+        \draw[-{Circle[fill=red!80]}, color=red!80]      (5p1) -- (5h1);
+        \draw[-{Circle[fill=red!80]}, color=red!80]      (5h1) -- (4d);
+        \draw[-{Circle[fill=red!80]}, color=red!80]      (4d) -- (1c);
+        \draw[-{Circle[fill=red!80]}, color=red!80]      (5p2) -- (5h2);
+        \draw[-{Circle[fill=red!80]}, color=red!80]      (5h2) -- (5d);
+        \draw[-{Circle[fill=red!80]}, color=red!80]      (5d) -- (2c);
+        \draw[-{Circle[fill=red!80]}, color=red!80]      (apri2.south west) ++(1.2mm,.1mm) -- ++(-2.9,0) -- ++(0,-7.5) --(5p1.east);
+    \end{tikzpicture}
+\end{landscape}
+\end{document}
