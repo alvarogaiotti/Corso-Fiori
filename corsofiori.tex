@@ -45,7 +45,7 @@
 \usepackage[colors=4A]{onedown}
 \usepackage[italian]{babel}
 \usepackage{enumitem}
-\usepackage{tcolorbox}
+\usepackage[most]{tcolorbox}
 \usepackage{multicol}
 \usepackage{xr}
 %%% Colors
@@ -118,23 +118,26 @@
 \end{tcolorbox} }%
 
 \newcounter{attenzionectr}
+\newcounter{regolactr}
 \newenvironment{attenzione}[1]
 {
     \refstepcounter{attenzionectr}
 \begin{tcolorbox}[colframe=red!80!white,title=#1]}
     {
 \end{tcolorbox} }%
-
-\newcounter{regolactr}
-\newenvironment{regola}[1]
-{
-    \refstepcounter{regolactr}
-    \medskip
-    \begin{tcolorbox}[colframe=green!40!black,title=Regola\ \theregolactr:\ #1]}
-    {
-\end{tcolorbox}
-    \medskip
- }%
+\newtcolorbox[auto counter, list inside=regole]{regola}[2][]{%
+colframe=green!40!black,
+title={Regola \thetcbcounter: #2}
+}
+%\newenvironment{regola}[1]
+%{
+%    \refstepcounter{regolactr}
+%    \medskip
+%    \begin{tcolorbox}}
+%    {
+%\end{tcolorbox}
+%    \medskip
+% }%
 \newcommand{\regolactrautorefname}{Regola}
 % \newenvironment{bidding}%
 % {\begin{tabbing}
@@ -203,7 +206,7 @@
     \end{center}%
 }
 
-\newcommand*{\plogo}{\fbox{$\mathcal{PN}$}} % Generic dummy publisher logo
+%\newcommand*{\plogo}{\includegraphics[scale=.5, trim={1cm 1cm 1cm 1cm}, clip]{quote associative 2022.jpg}} % Generic dummy publisher logo
 \externaldocument[I-]{lezione1/Lezione1}
 \externaldocument[II-]{lezione2/Lezione2}
 \externaldocument[VIII-]{lezione8/Lezione8}
@@ -243,7 +246,8 @@
     %   Publisher
     %------------------------------------------------
 
-    {\large Circolo Bridge Pordenone ~~\plogo} % Publisher and logo
+    {\large Circolo Bridge Pordenone ~~\raisebox{-1.3em}{\includegraphics[scale=.3, trim={0 7.4cm 21.7cm 0},
+    clip]{logobpn.jpg}}} % Publisher and logo
 
     \vspace*{3\baselineskip} % Whitespace at the bottom of the page
 \end{titlingpage}
@@ -254,6 +258,8 @@
 \tableofcontents
 }
 \newpage
+
+\tcblistof[\chapter*]{regole}{Lista delle Regole}
 
 %----------------------------------------------------------------------------------------
 \subfile{lezione1/Lezione1.tex}
