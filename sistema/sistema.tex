@@ -189,10 +189,10 @@
 \author{Circolo Bridge Pordenone \fbox{$\textcolor{red}{\mathcal{PN}}$}}
 
 \begin{document}
-\definecolor{green}{named}{OliveGreen}
-\definecolor{orange}{named}{RedOrange}
-\definecolor{red}{named}{Red2}
-\definecolor{blue}{named}{MidnightBlue}
+%\definecolor{green}{named}{OliveGreen}
+%\definecolor{orange}{named}{RedOrange}
+%\definecolor{red}{named}{Red2}
+%\definecolor{blue}{named}{MidnightBlue}
 \setdefaults{colors=4A}
 %\maketitle
 \thispagestyle{empty}
@@ -224,7 +224,7 @@
 
 \begin{bidtable}
     1\Cl/\Di--\+\\
-    1\Di,\He,\Sp,\SA \> \> Naturali, 4+\Di/\He/\Sp, 5+ punti. 1\SA 5--10 senza 4e\\
+    1\Di,\He,\Sp,\SA \> \> Naturali, 4+\Di/\He/\Sp, 5+ punti; 1\SA\ 5--10 senza 4e\\
     2\Cl \>\> Naturale forzante manche, 4+\Cl\\
     2\Di \>\> Su 1\Cl non previsto, 4+\Di 5--10 su 1\Di\\
     2\SA \>\> Invitante\\
@@ -239,7 +239,8 @@ differenza tra il numero di carte di atout possedute in mano e il numero di cart
 
 \begin{bidtable}
     1\He/\Sp--\+\\
-    1\Sp,\SA \> \> Naturale 4+\Sp, 5+ punti; Naturale 5--10 senza altra dichiarazione 1\SA\\
+    1\Sp \> \> Naturale 4+\Sp, 5+ punti \\
+    1\SA \> Naturale 5--10 senza altra dichiarazione \\
     2\Cl \>\> Naturale forzante manche, 2+\Cl\\
     2\Di \>\> 4+\Di, forzante manche\\
     2\He \>\> Appoggio 5--10 su 1\He, naturale forzante manche su 1\Sp\\
@@ -257,7 +258,8 @@ differenza tra il numero di carte di atout possedute in mano e il numero di cart
     1\SA--\+\\
     2\Cl\>\> Stayman\+\+\\
     2\Di\> No 4e maggiori\\
-    2\He/\Sp \> 4\He/\Sp, non 4\Sp/\He\\
+    2\He \> 4\He, non 4\Sp\\
+    2\Sp \> 4\Sp, non 4\He\\
     2\SA \> 4\He e 4\Sp, minimo\\
     3\Cl \> 4\He e 4\Sp, massimo\-\-\\
     2\Di,\He,\Sp \>\> 5+\Di/\He/\Sp, a passare\\
@@ -272,7 +274,8 @@ Per mostrare 5+ carte in un maggiore in mano forzante manche, passare per 2\Cl e
     2\SA--\+\\
     3\Cl\>\> Stayman\+\+\\
     3\Di\> No 4e maggiori\\
-    3\He/\Sp \> 4\He/\Sp, non 4\Sp/\He\\
+    3\He \> 4\He, non 4\Sp\\
+    3\Sp \> 4\Sp, non 4\He\\
     3\SA \> 4\He e 4\Sp\-\-\\
     3\Di,\He,\Sp \>\> 5+\Di/\He/\Sp, forzante\\
     3\SA \>\> A giocare\\
@@ -281,9 +284,9 @@ Per mostrare 5+ carte in un maggiore in mano forzante manche, passare per 2\Cl e
 L'unico parziale giocabile è 2\SA.
 
 \section*{Quando interviene l'avversario}
-Intervento di contro: colori 5\textsuperscript{i} con meno di 11 punti, altrimenti Surcontro. Appoggi da sistema. \emph{No surlicita.}
+Intervento di contro: colori 5\textsuperscript{i} non forzanti. Con tutte le mani di 11+ punti: Surcontro. Appoggi da sistema. \emph{No surlicita.}
 
-Intervento a colore: nuovi colori 5\textsuperscript{i} forzanti, Contro 8+ punti, possibilità di giocare negli altri
+Intervento a colore: nuovi colori 5\textsuperscript{i} forzanti; Contro 8+ punti, possibilità di giocare negli altri
 colori, meno marcata mano a mano che il punteggio aumenta. \emph{No surlicita.}
 
 \section*{Iterventi}
@@ -371,6 +374,8 @@ di 17+ punti. In risposta, niente surlicita, dichiarare quello che si pensa di f
     \end{tikzpicture}
 
 
+\end{landscape}
+
     % Drawing part, node distance is 1.5 cm and every node
     % is prefilled with white background
     \begin{tikzpicture}[node distance=2cm,
@@ -395,7 +400,7 @@ di 17+ punti. In risposta, niente surlicita, dichiarare quello che si pensa di f
         \node   (Rever)       [process, below of=1sa?]           {17+ punti?};
         \node   (CRever)       [activityRuns, below of=1sa]      {Contro};
         \node   (5e?)       [process, below of=Rever, yshift=-.7cm]           {5(6)+ carte in un seme e\\requisiti per intervento\\a livello 1(2)?};
-        \node   (1colore)       [activityRuns, below of=5e?, yshift=-.7cm]      {1(2) nel colore};
+        \node   (1colore)       [activityRuns, below of=5e?, yshift=-.7cm]      {1\kern-.03em(2\kern.02em) nel colore};
         \node   (12+?)       [process, right of=5e?, xshift=4cm]           {12+?};
         \node   (doblabile?)       [process, right of=1colore, xshift = 4cm]      {Giocabilità nei tre semi\\diversi dall'apertura?};
         \node   (contro)       [activityRuns, below of=doblabile?]           {Contro};
@@ -415,5 +420,4 @@ di 17+ punti. In risposta, niente surlicita, dichiarare quello che si pensa di f
         \draw[-{Circle[fill=red!80]}, color=red!80]      ([xshift=1.5cm]doblabile?.north) -- ([xshift=1.5cm]Passo.south);
         \draw[-{Circle[fill=red!80]}, color=red!80]      (1sa?) -- (Rever);
     \end{tikzpicture}
-\end{landscape}
 \end{document}
