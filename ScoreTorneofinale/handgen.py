@@ -109,3 +109,21 @@ predeal = {
 }
 dealer = Deal.prepare(predeal)
 print(f'[Board "12"]\n{dealer()._pbn_str()}')
+
+predeal = {
+    Seat['N'] : H("Q9753 KQ A86 K86"),
+    Seat['S'] :H("86 AJT63 T32 T94"),
+    Seat['W'] :H("AJ 8752 KQJ54 53"),
+    Seat['E'] :H("KT42 94 97 AQJ72"),
+}
+dealer = Deal.prepare(predeal)
+print(f'[Board "13"]\n{dealer()._pbn_str()}')
+
+predeal = {
+    Seat['N'] : H("JT92 K AQ852 T94"),
+    Seat['S']  :H("543 A73 JT943 52"),
+    Seat['W']  :H("Q876 982 K6 A763"),
+    Seat['E']  :H("AK QJT654 7 KQJ8"),
+    }
+dealer = Deal.prepare(predeal)
+print(f'[Board "14"]\n{dealer()._pbn_str()}')
