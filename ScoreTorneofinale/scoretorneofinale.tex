@@ -11,6 +11,7 @@
 %\usepackage{fancyhdr}
 %\pagestyle{fancy}
 \usepackage{wrapfig}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newtheorem{theorem}{Principio }
@@ -182,8 +183,7 @@ title={Regola \thetcbcounter: #2}
 
 %\newcommand*{\plogo}{\includegraphics[scale=.5, trim={1cm 1cm 1cm 1cm}, clip]{quote associative 2022.jpg}} % Generic dummy publisher logo
 \newtcbox{\miamano}{colback=white, colframe=white, arc=0pt,outer arc=0pt}
-
-
+\renewcommand*\familydefault{\sfdefault}
 \begin{document}
 \definecolor{green}{named}{OliveGreen}
 \definecolor{orange}{named}{RedOrange}
@@ -191,7 +191,6 @@ title={Regola \thetcbcounter: #2}
 \definecolor{blue}{named}{MidnightBlue}
 \setdefaults{colors=4A}
 \setdefaults{compmid=\boardtext}
-
 \tcbsetforeverylayer{colback=white, colframe=black, arc=0pt,outer arc=0pt}
 \begin{tcolorbox}
 \begin{minipage}{.3\textwidth}
