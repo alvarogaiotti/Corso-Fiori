@@ -18,7 +18,7 @@ giocatori = [
 allievi = [
     "Raffaella",
     "Livietta",
-    "Marika",
+    "Marica",
     "Alessandro",
     "Aldo",
     "Nadia",
