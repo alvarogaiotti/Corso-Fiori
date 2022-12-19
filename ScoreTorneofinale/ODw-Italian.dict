@@ -1,0 +1,160 @@
+% this is file ODw-Italian.dict from the OneDown bundle
+%
+% Entries with a "!" denote an abreviated form
+%
+% retrieve with e.g. \translation{dealer-(ODw)} to get dealer
+%
+\ProvidesDictionary{ODw}{Italian}[V0.6-2021/04/24]
+
+\providetranslation{1st-(ODw)}{1°}
+\providetranslation{2nd-(ODw)}{2°}
+\providetranslation{3rd-(ODw)}{3°}
+\providetranslation{4th-(ODw)}{4°}
+\providetranslation{ace-(ODw)}{asso}
+\providetranslation{Ace-(ODw)}{Asso}
+\providetranslation{all-(ODw)}{tutti}
+\providetranslation{All-(ODw)}{Tutti}
+\providetranslation{all!-(ODw)}{tutti}
+\providetranslation{All!-(ODw)}{Tutti}
+\providetranslation{all pass-(ODw)}{tutti passano}
+\providetranslation{All pass-(ODw)}{Tutti passano}
+\providetranslation{a-(ODw)}{a}
+\providetranslation{A-(ODw)}{A}
+\providetranslation{ap-(ODw)}{ap}
+\providetranslation{AP-(ODw)}{AP}
+\providetranslation{Award-(ODw)}{Risposta}
+\providetranslation{award-(ODw)}{risposta}% = points you earn in a quiz
+\providetranslation{Bid-(ODw)}{Bid}
+\providetranslation{bid-(ODw)}{bid}% = e.g. 2C, 4H or 6NT
+\providetranslation{Board-(ODw)}{Board}
+\providetranslation{board-(ODw)}{board}% = equipment that holds 1 deal
+\providetranslation{Brd-(ODw)}{Brd}
+\providetranslation{brd-(ODw)}{brd}% = equipment that holds 1 deal
+\providetranslation{by-(ODw)}{by}
+\providetranslation{Call-(ODw)}{Call}
+\providetranslation{call-(ODw)}{call}% = bid + pass, (re)double
+\providetranslation{-card-(ODw)}{-card}
+\providetranslation{contract-(ODw)}{contratto}
+\providetranslation{Contract-(ODw)}{Contratto}
+\providetranslation{contr-(ODw)}{contr}
+\providetranslation{Contr-(ODw)}{Contr}
+\providetranslation{Dbl-(ODw)}{Dbl}
+\providetranslation{dealer-(ODw)}{mazziere}
+\providetranslation{Dealer-(ODw)}{Mazziere}
+\providetranslation{Deal-(ODw)}{Deal}
+\providetranslation{Deal!-(ODw)}{Deal}
+\providetranslation{deal-(ODw)}{deal}% = 4 hands
+\providetranslation{deal!-(ODw)}{deal}% = 4 hands
+\providetranslation{declarer-(ODw)}{dichiarante}
+\providetranslation{Declarer-(ODw)}{Dichiarante}
+\providetranslation{decl-(ODw)}{decl}
+\providetranslation{Decl-(ODw)}{Decl}
+\providetranslation{distribution points-(ODw)}{distribution points}
+\providetranslation{Distribution Points-(ODw)}{Distribution Points}
+\providetranslation{doubled-(ODw)}{contrate}
+\providetranslation{Doubled-(ODw)}{Contrate}
+\providetranslation{double-(ODw)}{contro}
+\providetranslation{Double-(ODw)}{Contro}
+\providetranslation{dp-(ODw)}{dp}
+\providetranslation{DP-(ODw)}{DP}
+\providetranslation{east-(ODw)}{est}
+\providetranslation{East-(ODw)}{Est}
+\providetranslation{e-(ODw)}{e}
+\providetranslation{E-(ODw)}{E}
+\providetranslation{fourth suit forcing-(ODw)}{fourth suit forcing}
+\providetranslation{Fourth Suit Forcing-(ODw)}{Fourth Suit Forcing}
+\providetranslation{fsf-(ODw)}{4th\,sf}
+\providetranslation{FSF-(ODw)}{4th\,SF}
+\providetranslation{game forcing-(ODw)}{game forcing}
+\providetranslation{Game Forcing-(ODw)}{Game Forcing}
+\providetranslation{gf-(ODw)}{fm}
+\providetranslation{GF-(ODw)}{FM}
+\providetranslation{Hand-(ODw)}{Hand}
+\providetranslation{hand-(ODw)}{hand}% = 13 cards of 1 player
+\providetranslation{hcp-(ODw)}{hcp}
+\providetranslation{HCP-(ODw)}{HCP}
+\providetranslation{high card points-(ODw)}{high card points}
+\providetranslation{High Card Points-(ODw)}{High Card Points}
+\providetranslation{hlp-(ODw)}{hlp}
+\providetranslation{HLP-(ODw)}{HLP}
+\providetranslation{jack-(ODw)}{fante}
+\providetranslation{Jack-(ODw)}{Fante}
+\providetranslation{j-(ODw)}{j}
+\providetranslation{J-(ODw)}{J}
+\providetranslation{king-(ODw)}{re}
+\providetranslation{King-(ODw)}{Re}
+\providetranslation{k-(ODw)}{k}
+\providetranslation{K-(ODw)}{K}
+\providetranslation{lead-(ODw)}{attacco}
+\providetranslation{Lead-(ODw)}{Attacco}
+\providetranslation{lead!-(ODw)}{attacco}
+\providetranslation{Lead!-(ODw)}{Attacco}
+\providetranslation{length points-(ODw)}{length points}
+\providetranslation{Length Points-(ODw)}{Length Points}
+\providetranslation{lp-(ODw)}{lp}
+\providetranslation{LP-(ODw)}{LP}
+\providetranslation{new minor forcing-(ODw)}{new minor forcing}
+\providetranslation{New Minor Forcing-(ODw)}{New Minor Forcing}
+\providetranslation{nmf-(ODw)}{nmf}
+\providetranslation{NMF-(ODw)}{NMF}
+\providetranslation{n-(ODw)}{n}
+\providetranslation{N-(ODw)}{N}
+\providetranslation{none-(ODw)}{none}
+\providetranslation{None-(ODw)}{Nessuno}
+\providetranslation{none!-(ODw)}{none}
+\providetranslation{None!-(ODw)}{None}
+\providetranslation{north-(ODw)}{nord}
+\providetranslation{North-(ODw)}{Nord}
+\providetranslation{no trump-(ODw)}{senza atout}
+\providetranslation{No Trump-(ODw)}{Senza Atout}
+\providetranslation{Nr-(ODw)}{\textnumero}
+\providetranslation{Nr.-(ODw)}{\textnumero.}
+\providetranslation{NT-(ODw)}{S\kern-0.07emA}
+\providetranslation{nt-(ODw)}{sa}
+\providetranslation{pass-(ODw)}{pass}
+\providetranslation{Pass-(ODw)}{Pass}
+\providetranslation{pass!-(ODw)}{P}
+\providetranslation{Pass!-(ODw)}{P}
+\providetranslation{q-(ODw)}{q}
+\providetranslation{Q-(ODw)}{Q}
+\providetranslation{queen-(ODw)}{dama}
+\providetranslation{Queen-(ODw)}{Dama}
+\providetranslation{ReDbl-(ODw)}{ReDbl}
+\providetranslation{redoubled-(ODw)}{surcontrate}
+\providetranslation{Redoubled-(ODw)}{Surcontrate}
+\providetranslation{redouble-(ODw)}{surcontro}
+\providetranslation{ReDouble-(ODw)}{Surcontro}
+\providetranslation{semi forcing-(ODw)}{semi forcing}
+\providetranslation{Semi Forcing-(ODw)}{Semi Forcing}
+\providetranslation{sf-(ODw)}{sf}
+\providetranslation{SF-(ODw)}{SF}
+\providetranslation{s-(ODw)}{s}
+\providetranslation{S-(ODw)}{S}
+\providetranslation{south-(ODw)}{sud}
+\providetranslation{South-(ODw)}{Sud}
+\providetranslation{suiter-(ODw)}{suiter}
+\providetranslation{Suiter-(ODw)}{Suiter}
+\providetranslation{suit-(ODw)}{suit}
+\providetranslation{Suit-(ODw)}{Suit}
+\providetranslation{third suit forcing-(ODw)}{third suit forcing}
+\providetranslation{Third Suit Forcing-(ODw)}{Third Suit Forcing}
+\providetranslation{total points-(ODw)}{total points}
+\providetranslation{Total Points-(ODw)}{Total Points}
+\providetranslation{tp-(ODw)}{tp}
+\providetranslation{TP-(ODw)}{TP}
+\providetranslation{trial bid-(ODw)}{trial bid}
+\providetranslation{Trial bid-(ODw)}{Trial bid}
+\providetranslation{trick-(ODw)}{trick}
+\providetranslation{Trick-(ODw)}{Trick}
+\providetranslation{tsf-(ODw)}{3rd\,sf}
+\providetranslation{TSF-(ODw)}{3rd\,SF}
+\providetranslation{vulnerable-(ODw)}{zona}
+\providetranslation{Vulnerable-(ODw)}{Zona}
+\providetranslation{vul-(ODw)}{vul}
+\providetranslation{Vul-(ODw)}{Vul}
+\providetranslation{west-(ODw)}{ovest}
+\providetranslation{West-(ODw)}{Ovest}
+\providetranslation{w-(ODw)}{o}
+\providetranslation{W-(ODw)}{O}
+%
+\endinput

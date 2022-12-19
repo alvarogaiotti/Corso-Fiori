@@ -1,0 +1,531 @@
+\PassOptionsToPackage{dvipsnames,x11names,svgnames}{xcolor}
+\PassOptionsToPackage{colors=4A}{onedown}
+\PassOptionsToPackage{usenames,dvipsnames,pdftex}{color}
+\documentclass[a4paper,italian,12pt]{article}
+\usepackage[margin=0.1cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{newcent}
+\usepackage{helvet}
+\usepackage{graphicx}
+%\usepackage{fancyhdr}
+%\pagestyle{fancy}
+\usepackage{wrapfig}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newtheorem{theorem}{Principio }
+\usepackage[colors=4A]{onedown}
+\usepackage[italian]{babel}
+\usepackage{enumitem}
+\usepackage[most]{tcolorbox}
+\usepackage{multicol}
+\usepackage{xr}
+%%% Colors
+\definecolor{linkcolor}{HTML}{E23812}
+\definecolor{azzurro}{HTML}{1ECBE1}
+\definecolor{titlepagecolor}{HTML}{FF0800}
+\definecolor{MidnightBlue}{HTML}{191970}
+\definecolor{arancionediam}{HTML}{FFA500}
+\definecolor{OLIVEGREEN}{rgb}{0.33, 0.42, 0.18}
+\definecolor{MIDNIGHTBLUE}{HTML}{191970}
+\definecolor{REDORANGE}{HTML}{FF5349}
+\definecolor{RED2}{HTML}{EE0000}
+%\definecolor{titlepagecolor}{RGB}{255,40,0}
+%{cmyk}{1,.60,0,.40}
+
+\usepackage[pdftex, pdfborder={0 0 0}, colorlinks=true, linkcolor=linkcolor]{hyperref}
+\frenchspacing
+
+\usepackage{txfonts} % For \varheartsuit and \vardiamondsuit
+%\usepackage[usenames,dvipsnames,monochrome]{color} % dvipsnames necessary to made PDFLaTeX work.
+
+\usepackage{listliketab}
+\usepackage{latexsym} % \Box
+\usepackage{pbox} % \Box
+\usepackage{parskip} % line between paragraphs
+\usepackage{pgfornament}
+\usepackage{booktabs}
+\usetikzlibrary{shapes.geometric,calc}
+\usepackage{subfiles}
+% suits
+
+
+\newcommand{\BC}{\textcolor{OliveGreen}{$\clubsuit$}}
+\newcommand{\BD}{\textcolor{RedOrange}{$\vardiamondsuit$}}
+\newcommand{\BH}{\textcolor{Red2}{$\varheartsuit${}}}
+\newcommand{\BS}{\textcolor{MidnightBlue}{$\spadesuit${}}}
+
+%suits for pdf-friendly titles
+\newcommand{\pdfc}{\texorpdfstring{\BC{}}{C}}
+\newcommand{\pdfd}{\texorpdfstring{\BD{}}{D}}
+\newcommand{\pdfh}{\texorpdfstring{\BH{}}{H}}
+\newcommand{\pdfs}{\texorpdfstring{\BS{}}{S}}
+
+\newcommand*\numcircledtikz[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=1.2pt] (char) {#1};}} 
+
+%Titlepage
+\addto\captionsitalian{
+    \renewcommand{\chaptername}{Lezione}
+      \renewcommand*{\chapterautorefname}{Lezione}%
+}
+\addto\extrasitalian{
+      \renewcommand*{\chapterautorefname}{Lezione}%
+}
+\newcommand\SA{{\smaller{SA}}\xspace}
+\newcommand\pic{Picche\xspace}
+\newcommand\cu{Cuori\xspace}
+\newcommand\qu{Quadri\xspace}
+\newcommand\fio{Fiori\xspace}
+
+\newenvironment{bidtable}
+{\begin{tabbing}
+
+    xxxxxx\=xxxxxx\=xxxxxx\=xxxxxx\=xxxxxx\=xxxxxx\=xxxxxx\=xxxxxx\=xxxxxx\=xxxxxx\=\kill}
+{\end{tabbing} }%
+
+\newenvironment{sviluppi}
+{\begin{tcolorbox}[colframe=azzurro,title=Sviluppi particolari]}
+    {
+\end{tcolorbox} }%
+
+\newcounter{attenzionectr}
+\newcounter{regolactr}
+\newenvironment{attenzione}[1]
+{
+    \refstepcounter{attenzionectr}
+\begin{tcolorbox}[colframe=red!80!white,title=#1]}
+    {
+\end{tcolorbox} }%
+\newtcolorbox[auto counter, list inside=regole]{regola}[2][]{%
+colframe=green!40!black,
+title={Regola \thetcbcounter: #2}
+}
+\AtBeginEnvironment{regola}{\medskip}
+\AtEndEnvironment{regola}{\medskip}
+%\newenvironment{regola}[1]
+%{
+%    \refstepcounter{regolactr}
+%    \medskip
+%    \begin{tcolorbox}}
+%    {
+%\end{tcolorbox}
+%    \medskip
+% }%
+\newcommand{\regolactrautorefname}{Regola}
+% \newenvironment{bidding}%
+% {\begin{tabbing}
+% xxxxxx\=xxxxxx\=xxxxxx\=xxxxxx \kill
+% }{\end{tabbing} }%end bidding
+
+% writing hands
+\newcommand{\cards}[1]{\textsf{#1}}
+%\newcommand{\spades}[1]{\BS\cards{#1}}
+%\newcommand{\hearts}[1]{\BH\cards{#1}}
+%\newcommand{\diamonds}[1]{\BD\cards{#1}}
+%\newcommand{\clubs}[1]{\BC\cards{#1}}
+\newcommand{\void}{--}
+\newcommand{\vhand}[4]{\spades{#1}\\\hearts{#2}\\\diamonds{#3}\\\clubs{#4}}
+
+% The \Box should always appear the same distance from the left margin
+\newcommand\onesuit[4]%
+{%
+    \begin{center}%
+        \begin{tabular}{>{\hfill}p{3cm}cp{3cm}}
+            & \cards{#2} \\%
+            \cards{#1}& $\Box$    & \cards{#3} \\%
+                      & \cards{#4} %
+        \end{tabular}
+    \end{center}%
+}
+
+% A special command if the south hand is not shown to avoid whitespace
+\newcommand\onesuitenw[3]%
+{%
+    \begin{center}%
+        \begin{tabular}{>{\hfill}p{3cm}cp{3cm}}%
+                & \cards{#2} \\%
+            \cards{#1}& $\Box$    & \cards{#3}%
+        \end{tabular}%
+    \end{center}%
+}
+
+\newcommand\dealdiagram[5]%
+{%
+    \begin{center}%
+        \begin{tabular}{>{\hfill}p{3cm}cp{3cm}}
+            \pbox{20cm}{\small #5}& \pbox{20cm}{#2} \\%
+            \pbox{20cm}{#1}& $\Box$    & \pbox{20cm}{#3} \\%
+                           & \pbox{20cm}{#4} %
+        \end{tabular}
+    \end{center}%
+}
+
+\newcommand\dealdiagramenw[4]%
+{%
+    \begin{center}%
+        \begin{tabular}{>{\hfill}p{3cm}cp{3cm}}
+            \pbox{20cm}{\small #4}& \pbox{20cm}{#2} \\%
+            \pbox{20cm}{#1}& $\Box$    & \pbox{20cm}{#3} \\%
+        \end{tabular}
+    \end{center}%
+}
+
+\newcommand\dealdiagramew[2]%
+{%
+    \begin{center}%
+        \begin{tabular}{>{\hfill}p{3cm}cp{3cm}}
+            \pbox{20cm}{#1}& $\Box$    & \pbox{20cm}{#2} \\%
+        \end{tabular}
+    \end{center}%
+}
+
+%\newcommand*{\plogo}{\includegraphics[scale=.5, trim={1cm 1cm 1cm 1cm}, clip]{quote associative 2022.jpg}} % Generic dummy publisher logo
+\newtcbox{\miamano}{colback=white, colframe=white, arc=0pt,outer arc=0pt}
+
+
+\begin{document}
+\definecolor{green}{named}{OliveGreen}
+\definecolor{orange}{named}{RedOrange}
+\definecolor{red}{named}{Red2}
+\definecolor{blue}{named}{MidnightBlue}
+\setdefaults{colors=4A}
+\setdefaults{compmid=\boardtext}
+
+\tcbsetforeverylayer{colback=white, colframe=black, arc=0pt,outer arc=0pt}
+\begin{tcolorbox}
+\begin{minipage}{.3\textwidth}
+\newgame
+\boardnr{1}
+\northhand{742}{KQJ6}{K2}{8653}
+\southhand{AQ8}{743}{A743}{AK4}
+\westhand{95}{A985}{956}{QJT9}
+    \easthand{KJT63}{T2}{QJT8}{72}
+
+\hspace{-.2cm}\showAll
+\end{minipage}
+\begin{minipage}{.7\textwidth}
+
+\renewcommand{\arraystretch}{2}
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+N-S & Contratto\hspace{1.5cm} & Risultato& Punteggio N-S & Punteggio E-W & E-W\\\hline
+  &&&&&\\\hline
+   &&&&&\\\hline
+    &&&&&\\\hline
+     &&&&&\\\hline
+          &&&&&\\\hline
+\end{tabular}
+\end{minipage}
+\end{tcolorbox}
+
+\medskip
+
+\begin{tcolorbox}
+\begin{minipage}{.3\textwidth}
+\newgame
+\boardnr{2}
+\northhand{432}{JT97}{AK98}{52}
+\southhand{85}{Q8}{T7432}{QT97}
+\westhand{KQJT6}{5432}{Q5}{K8}
+\easthand{A97}{AK6}{J6}{AJ643}
+
+\hspace{-.2cm}\showAll
+\end{minipage}
+\begin{minipage}{.7\textwidth}
+
+\renewcommand{\arraystretch}{2}
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+N-S & Contratto\hspace{1.5cm} & Risultato& Punteggio N-S & Punteggio E-W & E-W\\\hline
+  &&&&&\\\hline
+   &&&&&\\\hline
+    &&&&&\\\hline
+     &&&&&\\\hline
+          &&&&&\\\hline
+\end{tabular}
+\end{minipage}
+\end{tcolorbox}
+
+\medskip
+
+\begin{tcolorbox}
+\begin{minipage}{.3\textwidth}
+\newgame
+\boardnr{3}
+    \northhand{KJT974} {AT3} {Q43} {9}
+    \westhand{53} {Q865} {JT9} {AT52}
+    \easthand{AQ6} {K4} {A865} {KQJ7}
+    \southhand{82} {J972} {K72} {8643}
+ 
+\hspace{-.2cm}\showAll
+\end{minipage}
+\begin{minipage}{.7\textwidth}
+
+\renewcommand{\arraystretch}{2}
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+N-S & Contratto\hspace{1.5cm} & Risultato& Punteggio N-S & Punteggio E-W & E-W\\\hline
+  &&&&&\\\hline
+   &&&&&\\\hline
+    &&&&&\\\hline
+     &&&&&\\\hline
+          &&&&&\\\hline
+\end{tabular}
+\end{minipage}
+\end{tcolorbox}
+
+\medskip
+
+\begin{tcolorbox}
+\begin{minipage}{.3\textwidth}
+\newgame
+\boardnr{4}
+\northhand{K952}{853}{AQ5}{K65}
+\southhand{QJT63}{A62}{K6}{QJ3}
+\westhand{A4}{KQJ4}{J984}{984}
+\easthand{87}{T97}{T732}{AT72}
+
+\hspace{-.2cm}\showAll
+\end{minipage}
+\begin{minipage}{.7\textwidth}
+
+\renewcommand{\arraystretch}{2}
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+N-S & Contratto\hspace{1.5cm} & Risultato& Punteggio N-S & Punteggio E-W & E-W\\\hline
+  &&&&&\\\hline
+   &&&&&\\\hline
+    &&&&&\\\hline
+     &&&&&\\\hline
+          &&&&&\\\hline
+\end{tabular}
+\end{minipage}
+\end{tcolorbox}
+\newpage
+
+\begin{tcolorbox}
+\begin{minipage}{.3\textwidth}
+\newgame
+\boardnr{5}
+    \northhand{T3} {KT82} {KQJ2} {AJT}
+    \westhand{874} {J93} {4} {Q76532}
+    \easthand{AKJ62} {76} {A953} {98}
+    \southhand{Q95} {AQ54} {T876} {K4}
+
+    \hspace{-.2cm}\showAll
+\end{minipage}
+\begin{minipage}{.7\textwidth}
+
+\renewcommand{\arraystretch}{2}
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+N-S & Contratto\hspace{1.5cm} & Risultato& Punteggio N-S & Punteggio E-W & E-W\\\hline
+  &&&&&\\\hline
+   &&&&&\\\hline
+    &&&&&\\\hline
+     &&&&&\\\hline
+          &&&&&\\\hline
+\end{tabular}
+\end{minipage}
+\end{tcolorbox}
+
+\medskip
+
+\begin{tcolorbox}
+\begin{minipage}{.3\textwidth}
+\newgame
+\boardnr{6}
+    \northhand{K8} {J96} {T6432} {832}
+    \westhand{Q76} {T3} {J7} {KQT964}
+    \easthand{J543} {AK54} {KQ85} {J}
+    \southhand{AT92} {Q872} {A9} {A75}
+    \hspace{-.2cm}\showAll
+\end{minipage}
+\begin{minipage}{.7\textwidth}
+
+\renewcommand{\arraystretch}{2}
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+N-S & Contratto\hspace{1.5cm} & Risultato& Punteggio N-S & Punteggio E-W & E-W\\\hline
+  &&&&&\\\hline
+   &&&&&\\\hline
+    &&&&&\\\hline
+     &&&&&\\\hline
+          &&&&&\\\hline
+\end{tabular}
+\end{minipage}
+\end{tcolorbox}
+
+\medskip
+
+\begin{tcolorbox}
+\begin{minipage}{.3\textwidth}
+\newgame
+\boardnr{7}
+    \northhand{8643} {93} {QJ6} {T942}
+    \westhand{AJT9} {KQJ5}{32} {A87} 
+    \easthand{Q52} {AT864} {K98} {J5}
+    \southhand{K7} {72} {AT754} {KQ63}
+
+
+
+
+\hspace{-.2cm}\showAll
+\end{minipage}
+\begin{minipage}{.7\textwidth}
+
+\renewcommand{\arraystretch}{2}
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+N-S & Contratto\hspace{1.5cm} & Risultato& Punteggio N-S & Punteggio E-W & E-W\\\hline
+  &&&&&\\\hline
+   &&&&&\\\hline
+    &&&&&\\\hline
+     &&&&&\\\hline
+          &&&&&\\\hline
+\end{tabular}
+\end{minipage}
+\end{tcolorbox}
+
+\medskip
+
+\begin{tcolorbox}
+\begin{minipage}{.3\textwidth}
+\newgame
+\boardnr{8}
+    \northhand{KQT} {A62} {9875} {A98}
+    \westhand{97432} {J93} {Q643} {3}
+    \easthand{J865} {T} {AJ} {KJT542}
+    \southhand{A} {KQ8754} {KT2} {Q76}
+    \hspace{-.2cm}\showAll
+\end{minipage}
+\begin{minipage}{.7\textwidth}
+
+\renewcommand{\arraystretch}{2}
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+N-S & Contratto\hspace{1.5cm} & Risultato& Punteggio N-S & Punteggio E-W & E-W\\\hline
+  &&&&&\\\hline
+   &&&&&\\\hline
+    &&&&&\\\hline
+     &&&&&\\\hline
+          &&&&&\\\hline
+\end{tabular}
+\end{minipage}
+\end{tcolorbox}
+
+\newpage
+
+\begin{tcolorbox}
+\begin{minipage}{.3\textwidth}
+\newgame
+\boardnr{9}
+    \northhand  {AQ6}   {KJ52}  {763}  {AKQ}     
+    \westhand   {KJT92}   {Q3}  {QJT}   {JT3}    
+    \easthand   {754} {AT64}    {98}  {9764}    
+    \southhand  {83}   {987}  {AK542}{852}       
+
+    \hspace{-.2cm}\showAll
+\end{minipage}
+\begin{minipage}{.7\textwidth}
+
+\renewcommand{\arraystretch}{2}
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+N-S & Contratto\hspace{1.5cm} & Risultato& Punteggio N-S & Punteggio E-W & E-W\\\hline
+  &&&&&\\\hline
+   &&&&&\\\hline
+    &&&&&\\\hline
+     &&&&&\\\hline
+          &&&&&\\\hline
+\end{tabular}
+\end{minipage}
+\end{tcolorbox}
+
+\medskip
+
+\begin{tcolorbox}
+\begin{minipage}{.3\textwidth}
+\newgame
+\boardnr{10}
+    \easthand{QT94} {93} {QJ5} {J653}
+    \northhand{AJ76} {QJT5} {87} {KQ8}
+    \southhand{8532} {876} {63} {AT72}
+    \westhand{K} {AK42} {AKT942} {94}
+    \hspace{-.2cm}\showAll
+\end{minipage}
+\begin{minipage}{.7\textwidth}
+
+\renewcommand{\arraystretch}{2}
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+N-S & Contratto\hspace{1.5cm} & Risultato& Punteggio N-S & Punteggio E-W & E-W\\\hline
+  &&&&&\\\hline
+   &&&&&\\\hline
+    &&&&&\\\hline
+     &&&&&\\\hline
+          &&&&&\\\hline
+\end{tabular}
+\end{minipage}
+\end{tcolorbox}
+
+\medskip
+
+\begin{tcolorbox}
+\begin{minipage}{.3\textwidth}
+\newgame
+\boardnr{11}
+    \southhand{K542} {QJT9} {J3} {AJ5}
+    \northhand{87} {86} {T8642} {Q864}
+    \westhand{AQJT} {A743} {Q95} {32}
+    \easthand{963} {K52} {AK7} {KT97}
+
+
+
+\hspace{-.2cm}\showAll
+\end{minipage}
+\begin{minipage}{.7\textwidth}
+
+\renewcommand{\arraystretch}{2}
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+N-S & Contratto\hspace{1.5cm} & Risultato& Punteggio N-S & Punteggio E-W & E-W\\\hline
+  &&&&&\\\hline
+   &&&&&\\\hline
+    &&&&&\\\hline
+     &&&&&\\\hline
+          &&&&&\\\hline
+\end{tabular}
+\end{minipage}
+\end{tcolorbox}
+
+\medskip
+
+\begin{tcolorbox}
+\begin{minipage}{.3\textwidth}
+\newgame
+\boardnr{12}
+    \northhand{KQ64} {A65} {AKJ73} {4}
+    \westhand{982} {T32} {952} {KT92}
+    \easthand{A7} {KQJ74} {T4} {Q863}
+    \southhand{JT53} {98} {Q86} {AJ75}
+
+
+    \hspace{-.2cm}\showAll
+\end{minipage}
+\begin{minipage}{.7\textwidth}
+
+\renewcommand{\arraystretch}{2}
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+N-S & Contratto\hspace{1.5cm} & Risultato& Punteggio N-S & Punteggio E-W & E-W\\\hline
+  &&&&&\\\hline
+   &&&&&\\\hline
+    &&&&&\\\hline
+     &&&&&\\\hline
+          &&&&&\\\hline
+\end{tabular}
+\end{minipage}
+\end{tcolorbox}
+\end{document}
