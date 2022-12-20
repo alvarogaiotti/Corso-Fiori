@@ -1,0 +1,688 @@
+\PassOptionsToPackage{dvipsnames,x11names,svgnames}{xcolor}
+\PassOptionsToPackage{colors=4A}{onedown}
+\PassOptionsToPackage{usenames,dvipsnames,pdftex}{color}
+\documentclass[a4paper,italian,12pt]{article}
+\usepackage[margin=1.5cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{newcent}
+\usepackage{helvet}
+\usepackage{graphicx}
+%\usepackage{fancyhdr}
+%\pagestyle{fancy}
+\usepackage{wrapfig}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newtheorem{theorem}{Principio }
+\usepackage[colors=4A]{onedown}
+\usepackage[italian]{babel}
+\usepackage{enumitem}
+\usepackage[most]{tcolorbox}
+\usepackage{multicol}
+\usepackage{xr}
+%%% Colors
+\definecolor{linkcolor}{HTML}{E23812}
+\definecolor{azzurro}{HTML}{1ECBE1}
+\definecolor{titlepagecolor}{HTML}{FF0800}
+\definecolor{MidnightBlue}{HTML}{191970}
+\definecolor{arancionediam}{HTML}{FFA500}
+\definecolor{OLIVEGREEN}{rgb}{0.33, 0.42, 0.18}
+\definecolor{MIDNIGHTBLUE}{HTML}{191970}
+\definecolor{REDORANGE}{HTML}{FF5349}
+\definecolor{RED2}{HTML}{EE0000}
+%\definecolor{titlepagecolor}{RGB}{255,40,0}
+%{cmyk}{1,.60,0,.40}
+
+\usepackage[pdftex, pdfborder={0 0 0}, colorlinks=true, linkcolor=linkcolor]{hyperref}
+\frenchspacing
+
+\usepackage{txfonts} % For \varheartsuit and \vardiamondsuit
+%\usepackage[usenames,dvipsnames,monochrome]{color} % dvipsnames necessary to made PDFLaTeX work.
+
+\usepackage{listliketab}
+\usepackage{latexsym} % \Box
+\usepackage{pbox} % \Box
+\usepackage{parskip} % line between paragraphs
+\usepackage{pgfornament}
+\usepackage{booktabs}
+\usetikzlibrary{shapes.geometric,calc}
+\usepackage{subfiles}
+% suits
+
+
+\newcommand{\BC}{\textcolor{OliveGreen}{$\clubsuit$}}
+\newcommand{\BD}{\textcolor{RedOrange}{$\vardiamondsuit$}}
+\newcommand{\BH}{\textcolor{Red2}{$\varheartsuit${}}}
+\newcommand{\BS}{\textcolor{MidnightBlue}{$\spadesuit${}}}
+
+%suits for pdf-friendly titles
+\newcommand{\pdfc}{\texorpdfstring{\BC{}}{C}}
+\newcommand{\pdfd}{\texorpdfstring{\BD{}}{D}}
+\newcommand{\pdfh}{\texorpdfstring{\BH{}}{H}}
+\newcommand{\pdfs}{\texorpdfstring{\BS{}}{S}}
+
+\newcommand*\numcircledtikz[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=1.2pt] (char) {#1};}} 
+
+%Titlepage
+\addto\captionsitalian{
+    \renewcommand{\chaptername}{Lezione}
+      \renewcommand*{\chapterautorefname}{Lezione}%
+}
+\addto\extrasitalian{
+      \renewcommand*{\chapterautorefname}{Lezione}%
+}
+\newcommand\SA{{\smaller{SA}}\xspace}
+\newcommand\pic{Picche\xspace}
+\newcommand\cu{Cuori\xspace}
+\newcommand\qu{Quadri\xspace}
+\newcommand\fio{Fiori\xspace}
+
+\newenvironment{bidtable}
+{\begin{tabbing}
+
+    xxxxxx\=xxxxxx\=xxxxxx\=xxxxxx\=xxxxxx\=xxxxxx\=xxxxxx\=xxxxxx\=xxxxxx\=xxxxxx\=\kill}
+{\end{tabbing} }%
+
+\newenvironment{sviluppi}
+{\begin{tcolorbox}[colframe=azzurro,title=Sviluppi particolari]}
+    {
+\end{tcolorbox} }%
+
+\newcounter{attenzionectr}
+\newcounter{regolactr}
+\newenvironment{attenzione}[1]
+{
+    \refstepcounter{attenzionectr}
+\begin{tcolorbox}[colframe=red!80!white,title=#1]}
+    {
+\end{tcolorbox} }%
+\newtcolorbox[auto counter, list inside=regole]{regola}[2][]{%
+colframe=green!40!black,
+title={Regola \thetcbcounter: #2}
+}
+\AtBeginEnvironment{regola}{\medskip}
+\AtEndEnvironment{regola}{\medskip}
+%\newenvironment{regola}[1]
+%{
+%    \refstepcounter{regolactr}
+%    \medskip
+%    \begin{tcolorbox}}
+%    {
+%\end{tcolorbox}
+%    \medskip
+% }%
+\newcommand{\regolactrautorefname}{Regola}
+% \newenvironment{bidding}%
+% {\begin{tabbing}
+% xxxxxx\=xxxxxx\=xxxxxx\=xxxxxx \kill
+% }{\end{tabbing} }%end bidding
+
+% writing hands
+\newcommand{\cards}[1]{\textsf{#1}}
+%\newcommand{\spades}[1]{\BS\cards{#1}}
+%\newcommand{\hearts}[1]{\BH\cards{#1}}
+%\newcommand{\diamonds}[1]{\BD\cards{#1}}
+%\newcommand{\clubs}[1]{\BC\cards{#1}}
+\newcommand{\void}{--}
+\newcommand{\vhand}[4]{\spades{#1}\\\hearts{#2}\\\diamonds{#3}\\\clubs{#4}}
+
+% The \Box should always appear the same distance from the left margin
+\newcommand\onesuit[4]%
+{%
+    \begin{center}%
+        \begin{tabular}{>{\hfill}p{3cm}cp{3cm}}
+            & \cards{#2} \\%
+            \cards{#1}& $\Box$    & \cards{#3} \\%
+                      & \cards{#4} %
+        \end{tabular}
+    \end{center}%
+}
+
+% A special command if the south hand is not shown to avoid whitespace
+\newcommand\onesuitenw[3]%
+{%
+    \begin{center}%
+        \begin{tabular}{>{\hfill}p{3cm}cp{3cm}}%
+                & \cards{#2} \\%
+            \cards{#1}& $\Box$    & \cards{#3}%
+        \end{tabular}%
+    \end{center}%
+}
+
+\newcommand\dealdiagram[5]%
+{%
+    \begin{center}%
+        \begin{tabular}{>{\hfill}p{3cm}cp{3cm}}
+            \pbox{20cm}{\small #5}& \pbox{20cm}{#2} \\%
+            \pbox{20cm}{#1}& $\Box$    & \pbox{20cm}{#3} \\%
+                           & \pbox{20cm}{#4} %
+        \end{tabular}
+    \end{center}%
+}
+
+\newcommand\dealdiagramenw[4]%
+{%
+    \begin{center}%
+        \begin{tabular}{>{\hfill}p{3cm}cp{3cm}}
+            \pbox{20cm}{\small #4}& \pbox{20cm}{#2} \\%
+            \pbox{20cm}{#1}& $\Box$    & \pbox{20cm}{#3} \\%
+        \end{tabular}
+    \end{center}%
+}
+
+\newcommand\dealdiagramew[2]%
+{%
+    \begin{center}%
+        \begin{tabular}{>{\hfill}p{3cm}cp{3cm}}
+            \pbox{20cm}{#1}& $\Box$    & \pbox{20cm}{#2} \\%
+        \end{tabular}
+    \end{center}%
+}
+
+%\newcommand*{\plogo}{\includegraphics[scale=.5, trim={1cm 1cm 1cm 1cm}, clip]{quote associative 2022.jpg}} % Generic dummy publisher logo
+\newtcbox{\miamano}{colback=white, colframe=white, arc=0pt,outer arc=0pt}
+\renewcommand*\familydefault{\sfdefault}
+\begin{document}
+\definecolor{green}{named}{OliveGreen}
+\definecolor{orange}{named}{RedOrange}
+\definecolor{red}{named}{Red2}
+\definecolor{blue}{named}{MidnightBlue}
+\setdefaults{colors=4A}
+\gamefont{\sffamily\bfseries\large}
+\setdefaults{compmid=\boardtext,bidfirst=N}
+\section{Board 1}
+\newgame
+\boardnr{1}
+\northhand{AQ8}{743}{A743}{AK4}
+\southhand{742}{KQJ6}{K2}{8653}
+\westhand{KJT63}{T2}{QJT8}{72}
+    \easthand{95}{A985}{965}{QJT9}
+    \begin{bidding}-
+        1N & p & 2C & p\\
+        2D & p & 3N & ---\\
+    \end{bidding}
+
+\showAll*+
+
+\paragraph{Dichiarazione:}
+Nord con 17 punti bilanciati apre di 1\SA. Est passa. Sud, con 9 punti e una quarta maggiore va alla ricerca del fit
+attraverso la dichiarazione di 2\Cl Stayman. Nord, non possedendo 4e nobili, risponde 2\Di (si vedano dispense per le
+risposte). Una volta assicurata la mancanza di fit in un colore maggiore, Sud chiude a manche.
+
+\paragraph{Gioco:}
+Nord conta 4 vincenti. Se in grado di fare 3\He e 2\Sp arriva a 9. Si tratta, quindi, di giocare 3 volte verso le cuori
+del morto mantenendo l'ingresso con il K\Di per godere della 4a cuori. Quindi:
+
+\begin{play}*{E}
+    CQ & 3 & 2 & K\\
+    H3 & 5 & J & 2\\
+    S2 & T & Q & 5\\
+    H4 & 8 & Q & T\\
+    D2 & T & A & 5\\
+    H7 & A & 6 & S3\\
+    CJ & 5 & 7 & A\\
+    D3 & 6 & K & 8\\
+    HK & S6 & S8 &9\\
+    S4 & J & A &9\\
+\end{play}
+
+Contratto mantenuto.
+\newpage
+
+\section{Board 2}
+
+\newgame
+\boardnr{2}
+\northhand{QJT63}{A62}{K6}{QJ3}
+\southhand{K952}{853}{AQ5}{K65}
+\westhand{87}{T97}{T732}{AT72}
+\easthand{A4}{KQJ4}{J984}{984}
+\begin{bidding}-
+        - & p & 1C & p\\
+        1S & X & 2S & p\\
+        4S & ---\\
+    \end{bidding}
+
+\showAll*+
+
+\paragraph{Dichiarazione:} Sud apre con 12, Nord dichiara 1\Sp. Est, essendo passato di mano, può dichiarare contro (non può avere
+12+ punti!), mostrando 4\Di e 4\He. Sud dichiara 2\Sp: anche se si tratta di una dichiarazione libera, abbiamo detto che
+il fit è sacro, ovvero che è sempre necessario mostrarlo, anche con mano minima.
+
+\paragraph{Gioco:}
+Dopo l'attacco K\He, possediamo 10 vincenti: 4\Sp, 1\He, 3\Di, 2\Cl. Nonostante questo, dobbiamo ricordarci che
+è necessario che gli avversari non facciano 4 prese prima che noi ne facciamo 10! Se, infatti, battiamo atout, gli
+avversari potranno vincere 1 presa a \pic, 2 a \cu e 1 a \fio, per un totale di 4. Si tratta, quindi, di giocare 3 volte
+\qu al fine di scartare una cuori ed esercitare il potere di controllo delle atout in questo seme.
+
+\begin{play}*{E}
+    HK & 3 & 7 & A\\
+    DK & 4 & 5 & 2\\
+    D6 & 8 & Q & 3 \\
+    DA & 7 & H2 & D9\\
+\end{play}
+
+Ora Est-Ovest non possono fare nulla per battere il contratto se Nord batte atout.
+
+\newpage
+
+\section{Board 3}
+\newgame
+\boardnr{3}
+    \northhand{KJT974} {AT3} {Q43} {9}
+    \westhand{53} {Q865} {JT9} {AT52}
+    \easthand{AQ6} {K4} {A865} {KQJ7}
+    \southhand{82} {J972} {K72} {8643}
+\begin{bidding}-
+        - & - & p & p\\
+        p & 1D & p & 1H\\
+        1S & 1N & p & 3N\\
+    \end{bidding}
+\showAll*+
+
+\paragraph{Dichiarazione:} Est apre, Ovest risponde 1\He e Nord, possedendo i requisiti per l'intervento a livello 1 (almeno
+8 punti, almeno 5 carte nel colore da dichiarare, almeno un onore nel colore da dichiarare), dichiara 1\Sp. Est, che ora
+  non è in una situazione di dichiarazione obbligata dal cambio di colore forzante del rispondente, dichiara 1\SA.
+  Questa è una dichiarazione libera e, quindi, mostra:
+  \begin{enumerate}
+      \item Una mano particolarmente sbilanciata.
+          \item Una mano forte.
+  \end{enumerate}
+
+  Può una dichiarazione di senz'atout mostrare una mano sbilanciata? No, perché questa preferirebbe dichiarare un
+  colore. Deve, quindi, trattarsi di una mano forte: una mano di 18--20 punti bilanciata (non 15--17, con cui est
+  avrebbea aperto 1\SA). A questo punto, Ovest, sapendo di essere oltre il giustificativo di punteggio per la manche
+  (24--25 punti) dichiara 3\SA: non può, infatti, esserci il fit a \cu, con il quale Est avrebbe dichiarato 4\He.
+
+\paragraph{Gioco:} Possedendo, dopo l'attacco \pic (il colore di Nord), 6 prese, si tratta di affrancarne altre 3. Il
+colore più promettente sono le \qu, con una manovra di impasse alla Q e al K. Ma attenzione! Per questa manovra ci
+servono due ingressi al morto, in quanto andrà ripetuta! Importante non incassare troppe \fio, in quanto potreste rimanere incastrati al morto (provate a giocare due volte fiori e poi mangiarvi il J con
+l'Asso, e sull'onore di \qu coprire con la Q: rimarreste bloccati al morto, costretti a cedere una presa a Nord, che
+possiede le \pic franche dopo che Sud è tornato \pic in presa con il K\Di).
+
+\begin{play}*{S}
+    S8 & 3 & 9 & Q\\
+    CK & 3 & A & 9\\
+    DJ & 3 & 5 & K\\
+    S2 & 5 & T & A\\
+    C7 & 4 & T & H3\\
+    DT & Q & A & 2\\
+    D6 & 7 & 9 & 4\\
+    C2 & HT & CQ & 6\\
+\end{play}
+
+\section{Board 4}
+\newgame
+\boardnr{4}
+\northhand{432}{JT97}{AK98}{52}
+\southhand{85}{Q8}{T7432}{QT97}
+\westhand{KQJT6}{5432}{Q5}{K8}
+\easthand{A97}{AK6}{J6}{AJ643}
+\begin{bidding}-
+    -& -& - & p\\
+    1N & p & 2C & p\\
+    2D & p & 2S & p\\
+    4S & ---\\
+\end{bidding}
+
+\showAll*+
+
+\paragraph{Dichiarazione:} Est apre di 1\SA e Ovest, possedendo una quinta maggiore in una mano con forza sufficiente
+a giocare manche (15 + 11 > 24--25 punti), dichiara 2\Cl Stayman per poi dichiarare 2\Sp, mostrando 5\Sp in mano da
+manche. Est, notando che Ovest è passato, sa che non può esserci Slam e chiude a manche.
+
+\paragraph{Gioco:} Tante le linee possibili. Tra queste:
+\begin{enumerate}
+    \item Giocare tre giri di \cu, per poi tagliare il 4\kern-.1em° con il 9\Sp.
+    \item Tagliare due giri di \fio ed effettuare un affrancamento di lunga, mantenevo gli ingressi al morto.
+\end{enumerate}
+Entrambe questo linee hanno successo.
+
+\section{Board 5}
+
+\newgame
+\boardnr{5}
+    \northhand{T3} {KT82} {KQJ2} {AJT}
+    \westhand{874} {J93} {4} {Q76532}
+    \easthand{AKJ62} {76} {A953} {98}
+    \southhand{Q95} {AQ54} {T876} {K4}
+
+    \begin{bidding}-
+        1D & 1S & X & p\\
+        2H & p & 3H & p\\
+        4H & ---\\
+    \end{bidding}
+    \showAll*+
+
+\paragraph{Dichiarazione:} Nord apre, Est entra con 1\Sp possedendo tutti i requisiti per l'intervento a livello 1 (5+
+carte, colore solido e anche punti). Sud, pur avendo l'appoggio a \qu,
+è maggiormente interessato al fit a \cu. Non avendo abbastanza punti e lunghezza per dichiararle a livello 2, sceglie
+una dichiarazione che mostra la ricerca di un fit 4-4 e un po' di punti (almeno 8): Contro. Nord, che, ricordiamoci, è in
+una situazione di dichiarazione obbligata, è costretto a dichiarare la quarta di \cu, anche se supera il livello di
+guardia: infatti, il fit a cuori è dato per assunto dopo che il compagno contra. Sud, a questo punto, appurato il fit
+a cuori, dichiara un \emph{parziale non minimo} al fine di mostrare una mano invitante di 10--11 punti onori. Nord,
+possedendo un apertura minima nel massimo del range (14 punti onori), dichiara 4\He.
+
+\paragraph{Gioco:}
+Est attacca di Asso di \pic. A questo punto Est, realizzando che il dichiarante ha aperto 1\Di (ricordate la licita!) e che
+quindi ne possiede almeno 4, sa che il compagno ha il singolo di \qu. Si tratta quindi di dargli il
+taglio prima di incassare il Re di picche, che permette di fornire un secondo taglio al compagno. Si veda, di seguito,
+il corretto ordine di gioco.
+
+\begin{play}*{E}[H]
+    SA & 5 & 4 & 3\\
+    DA & 6 & 4 & 2\\
+    D9 & 7 & H3 & DJ\\
+    S8 & T & K & 9\\
+    D5 & 8 & H9 & Q\\
+\end{play}
+
+Si noti, per il futuro, che il ritorno di Est con il 9 di \qu, essendo una carta alta, suggeriva al compagno di giocare
+il seme più alto, ovvero \pic.
+
+\section{Board 6}
+
+\newgame
+\boardnr{6}
+    \northhand{AT92} {Q872} {A9} {A75}
+    \southhand{K8} {J96} {T6432} {832}
+    \westhand{J543} {AK54} {KQ85} {J}
+    \easthand{Q76} {T3} {J7} {KQT964}
+    \begin{bidding}-
+        - & p & p & 1D\\
+        X & 2C & --- \\
+    \end{bidding}
+\showAll*+
+
+\paragraph{Dichiarazione:}Nonostante molti di voi abbiano preferito, con le carte di Nord, dichiarare 1\Sp, la
+dichiarazione corretta è quella di Contro: ricordate, infatti, che l'intervento a colore richiede almeno 5 carte. Est
+dichiara 2\Cl sul contro, promettendo 5+ carte e meno di 11 punti. Ovest non ha di meglio da dire e passa, come tutti
+gli altri giocatori.
+
+\paragraph{Gioco:} Un buon attacco è il K\Sp. Dopo 3 giri di \pic, di cui il terzo tagliato da Sud, si tratta, per Est,
+semplicemente di battere atout e incassare 5\Cl, 2\He e 1\Di.
+
+\newpage
+\section{Board 7}
+\newgame
+\boardnr{7}
+    \northhand{8643} {93} {QJ6} {T942}
+    \westhand{AJT9} {KQJ5}{32} {A87} 
+    \easthand{Q52} {AT864} {K98} {J5}
+    \southhand{K7} {72} {AT754} {KQ63}
+    \begin{bidding}-
+        - & - & 1D & X\\
+        p & 2H & p & 4H\\
+    \end{bidding}
+
+\showAll*+
+
+\paragraph{Dichiarazione:} Sud apre, Est, possedendo 15 punti e una mano bilanciata, ma non il fermo a \qu,
+è impossibilitato a dichiarare 1\SA. Dichiara quindi contro, avendo almeno la 4-3 tra \cu e \pic e anche 3\Cl. Est,
+possedendo 10 punti e la quinta di \cu, possiede una mano invitante: è, infatti, desideroso di dichiarare manche se il
+compagno ha un contro non minimo (almeno 14 punti). Dichiara, quindi, un parziale non minimo (2\He), con significato
+invitante. Ovest, possedendo un buon Contro (15 punti e 4 carte di fit contro le sole tre attese dal compagno), dichiara
+4\He.
+
+\paragraph{Gioco:} Dopo l'attacco K\Cl, si tratta di battere le atout in due giri finendo in Mano, per poi giocare la
+Q\Sp al fine di effettuare l'impasse: 5\He, 4\Sp, 1\Cl, ovvero 10 prese.
+
+\section{Board 8}
+
+\newgame
+\boardnr{8}
+    \northhand{8532} {876} {63} {AT72}
+    \southhand{AJ76} {QJT5} {87} {KQ8}
+    \easthand{K} {AK42} {AKT942} {94}
+    \westhand{QT94} {93} {QJ5} {J653}
+    \begin{bidding}-
+        - & - & - & p\\
+        p & 1D & X & p\\
+        1S & 2H & p & 3D\\
+    \end{bidding}
+    \showAll*+
+
+    \paragraph{Dichiarazione:} Est, possedendo mano di Rovescio, apre 1\Di. Sud non possedendo un colore quinto, con buona giocabilità
+    negli altri colori e con 12+ punti, dichiara contro. Ovest, con il minimo, passa. Nord, essendo costretto
+    a dichiarare (ricordate che il Contro vi chiede di dichiarare un contratto di altro tipo, con preferenza di uno dei
+    tre semi alternativi a quello di apertura) e possedendo 4\Sp e pochi punti,preferisce dichiarare 1\Sp, ovvero il
+    contratto che vuole giocare: è infatti alta la possibilità di fit. La
+    dichiarazione di 1\SA non va bene: non abbiamo, infatti, il fermo (una
+    figura di carte che impedisca l'incasso di tutte le vincenti avversarie in un determinato seme) a \qu, colore di
+    apertura. \`E necessario, quindi, proporre un seme come atout. Il compagno ha indicato gradimento per i nobili e, di
+    conseguenza, dichiariamo 1\Sp. Est, possedendo una bicolore (due semi) di 10 carte, per giunta non minima,
+    è giustificato a dichiarare. 2\He è la dichiarazione migliore: il compagno saprà che abbiamo almeno 5\Di (niente ci
+    impedisce, come in questo caso, di averne 6) e 4\He, permettendogli di scegliere il contratto migliore. Ricordate
+    sempre questa massima quando si tratta di dichiarazione: cercate di rendere il compagno il \emph{boss}, ovvero di
+    fornirgli tutte le informazioni necessarie al fine di compiere la migliore dichiarazione. Un'ottima dichiarazione
+    è quella che permette al compagno di compiere una decisione complessa con il minimo sforzo. In questo caso, fornigli
+    informazioni su 2 colori (invece che solo su 1, dichiarando 2\Di, per altro nascondendo la nostra forza) è la cosa migliore.
+
+    \paragraph{Gioco:} Niente da dire, si tratta semplicemente di affrancare la Q\Sp per arrivare a 9 prese, oppure di
+    tagliare una \cu con il medesimo risultato.
+
+    \section{Board 9}
+\newgame
+\boardnr{9}
+    \northhand  {AQ6}   {KJ52}  {763}  {AKQ}     
+    \westhand   {KJT92}   {Q3}  {QJT}   {JT3}    
+    \easthand   {754} {AT64}    {98}  {9764}    
+    \southhand  {83}   {987}  {AK542}{852}       
+
+    \begin{bidding}-
+        1C & p & 1D & 1S\\
+        1N! & p & 3N &---\\
+    \end{bidding}
+
+\showAll*+
+
+\paragraph{Dichiarazione:} Nord, dopo l'intervento di 1\Sp, non è più obbligato a parlare (la parola, infatti, tornerà
+a Sud, come da sua richiesta effettuata tramite la dichiarazione di un nuovo colore forzante, ovvero 1\Di). La sua dichiarazione è,
+quindi, \emph{libera}. Le dichiarazioni libere denotano:
+\begin{itemize}
+    \item Mani particolarmente sbilanciate, in possesso di 6+ belle carte nel seme di apertura o di almeno 10 carte tra
+        i due semi dichiarati.
+        \item Mani particolarmente forti.
+\end{itemize}
+
+In questo caso vale il discorso fatto per il Board 3: dichiarando i \SA neghiamo una mano bilanciata, di conseguenza
+garantendo una mano non minima. Non possiamo possedere 15--17 bilanciati in quanto avremmo aperto 1\SA: rimane, quindi,
+solo la fascia 18--20. Sud, a questo punto, chiude a manche.
+
+\paragraph{Gioco:} Dopo l'attacco \pic, per nord si tratta di trovare due prese. Il colore più promettente sono le
+\qu, in cui possediamo otto carte, ed è quindi probabile che i resti avversari siano 3-2. Ma attenzione! La mano di Sud,
+povera di punti, è povera anche di rientri! Se, provando ad effettuare un affrancamento di lunga, giochiamo A,
+K e piccola a \qu, ci troviamo con il colore di quadri sì affrancato, ma \emph{irraggiungibile}. Si tratta, quindi,
+sapendo di dover cedere una presa, di cederla immediatamente, al fine di mantenere il collegamento (comunicazione
+interna al colore, si vedano le pagine 13 e 27--28 delle dispense, con particolare attenzione alla Regola 13) nel colore
+di \qu. Il gioco deve, quindi, svolgersi nella seguente maniera:
+
+\begin{play}*{E}
+    S4 & 3 & 9 & Q\\
+    D3 & 9 & 2! & T\\
+    ST & A & 5 & 8\\
+    D6 & 8 & K & J\\
+    DA & Q & 7 & H4\\
+\end{play}
+
+A questo punto il colore di \qu è \emph{affrancato} e noi ci troviamo al Morto, dove possiamo usufruirne.
+
+
+\section{Board 10}
+
+\newgame
+\boardnr{10}
+    \northhand{A} {KQ8754} {KT2} {Q76}
+    \westhand{J865} {T} {AJ} {KJT542}
+    \easthand{97432} {J93} {Q643} {3}
+    \southhand{KQT} {A62} {9875} {A98}
+
+    \begin{bidding}-
+        - & - & 1D & 2C\\
+        2H & p & 3H & p\\
+        4H & ---\\
+    \end{bidding}
+    \showAll*+
+
+    \paragraph{Dichiarazione:} Ovest interviene di 2\Cl possedendo un bel colore sesto e più di 10 punti. Nord, con 14
+    punti e una sesta, supera di gran lunga il requisito per una dichiarazione di 2 in competizione (10+ punti e almeno
+    5 carte). Sud mostra il proprio appoggio minimo dichiarando 3\He. Nord, sapendo di possedere punteggio superiore al
+      giustificativo di manche, dichiara 4\He.
+
+      \paragraph{Gioco:} Fondamentale prendere di Asso l'attacco di 3\Cl: si tratta, infatti, certamente di un singolo
+      data la dichiarazione di Ovest (se lasciato correre, rischiamo che Ovest rigiochi \fio, dando il taglio al
+      compagno, che poi giocherà \qu per farsene dare un altro, facendoci perdere 4 prese: due tagli a \fio, il K\Cl
+      e l'A di \Di). Sbloccare, successivamente, l'Asso di \pic, per poi battere le atout finendo al
+      morto, dove giocheremo K e Q di \pic per scartare due quadri e giocare \fio verso la Q, un expasse della cui
+      riuscita siamo sicuri dato l'intervento.
+
+      \begin{play}*{E}[H]
+          C3 & A & 2 & 6\\
+          ST & 5 & A & 2\\
+          HK & 3 & 2 & T\\
+          HQ & 9 & 6 & C4\\
+          H4 & J & A & C5\\
+          SQ & 6 & D2 & S3\\
+          SK & 8 & DT & S4\\
+      \end{play}
+
+\section{Board 11}
+\newgame
+\boardnr{11}
+    \southhand{K542} {QJT9} {J3} {AJ5}
+    \northhand{87} {86} {T8642} {Q864}
+    \westhand{AQJT} {A743} {Q95} {32}
+    \easthand{963} {K52} {AK7} {KT97}
+
+\begin{bidding}-
+    - & - & 1C & x\\
+    p & 3N & ---\\
+\end{bidding}
+
+\showAll*+
+
+\paragraph{Dichiarazione:} Sud apre e Ovest, possedendo l'apertura ma nessun colore quinto, ed avendo almeno la 4-3 nei
+nobili, dichiara Contro. Est, in possesso di 13 punti e fermo nel colore avversario sa due cose: non c'è fit in un
+colore maggiore (il compagno non può averne 5), e che il giustificativo per la manche è raggiunto. Dichiara, quindi,
+3\SA.
+
+\paragraph{Gioco:} Attacco di Q\He. Possiamo contare 6 vincenti. Le \pic offrono la possibilità di sviluppare le tre
+ulteriori, tramite una manovra ripetuta di impasse. In presa con il K\He, quindi, giocheremo immediatamente \pic, per
+tornare in Mano con l'Asso di \qu, ripetere l'impasse, tornare in mano con il k\Di e ripetere, per l'ultima volta,
+l'impasse al K\Sp. Una decima presa ci spetta, inoltre, se, a questo punto, giochiamo la Q\Di e una \cu (poco sotto il
+diagramma della situazione).
+
+\begin{play}*{S}
+    HQ & 3 & 6 & K\\
+    S3 & 2 & T & 7\\
+    D5 & 2 & A & 3\\
+    S6 & 4 & J & 8\\
+    D9 & 4 & K & J\\
+    S9 & 5 & Q & D6\\
+    SA & D8 & C7 & SK\\
+\end{play}
+
+\newgame
+\boardnr{11}
+    \southhand{-} {JT9} {-} {AJ5}
+    \northhand{-} {8} {T} {Q864}
+    \westhand{-} {A74} {Q} {32}
+    \easthand{-} {52} {7} {KT9}
+
+\showAll*
+
+A questo punto, se Est gioca la Q\Di e Asso di \cu e \cu, Sud sarà costretto a prendere e regalare il K\Cl, dovendo
+giocare dall'Asso di fiori. Di seguito la situazione, dopo Q\Di e due giri di \cu, di cui il secondo preso da Sud con il
+J\He.
+
+\newgame
+\boardnr{11}
+    \southhand{-} {-} {-} {AJ}
+    \northhand{-} {-} {-} {Q8}
+    \westhand{-} {-} {-} {32}
+    \easthand{-} {-} {-} {KT}
+
+\showAll*
+
+\section{Board 12}
+\newgame
+\boardnr{12}
+    \northhand{KQ64} {A65} {AKJ73} {4}
+    \westhand{982} {T32} {952} {KT92}
+    \easthand{A7} {KQJ74} {T4} {Q863}
+    \southhand{JT53} {98} {Q86} {AJ75}
+\begin{bidding}-
+    - & - & - & p\\
+    1D & 1H & x & p\\
+    2S & p & 4S & ---\\
+\end{bidding}
+
+    \showAll*+
+
+    \paragraph{Dichiarazione:} Nord, con 17 punti in mano sbilanciata, apre di 1\Di. Est, possedendo un bel colore di
+    \cu quinto e l'apertura, dichiara 1\He. Sud vuole andare alla ricerca di un fit 4-4 negli altri colori: dichiara
+    quindi Contro, in quanto possiede anche il minimo del punteggio richiesto per questa dichiarazione da parte del
+    Rispondente: 8 punti. Nord, dal canto suo, possiede la quarta di \pic. Ma se la dichiarasse a livello 1 non
+    supererebbe il livello di guardia (2\Di), mostrando, quindi, mano di dritto. \`E allora necessario dichiarare
+    2\Sp, superando il livello di guardia e mostrando una mano di rovescio, sbilanciata con 4\Sp. Sud, sapendo che il
+    giustificativo per la manche è raggiunto, dichiara 4\Sp.
+
+    \paragraph{Gioco:} Dopo l'attacco di K\He, Nord può contare 9 vincenti (ricordate che le affrancabili in atout si
+    contano sempre come vincenti). Si tratta, quindi, di trovare la decima presa: questa verrà necessariamente da un
+    taglio, effettuato dopo la battuta delle atout, o della \cu al morto, o della \fio in mano.
+
+
+    \newpage
+    \section{Board 13}
+\newgame
+\boardnr{13}
+    \northhand{Q9753} {KQ} {A86} {K86}
+    \southhand{86} {AJT63} {T32} {T94}
+    \westhand{AJ} {8752} {KQJ54} {53}
+    \easthand{KT42} {94} {97} {AQJ72}
+
+    \begin{bidding}-
+        1S & p & 1N & 
+        ---\\
+    \end{bidding}
+
+    \showAll*+
+
+\paragraph{Dichiarazione:} Né Est né Ovest possiedono i requisiti per un intervento a livello 2 (6 carte almeno
+discrete), di conseguenza entrambi passano.
+
+\paragraph{Gioco:} Dopo l'attacco K\Di, Sud dovrà incassare 5\He, mangiandosi il secondo onore con l'Asso (sblocco).
+Proverà, in seguito, l'expasse al K di \fio, che fallisce. Risultato: 1\SA -1.
+
+\section{Board 14}
+
+\newgame
+\boardnr{14}
+    \northhand{JT92} {K} {AQ852} {T94}
+    \southhand{543} {A73} {JT943} {52}
+    \westhand{Q876} {982} {K6} {A763}
+    \easthand{AK} {QJT654} {7} {KQJ8}
+
+    \begin{bidding}-
+        - & 1H & p & 2H\\
+        p & 3C{!} & p & 4H\\
+    \end{bidding}
+
+    \showAll*+
+
+\paragraph{Dichiarazione:} Una dichiarazione nuova, quella di Est, di cui non abbiamo parlato durante il corso. Dopo
+l'appoggio di Ovest, Est sa che la linea Est-Ovest potrebbe superare il giustificativo di manche (se Ovest ha 8--10
+punti). In cerca di informazioni, fa un ulteriore dichiarazione, mostrando un altro colore e più punti del previsto:
+3\Cl. Si tratta di una dichiarazione invitante, fatta però dall'Apertore. Ovest, in possesso di 9 punti e di un secondo
+fit a \fio, dichiara 4\He.
+
+
+\paragraph{Gioco:} Dopo l'attacco J\Di, Est possiede 11 vincenti. Si tratta, quindi, di battere atout immediatamente,
+per trasformarle da potenziali ad effettive. Notate come, in realtà, le prese siano 10: perderemo, infatti,
+irrimediabilmente, una \qu e due \cu. State sempre attenti a queste situazioni in cui le prese che rischiate di perdere
+sono in numero maggiore a $13 - \mathit{n^{\circ} Vincenti}$ : si tratta, spesso (non in questo caso), di
+situazioni in cui si devono effettuare manovre particolari.
+
+\end{document}
